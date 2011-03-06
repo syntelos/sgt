@@ -25,37 +25,37 @@ import java.beans.*;
  * @see Layer
  */
 public class LayerContainer extends java.awt.Container implements LayerControl {
-  AbstractPane pane_;
+    AbstractPane pane_;
 
-  public LayerContainer() {
-    super();
-  }
-  /**
-   * Used internally by sgt.
-   */
-  public void setPane(AbstractPane pane) {
-    pane_ = pane;
-  }
-  /**
-   * Used internally by sgt.
-   */
-  public void draw(Graphics g) throws PaneNotFoundException {
-    throw new MethodNotImplementedError();
-  }
-  /**
-   * Used internally by sgt.
-   * @since 2.0
-   */
-  public void drawDraggableItems(Graphics g) throws PaneNotFoundException {
-    /**@todo Implement this sgt.LayerControl method*/
-    throw new java.lang.UnsupportedOperationException("Method drawDraggableItems() not yet implemented.");
-  }
+    public LayerContainer() {
+        super();
+    }
+    /**
+     * Used internally by sgt.
+     */
+    public void setPane(AbstractPane pane) {
+        pane_ = pane;
+    }
+    /**
+     * Used internally by sgt.
+     */
+    public void draw(Graphics g) throws PaneNotFoundException {
+        throw new MethodNotImplementedError();
+    }
+    /**
+     * Used internally by sgt.
+     * @since 2.0
+     */
+    public void drawDraggableItems(Graphics g) throws PaneNotFoundException {
+        /**@todo Implement this sgt.LayerControl method*/
+        throw new java.lang.UnsupportedOperationException("Method drawDraggableItems() not yet implemented.");
+    }
 
-  /**
-   * Get identifier.
-   * @return identifier/name
-   */
-  public String getId() {
-    return getName();
-  }
+    /**
+     * Get identifier.
+     * @return identifier/name
+     */
+    public String getId() {
+        return getName();
+    }
 }

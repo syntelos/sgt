@@ -119,380 +119,380 @@ import java.beans.PropertyChangeListener;
  * @see Layer
  * @see Graph
  * @see java.awt.Graphics
-**/
+ **/
 public class Pane extends Container implements AbstractPane {
-  //
-  private PaneProxy proxy_;
-  //
-  /**@shapeType AggregationLink
-   * @supplierCardinality 1..**/
-  /*#  Layer lnkUnnamed*/
-  /**
-   * Constructs a <code>Pane</code>.
-   *
-   * @param id the <code>Pane</code> identifier
-   * @param size the size of the <code>Pane</code> in pixels
-   **/
-  public Pane(String id, Dimension size) {
-    proxy_ = new PaneProxy(this, id, size);
-    setSize(size);
     //
-    // setup for Low-Level Events
+    private PaneProxy proxy_;
     //
-    this.enableEvents(AWTEvent.MOUSE_EVENT_MASK |
-                      AWTEvent.MOUSE_MOTION_EVENT_MASK);
-  }
-  /**
-   * Default constructor.  The identifier is set to an empty string and
-   * the size is set to a width and height of 50 pixels. A default constructor
-   * is required to work as a component with Visual Cafe.
-   *
-   * <pre>
-   * import sgt.Pane;
-   * ...
-   * Pane pane;
-   * ...
-   * pane = new Pane("main graph", new Dimension(400, 500));
-   * pane.setLayout(new StackedLayout());
-   * ...
-   * </pre>
-   *
-   * @see StackedLayout
-   *
-   **/
-  public Pane() {
-    this(new String(""), new Dimension(50,50));
-  }
-  /**
-   * Return the version of SGT.
-   * @since 3.0
-   */
-  public static String getVersion() {
-    return PaneProxy.getVersion();
-  }
-  public void draw() {
-    proxy_.draw();
-  }
-  /**
-   * No initialization required by Pane.
-   */
-  public void init() {
-  }
-  public void draw(Graphics g) {
-    proxy_.draw(g);
-  }
-  public void draw(Graphics g, int width, int height) {
-    proxy_.draw(g, width, height);
-  }
-  public boolean isPrinter() {
-    return proxy_.isPrinter();
-  }
-  /**
-   * Internal access to jdk1.1 or Java2D line drawing.
-   */
-  public static StrokeDrawer getStrokeDrawer() {
-    return PaneProxy.strokeDrawer;
-  }
-  public Dimension getPageSize() {
-    return proxy_.getPageSize();
-  }
-  /**
-   * Updates the <code>Pane</code>
-   */
-  public void update(Graphics g) {
-    if(Debug.DEBUG) System.out.println("Pane: " + proxy_.getId() + ": update(g)");
-    super.update(g);
-    paint(g);
-  }
-  /**
-   * Override of the parent <code>paint</code> method. This method should not be
-   * called by a user.
-   **/
-  public void paint(Graphics g) {
-    proxy_.paint(g);
-  }
-  /**
-   * Adds the specified component to the end of the <code>Pane</code>.
-   *
-   * @param comp the component to be added
-   * @return component argument
-   */
-  public Component add(Component comp) {
-    if(comp instanceof Layer) {
-      ((Layer)comp).setPane(this);
-    } else if(comp instanceof LayerContainer) {
-      ((LayerContainer)comp).setPane(this);
+    /**@shapeType AggregationLink
+     * @supplierCardinality 1..**/
+    /*#  Layer lnkUnnamed*/
+    /**
+     * Constructs a <code>Pane</code>.
+     *
+     * @param id the <code>Pane</code> identifier
+     * @param size the size of the <code>Pane</code> in pixels
+     **/
+    public Pane(String id, Dimension size) {
+        proxy_ = new PaneProxy(this, id, size);
+        setSize(size);
+        //
+        // setup for Low-Level Events
+        //
+        this.enableEvents(AWTEvent.MOUSE_EVENT_MASK |
+                          AWTEvent.MOUSE_MOTION_EVENT_MASK);
     }
-    return super.add(comp);
-  }
-  /**
-   * Adds the specified component to the <code>Pane</code> at the
-   * given position.
-   *
-   * @param comp the component to be added
-   * @param index the position at which to insert the component, or -1
-   to insert the component at the end.
-   * @return component argument
-   */
-  public Component add(Component comp, int index) {
-    if(comp instanceof Layer) {
-      ((Layer)comp).setPane(this);
-    } else if(comp instanceof LayerContainer) {
-      ((LayerContainer)comp).setPane(this);
+    /**
+     * Default constructor.  The identifier is set to an empty string and
+     * the size is set to a width and height of 50 pixels. A default constructor
+     * is required to work as a component with Visual Cafe.
+     *
+     * <pre>
+     * import sgt.Pane;
+     * ...
+     * Pane pane;
+     * ...
+     * pane = new Pane("main graph", new Dimension(400, 500));
+     * pane.setLayout(new StackedLayout());
+     * ...
+     * </pre>
+     *
+     * @see StackedLayout
+     *
+     **/
+    public Pane() {
+        this(new String(""), new Dimension(50,50));
     }
-    return super.add(comp, index);
-  }
-  /**
-   * Adds the specified component to the end of this <code>Pane</code>.
-   * Also notifies the layout manager to add the component to this
-   * <code>Pane</code>'s layout using the specified constraints object.
-   *
-   * @param comp the component to be added
-   * @param constraints an object expressing layout constraints for
-   this component
-  */
-  public void add(Component comp, Object constraints) {
-    super.add(comp, constraints);
-    if(comp instanceof Layer) {
-      ((Layer)comp).setPane(this);
-    } else if(comp instanceof LayerContainer) {
-      ((LayerContainer)comp).setPane(this);
+    /**
+     * Return the version of SGT.
+     * @since 3.0
+     */
+    public static String getVersion() {
+        return PaneProxy.getVersion();
     }
-  }
-  /**
-   * Adds the specified component to the end of this <code>Pane</code>
-   * at the specified index.
-   * Also notifies the layout manager to add the component to this
-   * <code>Pane</code>'s layout using the specified constraints object.
-   *
-   * @param comp the component to be added
-   * @param constraints an object expressing layout constraints for
-   this component
-   * @param index the position in the <code>Pane</code>'s list at which to
-   insert the component -1 means insert at the end.
-  */
-  public void add(Component comp, Object constraints, int index) {
-    super.add(comp, constraints, index);
-    if(comp instanceof Layer) {
-      ((Layer)comp).setPane(this);
-    } else if(comp instanceof LayerContainer) {
-      ((LayerContainer)comp).setPane(this);
+    public void draw() {
+        proxy_.draw();
     }
-  }
-  /**
-   * Adds the specified component to this <code>Pane</code>. It
-   * is strongly advised to use add(Component, Object), in place
-   * of this method.
-   */
-  public Component add(String name, Component comp) {
-    if(comp instanceof Layer) {
-      ((Layer)comp).setPane(this);
-    } else if(comp instanceof LayerContainer) {
-      ((LayerContainer)comp).setPane(this);
+    /**
+     * No initialization required by Pane.
+     */
+    public void init() {
     }
-    return super.add(name, comp);
-  }
+    public void draw(Graphics g) {
+        proxy_.draw(g);
+    }
+    public void draw(Graphics g, int width, int height) {
+        proxy_.draw(g, width, height);
+    }
+    public boolean isPrinter() {
+        return proxy_.isPrinter();
+    }
+    /**
+     * Internal access to jdk1.1 or Java2D line drawing.
+     */
+    public static StrokeDrawer getStrokeDrawer() {
+        return PaneProxy.strokeDrawer;
+    }
+    public Dimension getPageSize() {
+        return proxy_.getPageSize();
+    }
+    /**
+     * Updates the <code>Pane</code>
+     */
+    public void update(Graphics g) {
+        if(Debug.DEBUG) System.out.println("Pane: " + proxy_.getId() + ": update(g)");
+        super.update(g);
+        paint(g);
+    }
+    /**
+     * Override of the parent <code>paint</code> method. This method should not be
+     * called by a user.
+     **/
+    public void paint(Graphics g) {
+        proxy_.paint(g);
+    }
+    /**
+     * Adds the specified component to the end of the <code>Pane</code>.
+     *
+     * @param comp the component to be added
+     * @return component argument
+     */
+    public Component add(Component comp) {
+        if(comp instanceof Layer) {
+            ((Layer)comp).setPane(this);
+        } else if(comp instanceof LayerContainer) {
+            ((LayerContainer)comp).setPane(this);
+        }
+        return super.add(comp);
+    }
+    /**
+     * Adds the specified component to the <code>Pane</code> at the
+     * given position.
+     *
+     * @param comp the component to be added
+     * @param index the position at which to insert the component, or -1
+     to insert the component at the end.
+     * @return component argument
+     */
+    public Component add(Component comp, int index) {
+        if(comp instanceof Layer) {
+            ((Layer)comp).setPane(this);
+        } else if(comp instanceof LayerContainer) {
+            ((LayerContainer)comp).setPane(this);
+        }
+        return super.add(comp, index);
+    }
+    /**
+     * Adds the specified component to the end of this <code>Pane</code>.
+     * Also notifies the layout manager to add the component to this
+     * <code>Pane</code>'s layout using the specified constraints object.
+     *
+     * @param comp the component to be added
+     * @param constraints an object expressing layout constraints for
+     this component
+    */
+    public void add(Component comp, Object constraints) {
+        super.add(comp, constraints);
+        if(comp instanceof Layer) {
+            ((Layer)comp).setPane(this);
+        } else if(comp instanceof LayerContainer) {
+            ((LayerContainer)comp).setPane(this);
+        }
+    }
+    /**
+     * Adds the specified component to the end of this <code>Pane</code>
+     * at the specified index.
+     * Also notifies the layout manager to add the component to this
+     * <code>Pane</code>'s layout using the specified constraints object.
+     *
+     * @param comp the component to be added
+     * @param constraints an object expressing layout constraints for
+     this component
+     * @param index the position in the <code>Pane</code>'s list at which to
+     insert the component -1 means insert at the end.
+    */
+    public void add(Component comp, Object constraints, int index) {
+        super.add(comp, constraints, index);
+        if(comp instanceof Layer) {
+            ((Layer)comp).setPane(this);
+        } else if(comp instanceof LayerContainer) {
+            ((LayerContainer)comp).setPane(this);
+        }
+    }
+    /**
+     * Adds the specified component to this <code>Pane</code>. It
+     * is strongly advised to use add(Component, Object), in place
+     * of this method.
+     */
+    public Component add(String name, Component comp) {
+        if(comp instanceof Layer) {
+            ((Layer)comp).setPane(this);
+        } else if(comp instanceof LayerContainer) {
+            ((LayerContainer)comp).setPane(this);
+        }
+        return super.add(name, comp);
+    }
 
-  public String getId() {
-    return proxy_.getId();
-  }
-  public void setId(String id) {
-    proxy_.setId(id);
-  }
-  public void setPageAlign(int vert,int horz) {
-    proxy_.setPageAlign(vert, horz);
-  }
-  public void setPageVAlign(int vert) {
-    proxy_.setPageVAlign(vert);
-  }
-  public void setPageHAlign(int horz) {
-    proxy_.setPageHAlign(horz);
-  }
-  public int getPageVAlign() {
-    return proxy_.getPageVAlign();
-  }
-  public int getPageHAlign() {
-    return proxy_.getPageHAlign();
-  }
-  public void setPageOrigin(Point p) {
-    proxy_.setPageOrigin(p);
-  }
-  public Point getPageOrigin() {
-    return proxy_.getPageOrigin();
-  }
-  /**
-   * Set the size.
-   */
-  public void setSize(Dimension d) {
-    super.setSize(d);
-    proxy_.setSize(d);
-  }
-  public Layer getFirstLayer() {
-    return proxy_.getFirstLayer();
-  }
-  public Layer getLayer(String id) throws LayerNotFoundException  {
-    return proxy_.getLayer(id);
-  }
-  public Layer getLayerFromDataId(String id) throws LayerNotFoundException  {
-    return proxy_.getLayerFromDataId(id);
-  }
-  /**
-   * Move the <code>Layer</code> up in the stack.
-   * The order of the layers determine when they
-   * are drawn.  Moving the <code>Layer</code> up causes the
-   * <code>Layer</code> to be drawn later and over earlier
-   * layers.
-   *
-   * @param lyr <code>Layer</code> object.
-   * @exception LayerNotFoundException The specified <code>Layer</code> was not found in the list.
-   * @see Layer
-   **/
-  public void moveLayerUp(Layer lyr) throws LayerNotFoundException  {
-    throw new MethodNotImplementedError();
-  }
-  /**
-   * Move the <code>Layer</code> up in the stack.
-   * The order of the layers determine when they
-   * are drawn.  Moving the <code>Layer</code> up causes the
-   * <code>Layer</code> to be drawn later and over earlier
-   * layers.
-   *
-   * @param id identifier.
-   * @exception LayerNotFoundException The specified <code>Layer</code> was not found in the list.
-   * @see Layer
-   **/
-  public void moveLayerUp(String id) throws LayerNotFoundException  {
-    throw new MethodNotImplementedError();
-  }
-  /**
-   * Move the <code>Layer</code> down in the stack.
-   * The order of the layers determine when they
-   * are drawn.  Moving the <code>Layer</code> down causes the
-   * <code>Layer</code> to be drawn earlier.
-   *
-   * @param lyr <code>Layer</code> object.
-   * @exception LayerNotFoundException The specified <code>Layer</code> was not found in the list.
-   * @see Layer
-   **/
-  public void moveLayerDown(Layer lyr) throws LayerNotFoundException  {
-    throw new MethodNotImplementedError();
-  }
-  /**
-   * Move the <code>Layer</code> down in the stack.
-   * The order of the layers determine when they
-   * are drawn.  Moving the <code>Layer</code> down causes the
-   * <code>Layer</code> to be drawn earlier.
-   *
-   * @param id identifier
-   * @exception LayerNotFoundException The specified <code>Layer</code> was not found in the list.
-   * @see Layer
-   **/
-  public void moveLayerDown(String id) throws LayerNotFoundException  {
-    throw new MethodNotImplementedError();
-  }
-  public Object getSelectedObject() {
-    return proxy_.getSelectedObject();
-  }
-  public void setSelectedObject(Object obj) {
-    proxy_.setSelectedObject(obj);
-  }
-  /**
-   * Overrides the default event methods.
-   **/
-  public void processMouseEvent(MouseEvent event) {
-    if(!proxy_.processMouseEvent(event))
-      super.processMouseEvent(event);
-  }
+    public String getId() {
+        return proxy_.getId();
+    }
+    public void setId(String id) {
+        proxy_.setId(id);
+    }
+    public void setPageAlign(int vert,int horz) {
+        proxy_.setPageAlign(vert, horz);
+    }
+    public void setPageVAlign(int vert) {
+        proxy_.setPageVAlign(vert);
+    }
+    public void setPageHAlign(int horz) {
+        proxy_.setPageHAlign(horz);
+    }
+    public int getPageVAlign() {
+        return proxy_.getPageVAlign();
+    }
+    public int getPageHAlign() {
+        return proxy_.getPageHAlign();
+    }
+    public void setPageOrigin(Point p) {
+        proxy_.setPageOrigin(p);
+    }
+    public Point getPageOrigin() {
+        return proxy_.getPageOrigin();
+    }
+    /**
+     * Set the size.
+     */
+    public void setSize(Dimension d) {
+        super.setSize(d);
+        proxy_.setSize(d);
+    }
+    public Layer getFirstLayer() {
+        return proxy_.getFirstLayer();
+    }
+    public Layer getLayer(String id) throws LayerNotFoundException  {
+        return proxy_.getLayer(id);
+    }
+    public Layer getLayerFromDataId(String id) throws LayerNotFoundException  {
+        return proxy_.getLayerFromDataId(id);
+    }
+    /**
+     * Move the <code>Layer</code> up in the stack.
+     * The order of the layers determine when they
+     * are drawn.  Moving the <code>Layer</code> up causes the
+     * <code>Layer</code> to be drawn later and over earlier
+     * layers.
+     *
+     * @param lyr <code>Layer</code> object.
+     * @exception LayerNotFoundException The specified <code>Layer</code> was not found in the list.
+     * @see Layer
+     **/
+    public void moveLayerUp(Layer lyr) throws LayerNotFoundException  {
+        throw new MethodNotImplementedError();
+    }
+    /**
+     * Move the <code>Layer</code> up in the stack.
+     * The order of the layers determine when they
+     * are drawn.  Moving the <code>Layer</code> up causes the
+     * <code>Layer</code> to be drawn later and over earlier
+     * layers.
+     *
+     * @param id identifier.
+     * @exception LayerNotFoundException The specified <code>Layer</code> was not found in the list.
+     * @see Layer
+     **/
+    public void moveLayerUp(String id) throws LayerNotFoundException  {
+        throw new MethodNotImplementedError();
+    }
+    /**
+     * Move the <code>Layer</code> down in the stack.
+     * The order of the layers determine when they
+     * are drawn.  Moving the <code>Layer</code> down causes the
+     * <code>Layer</code> to be drawn earlier.
+     *
+     * @param lyr <code>Layer</code> object.
+     * @exception LayerNotFoundException The specified <code>Layer</code> was not found in the list.
+     * @see Layer
+     **/
+    public void moveLayerDown(Layer lyr) throws LayerNotFoundException  {
+        throw new MethodNotImplementedError();
+    }
+    /**
+     * Move the <code>Layer</code> down in the stack.
+     * The order of the layers determine when they
+     * are drawn.  Moving the <code>Layer</code> down causes the
+     * <code>Layer</code> to be drawn earlier.
+     *
+     * @param id identifier
+     * @exception LayerNotFoundException The specified <code>Layer</code> was not found in the list.
+     * @see Layer
+     **/
+    public void moveLayerDown(String id) throws LayerNotFoundException  {
+        throw new MethodNotImplementedError();
+    }
+    public Object getSelectedObject() {
+        return proxy_.getSelectedObject();
+    }
+    public void setSelectedObject(Object obj) {
+        proxy_.setSelectedObject(obj);
+    }
+    /**
+     * Overrides the default event methods.
+     **/
+    public void processMouseEvent(MouseEvent event) {
+        if(!proxy_.processMouseEvent(event))
+            super.processMouseEvent(event);
+    }
 
-  public void processMouseMotionEvent(MouseEvent event) {
-    if(!proxy_.processMouseMotionEvent(event))
-      super.processMouseMotionEvent(event);
-  }
-  public Rectangle getZoomBounds() {
-    return proxy_.getZoomBounds();
-  }
-  /**
-   * @since 3.0
-   */
-  public Point getZoomStart() {
-    return proxy_.getZoomStart();
-  }
-  public Object getObjectAt(int x, int y) {
-    return proxy_.getObjectAt(x, y);
-  }
-  /**
-   * @since 3.0
-   */
-  public Object[] getObjectsAt(int x, int y) {
-    return proxy_.getObjectsAt(x, y);
-  }
-  /**
-   * @since 3.0
-   */
-  public Object[] getObjectsAt(Point pt) {
-    return proxy_.getObjectsAt(pt.x, pt.y);
-  }
-  public Component getComponent() {
-    return (Component)this;
-  }
-  public Dimension getMaximumSize() {
-    return proxy_.getMaximumSize();
-  }
-  public Dimension getMinimumSize() {
-    return proxy_.getMinimumSize();
-  }
-  public Dimension getPreferredSize() {
-    return proxy_.getPreferredSize();
-  }
-  /**
-   * Get a <code>String</code> representatinof the
-   * <code>Pane</code>.
-   *
-   * @return <code>String</code> representation
-   */
-  public String toString() {
-    return proxy_.toString();
-  }
-  public void setBatch(boolean batch, String msg) {
-    proxy_.setBatch(batch, msg);
-  }
-  public void setBatch(boolean batch) {
-    proxy_.setBatch(batch, "");
-  }
-  public boolean isBatch() {
-    return proxy_.isBatch();
-  }
-  public void setModified(boolean mod, String mess) {
-    proxy_.setModified(mod, mess);
-  }
-  public boolean isModified() {
-    return proxy_.isModified();
-  }
-  /**
-   * @since 3.0
-   */
-  public void setMouseEventsEnabled(boolean enable) {
-    proxy_.setMouseEventsEnabled(enable);
-  }
-  /**
-   * @since 3.0
-   */
-  public boolean isMouseEventsEnabled() {
-    return proxy_.isMouseEventsEnabled();
-  }
-  public void setPageScaleMode(int mode) {
-    proxy_.setPageScaleMode(mode);
-  }
-  public int getPageScaleMode() {
-    return proxy_.getPageScaleMode();
-  }
-  /*
-   * Pane PropertyChange methods
-   */
-  public void addPropertyChangeListener(PropertyChangeListener l) {
-    proxy_.addPropertyChangeListener(l);
-  }
-  public void removePropertyChangeListener(PropertyChangeListener l) {
-    proxy_.removePropertyChangeListener(l);
-  }
+    public void processMouseMotionEvent(MouseEvent event) {
+        if(!proxy_.processMouseMotionEvent(event))
+            super.processMouseMotionEvent(event);
+    }
+    public Rectangle getZoomBounds() {
+        return proxy_.getZoomBounds();
+    }
+    /**
+     * @since 3.0
+     */
+    public Point getZoomStart() {
+        return proxy_.getZoomStart();
+    }
+    public Object getObjectAt(int x, int y) {
+        return proxy_.getObjectAt(x, y);
+    }
+    /**
+     * @since 3.0
+     */
+    public Object[] getObjectsAt(int x, int y) {
+        return proxy_.getObjectsAt(x, y);
+    }
+    /**
+     * @since 3.0
+     */
+    public Object[] getObjectsAt(Point pt) {
+        return proxy_.getObjectsAt(pt.x, pt.y);
+    }
+    public Component getComponent() {
+        return (Component)this;
+    }
+    public Dimension getMaximumSize() {
+        return proxy_.getMaximumSize();
+    }
+    public Dimension getMinimumSize() {
+        return proxy_.getMinimumSize();
+    }
+    public Dimension getPreferredSize() {
+        return proxy_.getPreferredSize();
+    }
+    /**
+     * Get a <code>String</code> representatinof the
+     * <code>Pane</code>.
+     *
+     * @return <code>String</code> representation
+     */
+    public String toString() {
+        return proxy_.toString();
+    }
+    public void setBatch(boolean batch, String msg) {
+        proxy_.setBatch(batch, msg);
+    }
+    public void setBatch(boolean batch) {
+        proxy_.setBatch(batch, "");
+    }
+    public boolean isBatch() {
+        return proxy_.isBatch();
+    }
+    public void setModified(boolean mod, String mess) {
+        proxy_.setModified(mod, mess);
+    }
+    public boolean isModified() {
+        return proxy_.isModified();
+    }
+    /**
+     * @since 3.0
+     */
+    public void setMouseEventsEnabled(boolean enable) {
+        proxy_.setMouseEventsEnabled(enable);
+    }
+    /**
+     * @since 3.0
+     */
+    public boolean isMouseEventsEnabled() {
+        return proxy_.isMouseEventsEnabled();
+    }
+    public void setPageScaleMode(int mode) {
+        proxy_.setPageScaleMode(mode);
+    }
+    public int getPageScaleMode() {
+        return proxy_.getPageScaleMode();
+    }
+    /*
+     * Pane PropertyChange methods
+     */
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        proxy_.addPropertyChangeListener(l);
+    }
+    public void removePropertyChangeListener(PropertyChangeListener l) {
+        proxy_.removePropertyChangeListener(l);
+    }
 }

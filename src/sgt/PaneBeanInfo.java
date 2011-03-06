@@ -16,54 +16,54 @@ import java.beans.*;
  *    BeanInfo for <code>Pane</code>.
  */
 public class PaneBeanInfo extends SimpleBeanInfo {
-  // getAdditionalBeanInfo method allows to return any number of additional
-  // BeanInfo objects which provide information about the Bean that this BeanInfo
-  // describes.
-  public BeanInfo[] getAdditionalBeanInfo() {
-    try {
-      BeanInfo[] bi = new BeanInfo[1];
-      bi[0] = Introspector.getBeanInfo(beanClass.getSuperclass());
-      return bi;
+    // getAdditionalBeanInfo method allows to return any number of additional
+    // BeanInfo objects which provide information about the Bean that this BeanInfo
+    // describes.
+    public BeanInfo[] getAdditionalBeanInfo() {
+        try {
+            BeanInfo[] bi = new BeanInfo[1];
+            bi[0] = Introspector.getBeanInfo(beanClass.getSuperclass());
+            return bi;
+        }
+        catch (IntrospectionException e) {
+            throw new Error(e.toString());
+        }
     }
-    catch (IntrospectionException e) {
-      throw new Error(e.toString());
+
+    // getIcon returns an image object which can be used by toolboxes, toolbars
+    // to represent this bean. Icon images are in GIF format.
+    public java.awt.Image getIcon(int iconKind) {
+        if (iconKind == BeanInfo.ICON_COLOR_16x16 ||
+            iconKind == BeanInfo.ICON_MONO_16x16) {
+            java.awt.Image img = loadImage("PaneIcon16.gif");
+            return img;
+        }
+        if (iconKind == BeanInfo.ICON_COLOR_32x32 ||
+            iconKind == BeanInfo.ICON_MONO_32x32) {
+            java.awt.Image img = loadImage("PaneIcon32.gif");
+            return img;
+        }
+        return null;
     }
-  }
 
-  // getIcon returns an image object which can be used by toolboxes, toolbars
-  // to represent this bean. Icon images are in GIF format.
-  public java.awt.Image getIcon(int iconKind) {
-    if (iconKind == BeanInfo.ICON_COLOR_16x16 ||
-        iconKind == BeanInfo.ICON_MONO_16x16) {
-      java.awt.Image img = loadImage("PaneIcon16.gif");
-      return img;
+    // getPropertyDescriptors returns an array of PropertyDescriptors which describe
+    // the editable properties of this bean.
+    public PropertyDescriptor[] getPropertyDescriptors() {
+        try {
+            PropertyDescriptor id = new PropertyDescriptor("id", beanClass);
+            id.setBound(false);
+            id.setDisplayName("Pane Identifier");
+
+            PropertyDescriptor rv[] = {id};
+            return rv;
+        } catch (IntrospectionException e) {
+            throw new Error(e.toString());
+        }
     }
-    if (iconKind == BeanInfo.ICON_COLOR_32x32 ||
-        iconKind == BeanInfo.ICON_MONO_32x32) {
-      java.awt.Image img = loadImage("PaneIcon32.gif");
-      return img;
+
+    public BeanDescriptor getBeanDescriptor() {
+        return new BeanDescriptor(beanClass);
     }
-    return null;
-  }
 
-  // getPropertyDescriptors returns an array of PropertyDescriptors which describe
-  // the editable properties of this bean.
-  public PropertyDescriptor[] getPropertyDescriptors() {
-    try {
-      PropertyDescriptor id = new PropertyDescriptor("id", beanClass);
-      id.setBound(false);
-      id.setDisplayName("Pane Identifier");
-
-      PropertyDescriptor rv[] = {id};
-      return rv;
-    } catch (IntrospectionException e) {
-      throw new Error(e.toString());
-    }
-  }
-
-  public BeanDescriptor getBeanDescriptor() {
-    return new BeanDescriptor(beanClass);
-  }
-
-  private final static Class beanClass = Pane.class;
+    private final static Class beanClass = Pane.class;
 }

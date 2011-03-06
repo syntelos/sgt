@@ -18,40 +18,40 @@ import sgt.LayerStack;
  * @since 2.x
  */
 public class JPlotPane extends JPane {
-  /**
-   * @undirected
-   * @link aggregation 
-   * @label currentMode
-   */
-  private PlotPaneMode currentMode_;
+    /**
+     * @undirected
+     * @link aggregation 
+     * @label currentMode
+     */
+    private PlotPaneMode currentMode_;
 
-  /**
-   * @link aggregationByValue
-   * @undirected
-   * @label layerManager 
-   */
-  private PlotLayerManager layerManager_;
+    /**
+     * @link aggregationByValue
+     * @undirected
+     * @label layerManager 
+     */
+    private PlotLayerManager layerManager_;
 
-  /**
-   * @link aggregationByValue
-   * @undirected
-   * @label printManager 
-   */
-  private PrintManager printManager_;
+    /**
+     * @link aggregationByValue
+     * @undirected
+     * @label printManager 
+     */
+    private PrintManager printManager_;
 
-  /**
-   * @link aggregationByValue
-   * @undirected
-   * @label dragNDropManager 
-   */
-  private DragNDropManager dragNDropManager_;
+    /**
+     * @link aggregationByValue
+     * @undirected
+     * @label dragNDropManager 
+     */
+    private DragNDropManager dragNDropManager_;
 
-  /**
-   *@link aggregation
-   *     @associates <{LayerStack}>
-   * @undirected
-   * @supplierCardinality 1..*
-   * @label layerStack
-   */
-  private Vector layerStack_;
+    /**
+     *@link aggregation
+     *     @associates <{LayerStack}>
+     * @undirected
+     * @supplierCardinality 1..*
+     * @label layerStack
+     */
+    private Vector layerStack_;
 }

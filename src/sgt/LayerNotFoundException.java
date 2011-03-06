@@ -17,10 +17,10 @@ package  sgt;
  * @version $Revision: 1.1.1.1 $, $Date: 1999/12/21 19:23:56 $
  */
 public class LayerNotFoundException extends SGException {
-  public LayerNotFoundException() {
-    super();
-  }
-  public LayerNotFoundException(String s) {
-    super(s);
-  }
+    public LayerNotFoundException() {
+        super();
+    }
+    public LayerNotFoundException(String s) {
+        super(s);
+    }
 }

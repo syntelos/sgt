@@ -35,98 +35,98 @@ import sgt.Attribute;
  * @stereotype bean
  **/
 public class DataModel {
-  private PropertyChangeSupport support_ = new PropertyChangeSupport(this);
-  private List dataList_;
+    private PropertyChangeSupport support_ = new PropertyChangeSupport(this);
+    private List dataList_;
 
-  /**
-   * @label page
-   */
-  private Page page;
+    /**
+     * @label page
+     */
+    private Page page;
 
-  /** @link aggregation
-   * @supplierCardinality 1..*
-   * @label dataList*/
-  /*#DataHolder lnkDataHolder;*/
+    /** @link aggregation
+     * @supplierCardinality 1..*
+     * @label dataList*/
+    /*#DataHolder lnkDataHolder;*/
 
-  /**
-   * Default constructor.
-   */
-  public DataModel() {
-    dataList_ = new Vector();
-  }
+    /**
+     * Default constructor.
+     */
+    public DataModel() {
+        dataList_ = new Vector();
+    }
 
-  /**
-   * Add data to the <code>DataModel</code>.  Throws a "addData" property change.
-   * @param data SGTData
-   * @param attr Attribute for data
-   * @param pHolder PanelHolder
-   * @param dataGroup DataGroup
-   * @param legend Legend
-   */
-  public void addData(SGTData data, Attribute attr,
-                      PanelHolder pHolder, DataGroup dataGroup,
-                      Legend legend) {
-    DataHolder dh = new DataHolder(this, data, attr, pHolder,
-                                   dataGroup, legend);
-    dataList_.add(dh);
-    support_.firePropertyChange("addData", null, dh);
-  }
+    /**
+     * Add data to the <code>DataModel</code>.  Throws a "addData" property change.
+     * @param data SGTData
+     * @param attr Attribute for data
+     * @param pHolder PanelHolder
+     * @param dataGroup DataGroup
+     * @param legend Legend
+     */
+    public void addData(SGTData data, Attribute attr,
+                        PanelHolder pHolder, DataGroup dataGroup,
+                        Legend legend) {
+        DataHolder dh = new DataHolder(this, data, attr, pHolder,
+                                       dataGroup, legend);
+        dataList_.add(dh);
+        support_.firePropertyChange("addData", null, dh);
+    }
 
-  /**
-   * Get <code>Iterator</code> of the <code>DataHolder</code> objects.
-   * @return
-   */
-  public Iterator dataIterator() {
-    return dataList_.iterator();
-  }
+    /**
+     * Get <code>Iterator</code> of the <code>DataHolder</code> objects.
+     * @return
+     */
+    public Iterator dataIterator() {
+        return dataList_.iterator();
+    }
 
-  /**
-   * Add property change listener.
-   * @param l property change listener
-   */
-  public void addPropertyChangeListener(PropertyChangeListener l) {
-    support_.addPropertyChangeListener(l);
-  }
+    /**
+     * Add property change listener.
+     * @param l property change listener
+     */
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        support_.addPropertyChangeListener(l);
+    }
 
-  /**
-   * Listen for specific property change.
-   * @param name property name
-   * @param l property change listner
-   */
-  public void addPropertyChangeListener(String name, PropertyChangeListener l) {
-    support_.addPropertyChangeListener(name, l);
-  }
+    /**
+     * Listen for specific property change.
+     * @param name property name
+     * @param l property change listner
+     */
+    public void addPropertyChangeListener(String name, PropertyChangeListener l) {
+        support_.addPropertyChangeListener(name, l);
+    }
 
-  /**
-   * Remove property change listener.
-   * @param l property change listener
-   */
-  public void removePropertyChangeListener(PropertyChangeListener l) {
-    support_.removePropertyChangeListener(l);
-  }
+    /**
+     * Remove property change listener.
+     * @param l property change listener
+     */
+    public void removePropertyChangeListener(PropertyChangeListener l) {
+        support_.removePropertyChangeListener(l);
+    }
 
-  /**
-   * Remove specific property change listener
-   * @param name property name
-   * @param l property change listener
-   */
-  public void removePropertyChangeListener(String name, PropertyChangeListener l) {
-    support_.removePropertyChangeListener(name, l);
-  }
+    /**
+     * Remove specific property change listener
+     * @param name property name
+     * @param l property change listener
+     */
+    public void removePropertyChangeListener(String name, PropertyChangeListener l) {
+        support_.removePropertyChangeListener(name, l);
+    }
 
-  /**
-   * Set <code>Page</code>.
-   * @param page Page
-   */
-  public void setPage(Page page) {
-    this.page = page;
-  }
+    /**
+     * Set <code>Page</code>.
+     * @param page Page
+     */
+    public void setPage(Page page) {
+        this.page = page;
+    }
 
-  /**
-   * Get Page.
-   * @return Page
-   */
-  public Page getPage() {
-    return page;
-  }
+    /**
+     * Get Page.
+     * @return Page
+     */
+    public Page getPage() {
+        return page;
+    }
 }

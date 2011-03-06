@@ -27,52 +27,52 @@ import sgt.geom.SoTValue;
  * @see ValueIcon
  */
 public class ValueIconFormat {
-  protected DecimalFormat xfrm_;
-  protected DecimalFormat yfrm_;
-  protected String tfrm_ = "yyyy-MM-dd HH:mm:ss z";
-  /**
-   * Construct <code>ValueIconFormat</code> from x and y coordinate
-   * <code>DeciamalFormat</code>s.
-   */
-  public ValueIconFormat(String xfrmt, String yfrmt) {
-    xfrm_ = new DecimalFormat(xfrmt);
-    yfrm_ = new DecimalFormat(yfrmt);
-  }
-  /**
-   * Format a string using <code>DecimalFormat</code> for x and y
-   * coordinates.
-   */
-  public String format(double x, double y) {
-    return "(" + xfrm_.format(x) + ", " + yfrm_.format(y) + ")";
-  }
-  /**
-   * Define the time format.
-   *
-   * @since 3.0
-   */
-   public void setTimeFormat(String tfrmt) {
-    tfrm_ = tfrmt;
-   }
-  /**
-   * Format a string using <code>DecimalFormat</code> for x and y
-   * coordinates or <code>GeoDate</code> formatting for time.
-   *
-   * @since 3.0
-   */
-  public String format(SoTPoint pt) {
-    StringBuffer sbuf = new StringBuffer("(");
-    if(pt.isXTime()) {
-      sbuf.append(pt.getX().getGeoDate().toString(tfrm_));
-    } else {
-      sbuf.append(xfrm_.format(((SoTValue.Double)pt.getX()).getValue()));
+    protected DecimalFormat xfrm_;
+    protected DecimalFormat yfrm_;
+    protected String tfrm_ = "yyyy-MM-dd HH:mm:ss z";
+    /**
+     * Construct <code>ValueIconFormat</code> from x and y coordinate
+     * <code>DeciamalFormat</code>s.
+     */
+    public ValueIconFormat(String xfrmt, String yfrmt) {
+        xfrm_ = new DecimalFormat(xfrmt);
+        yfrm_ = new DecimalFormat(yfrmt);
     }
-    sbuf.append(", ");
-    if(pt.isYTime()) {
-      sbuf.append(pt.getY().getGeoDate().toString(tfrm_));
-    } else {
-      sbuf.append(yfrm_.format(((SoTValue.Double)pt.getY()).getValue()));
+    /**
+     * Format a string using <code>DecimalFormat</code> for x and y
+     * coordinates.
+     */
+    public String format(double x, double y) {
+        return "(" + xfrm_.format(x) + ", " + yfrm_.format(y) + ")";
     }
-    sbuf.append(")");
-    return sbuf.toString();
-  }
+    /**
+     * Define the time format.
+     *
+     * @since 3.0
+     */
+    public void setTimeFormat(String tfrmt) {
+        tfrm_ = tfrmt;
+    }
+    /**
+     * Format a string using <code>DecimalFormat</code> for x and y
+     * coordinates or <code>GeoDate</code> formatting for time.
+     *
+     * @since 3.0
+     */
+    public String format(SoTPoint pt) {
+        StringBuffer sbuf = new StringBuffer("(");
+        if(pt.isXTime()) {
+            sbuf.append(pt.getX().getGeoDate().toString(tfrm_));
+        } else {
+            sbuf.append(xfrm_.format(((SoTValue.Double)pt.getX()).getValue()));
+        }
+        sbuf.append(", ");
+        if(pt.isYTime()) {
+            sbuf.append(pt.getY().getGeoDate().toString(tfrm_));
+        } else {
+            sbuf.append(yfrm_.format(((SoTValue.Double)pt.getY()).getValue()));
+        }
+        sbuf.append(")");
+        return sbuf.toString();
+    }
 }

@@ -23,68 +23,68 @@ import java.util.BitSet;
  * @since 2.0
  */
 class Sides {
-  BitSet sides_;
-  int nx_;
-  int ny_;
-  int ny2_;
+    BitSet sides_;
+    int nx_;
+    int ny_;
+    int ny2_;
 
-  public Sides(int nx, int ny) {
-    nx_ = nx;
-    ny_ = ny;
-    ny2_ = ny_*2;
-    sides_ = new BitSet(ny2_*nx_);
-  }
+    public Sides(int nx, int ny) {
+        nx_ = nx;
+        ny_ = ny;
+        ny2_ = ny_*2;
+        sides_ = new BitSet(ny2_*nx_);
+    }
 
-  public boolean isSideUsed(int i, int j, int side) {
-    int ind = index(i,j,side);
-    if(ind < 0 || ind > ny2_*nx_-1) {
-      if(Debug.CONTOUR) {
-	System.out.println("Sides.isSideUsed(): (i,j,side) = " + i + ", " + j + ", " + side);
-      }
-      return false;
+    public boolean isSideUsed(int i, int j, int side) {
+        int ind = index(i,j,side);
+        if(ind < 0 || ind > ny2_*nx_-1) {
+            if(Debug.CONTOUR) {
+                System.out.println("Sides.isSideUsed(): (i,j,side) = " + i + ", " + j + ", " + side);
+            }
+            return false;
+        }
+        return sides_.get(ind);
     }
-    return sides_.get(ind);
-  }
 
-  public void setSideUsed(int i, int j, int side, boolean set) {
-    int ind = index(i,j,side);
-    if(Debug.CONTOUR) {
-      if(ind < 0 || ind > ny2_*nx_-1) {
-	System.out.println("Sides.setSideUsed(): (i,j,side) = " + i + ", " + j + ", " + side);
-      }
+    public void setSideUsed(int i, int j, int side, boolean set) {
+        int ind = index(i,j,side);
+        if(Debug.CONTOUR) {
+            if(ind < 0 || ind > ny2_*nx_-1) {
+                System.out.println("Sides.setSideUsed(): (i,j,side) = " + i + ", " + j + ", " + side);
+            }
+        }
+        if(set) {
+            sides_.set(ind);
+        } else {
+            sides_.clear(ind);
+        }
     }
-    if(set) {
-      sides_.set(ind);
-    } else {
-      sides_.clear(ind);
-    }
-  }
 
-  public int getSide(int i, int j, int side) {
-    int ind = index(i,j,side);
-    if(ind < 0 || ind > ny2_*nx_-1) {
-      if(Debug.CONTOUR) {
-	System.out.println("Sides.getSide(): (i,j,side) = " + i + ", " + j + ", " + side);
-      }
-      return 0;
+    public int getSide(int i, int j, int side) {
+        int ind = index(i,j,side);
+        if(ind < 0 || ind > ny2_*nx_-1) {
+            if(Debug.CONTOUR) {
+                System.out.println("Sides.getSide(): (i,j,side) = " + i + ", " + j + ", " + side);
+            }
+            return 0;
+        }
+        return sides_.get(ind)?1:0;
     }
-    return sides_.get(ind)?1:0;
-  }
 
-  int index(int i, int j, int side) {
-    int index = -10;
-    if(side == 1) { /* i+1,j  right */
-      index = 1 + j*2 + (i+1)*ny2_;
-    } else if(side == 2) { /* i,j+1  top */
-      index = (j+1)*2 + i*ny2_;
-    } else if(side == 0) { /* i,j  bottom */
-      index = j*2 + i*ny2_;
-    } else if(side == 3) { /* i,j  left */
-      index = 1 + j*2 + i*ny2_;
+    int index(int i, int j, int side) {
+        int index = -10;
+        if(side == 1) { /* i+1,j  right */
+            index = 1 + j*2 + (i+1)*ny2_;
+        } else if(side == 2) { /* i,j+1  top */
+            index = (j+1)*2 + i*ny2_;
+        } else if(side == 0) { /* i,j  bottom */
+            index = j*2 + i*ny2_;
+        } else if(side == 3) { /* i,j  left */
+            index = 1 + j*2 + i*ny2_;
+        }
+        return index;
     }
-    return index;
-  }
-  public void clear() {
-    sides_ = new BitSet(ny2_*nx_);
-  }
+    public void clear() {
+        sides_ = new BitSet(ny2_*nx_);
+    }
 }

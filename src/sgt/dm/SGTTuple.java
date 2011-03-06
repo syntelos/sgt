@@ -28,9 +28,9 @@ public interface SGTTuple extends SGTData {
     public double[] getZArray();
     public int getSize();
     public GeoDate[] getTimeArray();
-  /**
-   * Get the <code>GeoDateArray</code> object.
-   */
+    /**
+     * Get the <code>GeoDateArray</code> object.
+     */
     public GeoDateArray getGeoDateArray();
     public double[] getAssociatedData();
     public boolean hasAssociatedData();

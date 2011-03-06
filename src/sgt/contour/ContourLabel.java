@@ -21,33 +21,33 @@ import sgt.SGLabel;
  * @since 2.0
  */
 class ContourLabel {
-  int index;
+    int index;
 
-  /**
-   * @label label
-   * @link aggregationByValue 
-   * @supplierCardinality 1
-   */
-  SGLabel label;
-  double width;
-  double height;
+    /**
+     * @label label
+     * @link aggregationByValue 
+     * @supplierCardinality 1
+     */
+    SGLabel label;
+    double width;
+    double height;
 
-  public ContourLabel(int indx, SGLabel lab, double hgt, double wid) {
-    index = indx;
-    label = lab;
-    width = wid;
-    height = hgt;
-  }
-  public SGLabel getLabel() {
-    return label;
-  }
-  public int getIndex() {
-    return index;
-  }
-  public double getWidth() {
-    return width;
-  }
-  public double getHeight() {
-    return height;
-  }
+    public ContourLabel(int indx, SGLabel lab, double hgt, double wid) {
+        index = indx;
+        label = lab;
+        width = wid;
+        height = hgt;
+    }
+    public SGLabel getLabel() {
+        return label;
+    }
+    public int getIndex() {
+        return index;
+    }
+    public double getWidth() {
+        return width;
+    }
+    public double getHeight() {
+        return height;
+    }
 }

@@ -21,35 +21,35 @@ public class PlotLayerManager {
         plotPane_ = plotPane;
     }
 
-  /**
-   *
-   */
-  public void addLayer(PlotLayer layer) {
-  }
+    /**
+     *
+     */
+    public void addLayer(PlotLayer layer) {
+    }
 
-  public void removeLayer(int index) throws LayerNotFoundException {
-  }
+    public void removeLayer(int index) throws LayerNotFoundException {
+    }
 
-  public void removeLayer(PlotLayer layer) throws LayerNotFoundException {
-  }
+    public void removeLayer(PlotLayer layer) throws LayerNotFoundException {
+    }
 
-  public void update() {
-  }
+    public void update() {
+    }
 
-  /** @link dependency */
-  /*#LayerStack lnkLayerStack;*/
+    /** @link dependency */
+    /*#LayerStack lnkLayerStack;*/
 
-  /** @link dependency */
-  /*#PlotLayer lnkPlotLayer;*/
+    /** @link dependency */
+    /*#PlotLayer lnkPlotLayer;*/
 
-  /** @link dependency */
-  /*#AxisTransform lnkAxisTransform;*/
+    /** @link dependency */
+    /*#AxisTransform lnkAxisTransform;*/
 
-  /** @link dependency */
-  /*#PlotLayerHints lnkPlotLayerHints;*/
+    /** @link dependency */
+    /*#PlotLayerHints lnkPlotLayerHints;*/
 
-  /**
-   * @label plotPane 
-   */
-  private JPlotPane plotPane_;
+    /**
+     * @label plotPane 
+     */
+    private JPlotPane plotPane_;
 }

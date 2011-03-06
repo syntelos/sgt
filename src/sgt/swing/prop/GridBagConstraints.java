@@ -18,21 +18,21 @@ package sgt.swing.prop;
  */
 public class GridBagConstraints extends java.awt.GridBagConstraints {
 
-/**
-  * Creates a <code>GridBagConstraint</code> object.
-  */
+    /**
+     * Creates a <code>GridBagConstraint</code> object.
+     */
 
     public GridBagConstraints(int gridX,
-        int gridY,
-        int gridWidth,
-        int gridHeight,
-        double weightX,
-        double weightY,
-        int anchor,
-        int fills,
-        java.awt.Insets inset,
-        int ipadX,
-        int ipadY) {
+                              int gridY,
+                              int gridWidth,
+                              int gridHeight,
+                              double weightX,
+                              double weightY,
+                              int anchor,
+                              int fills,
+                              java.awt.Insets inset,
+                              int ipadX,
+                              int ipadY) {
 
         gridx = gridX;
         gridy = gridY;

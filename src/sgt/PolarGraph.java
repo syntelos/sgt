@@ -24,28 +24,28 @@ import java.beans.PropertyChangeEvent;
  * @since 2.x
  */
 public class PolarGraph extends Graph implements Cloneable {
-  public PolarGraph() {
-  }
-  public Graph copy() {
-    PolarGraph newGraph;
-    try {
-      newGraph = (PolarGraph)clone();
-    } catch (CloneNotSupportedException e) {
-      newGraph = new PolarGraph();
+    public PolarGraph() {
     }
-    return (Graph)newGraph;
-  }
-  void draw(Graphics g) {
-    throw new MethodNotImplementedError();
-  }
-  public Object getObjectAt(Point pt) {
-    throw new MethodNotImplementedError();
-  }
-  public SGTData getDataAt(Point pt) {
-    throw new MethodNotImplementedError();
-  }
+    public Graph copy() {
+        PolarGraph newGraph;
+        try {
+            newGraph = (PolarGraph)clone();
+        } catch (CloneNotSupportedException e) {
+            newGraph = new PolarGraph();
+        }
+        return (Graph)newGraph;
+    }
+    void draw(Graphics g) {
+        throw new MethodNotImplementedError();
+    }
+    public Object getObjectAt(Point pt) {
+        throw new MethodNotImplementedError();
+    }
+    public SGTData getDataAt(Point pt) {
+        throw new MethodNotImplementedError();
+    }
 
-  public void propertyChange(PropertyChangeEvent evt) {
-  }
+    public void propertyChange(PropertyChangeEvent evt) {
+    }
 }
 

@@ -22,72 +22,72 @@ import java.awt.geom.*;
  */
 public class StrokeDrawer2 implements StrokeDrawer, Cloneable {
 
-  public void drawHeavy(Graphics g, int[] xout, int[] yout, int size,
-                        LineAttribute attr) {
-    Graphics2D g2 = (Graphics2D)g;
-    Stroke saved = g2.getStroke();
-    BasicStroke stroke = new BasicStroke(attr.getWidth());
-    g2.setStroke(stroke);
-    g2.drawPolyline(xout, yout, size);
-    g2.setStroke(saved);
-  }
-
-  public void drawDashed(Graphics g, int[] xout, int[] yout, int size,
-                         LineAttribute attr) {
-    Graphics2D g2 = (Graphics2D)g;
-    Stroke saved = g2.getStroke();
-    float[] dashes = {4.0f, 4.0f};
-    BasicStroke stroke = new BasicStroke(1.0f,
-                                         BasicStroke.CAP_SQUARE,
-                                         BasicStroke.JOIN_MITER,
-                                         10.0f,
-                                         dashes,
-                                         0.0f);
-    g2.setStroke(stroke);
-    g2.drawPolyline(xout, yout, size);
-    g2.setStroke(saved);
-  }
-
-  public void drawStroke(Graphics g, int[] xout, int[] yout, int size,
-                         LineAttribute attr) {
-
-    Graphics2D g2 = (Graphics2D)g;
-    Stroke saved = g2.getStroke();
-    BasicStroke stroke;
-    float[] arr = attr.getDashArray();
-    if(arr == null || (arr.length <= 1)) {
-    stroke = new BasicStroke(attr.getWidth(),
-                             attr.getCapStyle(),
-                             attr.getMiterStyle(),
-                             attr.getMiterLimit());
-    } else {
-    stroke = new BasicStroke(attr.getWidth(),
-                             attr.getCapStyle(),
-                             attr.getMiterStyle(),
-                             attr.getMiterLimit(),
-                             attr.getDashArray(),
-                             attr.getDashPhase());
+    public void drawHeavy(Graphics g, int[] xout, int[] yout, int size,
+                          LineAttribute attr) {
+        Graphics2D g2 = (Graphics2D)g;
+        Stroke saved = g2.getStroke();
+        BasicStroke stroke = new BasicStroke(attr.getWidth());
+        g2.setStroke(stroke);
+        g2.drawPolyline(xout, yout, size);
+        g2.setStroke(saved);
     }
-    g2.setStroke(stroke);
-    g2.drawPolyline(xout, yout, size);
-    g2.setStroke(saved);
-  }
 
-  public void drawHighlight(Graphics g, int[] xout, int[] yout, int size,
-			    LineAttribute attr) {
-    Graphics2D g2 = (Graphics2D)g;
-    Stroke saved = g2.getStroke();
-    BasicStroke stroke = new BasicStroke(2.75f);
-    Color col = attr.getColor();
-    Color rev = new Color(255 - col.getRed(),
-			  255 - col.getGreen(),
-			  255 - col.getBlue());
-    g2.setColor(rev);
-    g2.setStroke(stroke);
-    g2.drawPolyline(xout, yout, size);
-    g2.setColor(col);
-    g2.setStroke(saved);
-    g2.drawPolyline(xout, yout, size);
-  }
+    public void drawDashed(Graphics g, int[] xout, int[] yout, int size,
+                           LineAttribute attr) {
+        Graphics2D g2 = (Graphics2D)g;
+        Stroke saved = g2.getStroke();
+        float[] dashes = {4.0f, 4.0f};
+        BasicStroke stroke = new BasicStroke(1.0f,
+                                             BasicStroke.CAP_SQUARE,
+                                             BasicStroke.JOIN_MITER,
+                                             10.0f,
+                                             dashes,
+                                             0.0f);
+        g2.setStroke(stroke);
+        g2.drawPolyline(xout, yout, size);
+        g2.setStroke(saved);
+    }
+
+    public void drawStroke(Graphics g, int[] xout, int[] yout, int size,
+                           LineAttribute attr) {
+
+        Graphics2D g2 = (Graphics2D)g;
+        Stroke saved = g2.getStroke();
+        BasicStroke stroke;
+        float[] arr = attr.getDashArray();
+        if(arr == null || (arr.length <= 1)) {
+            stroke = new BasicStroke(attr.getWidth(),
+                                     attr.getCapStyle(),
+                                     attr.getMiterStyle(),
+                                     attr.getMiterLimit());
+        } else {
+            stroke = new BasicStroke(attr.getWidth(),
+                                     attr.getCapStyle(),
+                                     attr.getMiterStyle(),
+                                     attr.getMiterLimit(),
+                                     attr.getDashArray(),
+                                     attr.getDashPhase());
+        }
+        g2.setStroke(stroke);
+        g2.drawPolyline(xout, yout, size);
+        g2.setStroke(saved);
+    }
+
+    public void drawHighlight(Graphics g, int[] xout, int[] yout, int size,
+                              LineAttribute attr) {
+        Graphics2D g2 = (Graphics2D)g;
+        Stroke saved = g2.getStroke();
+        BasicStroke stroke = new BasicStroke(2.75f);
+        Color col = attr.getColor();
+        Color rev = new Color(255 - col.getRed(),
+                              255 - col.getGreen(),
+                              255 - col.getBlue());
+        g2.setColor(rev);
+        g2.setStroke(stroke);
+        g2.drawPolyline(xout, yout, size);
+        g2.setColor(col);
+        g2.setStroke(saved);
+        g2.drawPolyline(xout, yout, size);
+    }
 
 }

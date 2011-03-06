@@ -34,32 +34,32 @@ import sgt.geom.GeoDateArray;
  * @see SimpleLine
  */
 public interface SGTLine extends SGTData {
-  /**
-   * Get the array of X values.
-   */
-  public double[] getXArray();
-  /**
-   * Get the array of Y values.
-   */
-  public double[] getYArray();
-  /**
-   * Get the array of Time values.
-   */
-  public GeoDate[] getTimeArray();
-  /**
-   * Get the <code>GeoDateArray</code> object.
-   *
-   * @since 3.0
-   */
-  public GeoDateArray getGeoDateArray();
-  /**
-   * Get the associated data. The associated data must
-   * be of the same type (SGTLine) and length. The Y
-   * array will be used.
-   */
-  public SGTLine getAssociatedData();
-  /**
-   * Is there associated data available?
-   */
-  public boolean hasAssociatedData();
+    /**
+     * Get the array of X values.
+     */
+    public double[] getXArray();
+    /**
+     * Get the array of Y values.
+     */
+    public double[] getYArray();
+    /**
+     * Get the array of Time values.
+     */
+    public GeoDate[] getTimeArray();
+    /**
+     * Get the <code>GeoDateArray</code> object.
+     *
+     * @since 3.0
+     */
+    public GeoDateArray getGeoDateArray();
+    /**
+     * Get the associated data. The associated data must
+     * be of the same type (SGTLine) and length. The Y
+     * array will be used.
+     */
+    public SGTLine getAssociatedData();
+    /**
+     * Is there associated data available?
+     */
+    public boolean hasAssociatedData();
 }

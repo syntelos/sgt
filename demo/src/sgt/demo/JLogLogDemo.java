@@ -54,152 +54,152 @@ public class JLogLogDemo extends JApplet {
     JButton space_;
     JPane mainPane_;
 
-  public void init() {
-    setLayout(new BorderLayout(0,0));
-    setSize(553,438);
+    public void init() {
+        setLayout(new BorderLayout(0,0));
+        setSize(553,438);
 
-    add(makeGraph(), BorderLayout.CENTER);
-  }
+        add(makeGraph(), BorderLayout.CENTER);
+    }
 
-  public static void main(String[] args) {
-    JLogLogDemo pd = new JLogLogDemo();
-    JFrame frame = new JFrame("Log-Log Demo");
-    JPanel button = new JPanel();
-    JPane graph;
-    button.setLayout(new FlowLayout());
-    pd.tree_ = new JButton("Tree View");
-    MyAction myAction = pd. new MyAction();
-    pd.tree_.addActionListener(myAction);
-    button.add(pd.tree_);
-    pd.space_ = new JButton("Add Mark");
-    pd.space_.addActionListener(myAction);
-    button.add(pd.space_);
-    frame.getContentPane().setLayout(new BorderLayout());
-    frame.addWindowListener(new java.awt.event.WindowAdapter() {
-      public void windowClosing(java.awt.event.WindowEvent event) {
-	JFrame fr = (JFrame)event.getSource();
-	fr.setVisible(false);
-	fr.dispose();
-	System.exit(0);
-      }
-    });
-    frame.setSize(553,438);
-    graph = pd.makeGraph();
-    graph.setBatch(true);
-    frame.getContentPane().add(graph, BorderLayout.CENTER);
-    frame.getContentPane().add(button, BorderLayout.SOUTH);
-    frame.pack();
-    frame.setVisible(true);
-    graph.setBatch(false);
-  }
+    public static void main(String[] args) {
+        JLogLogDemo pd = new JLogLogDemo();
+        JFrame frame = new JFrame("Log-Log Demo");
+        JPanel button = new JPanel();
+        JPane graph;
+        button.setLayout(new FlowLayout());
+        pd.tree_ = new JButton("Tree View");
+        MyAction myAction = pd. new MyAction();
+        pd.tree_.addActionListener(myAction);
+        button.add(pd.tree_);
+        pd.space_ = new JButton("Add Mark");
+        pd.space_.addActionListener(myAction);
+        button.add(pd.space_);
+        frame.getContentPane().setLayout(new BorderLayout());
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+                public void windowClosing(java.awt.event.WindowEvent event) {
+                    JFrame fr = (JFrame)event.getSource();
+                    fr.setVisible(false);
+                    fr.dispose();
+                    System.exit(0);
+                }
+            });
+        frame.setSize(553,438);
+        graph = pd.makeGraph();
+        graph.setBatch(true);
+        frame.getContentPane().add(graph, BorderLayout.CENTER);
+        frame.getContentPane().add(button, BorderLayout.SOUTH);
+        frame.pack();
+        frame.setVisible(true);
+        graph.setBatch(false);
+    }
 
-  JPane makeGraph() {
-    /*
-     * This example creates a very simple plot from
-     * scratch (not using one of the sgt.awt classes)
-     * to display log-log line.
-     */
-    /*
-     * Create a Pane, place in the center of the Applet
-     * and set the layout to be StackedLayout.
-     */
-    mainPane_ = new JPane("Point Plot Demo", new Dimension(553,438));
-    mainPane_.setLayout(new StackedLayout());
-    mainPane_.setBackground(Color.white);
-    /*
-     * Create a line using the TestData class.
-     */
-    Range2D xrange;
-    SoTRange yrange;
-    TestData td;
-    SGTData data;
-    xrange = new Range2D(50.0, 150000., 1.25);
-    td = new TestData(TestData.LOG_LOG, xrange, TestData.RANDOM, 10000.0f, 1.0f, 10.0f);
-    data = td.getSGTData();
-    yrange = data.getYRange();
-    /*
-     * xsize, ysize are the width and height in physical units
-     * of the Layer graphics region.
-     *
-     * xstart, xend are the start and end points for the X axis
-     * ystart, yend are the start and end points for the Y axis
-     */
-    double xsize = 4.0;
-    double xstart = 0.6;
-    double xend = 3.5;
-    double ysize = 3.0;
-    double ystart = 0.6;
-    double yend = 2.75;
-    /*
-     * Create the layer and add it to the Pane.
-     */
-    Layer layer;
+    JPane makeGraph() {
+        /*
+         * This example creates a very simple plot from
+         * scratch (not using one of the sgt.awt classes)
+         * to display log-log line.
+         */
+        /*
+         * Create a Pane, place in the center of the Applet
+         * and set the layout to be StackedLayout.
+         */
+        mainPane_ = new JPane("Point Plot Demo", new Dimension(553,438));
+        mainPane_.setLayout(new StackedLayout());
+        mainPane_.setBackground(Color.white);
+        /*
+         * Create a line using the TestData class.
+         */
+        Range2D xrange;
+        SoTRange yrange;
+        TestData td;
+        SGTData data;
+        xrange = new Range2D(50.0, 150000., 1.25);
+        td = new TestData(TestData.LOG_LOG, xrange, TestData.RANDOM, 10000.0f, 1.0f, 10.0f);
+        data = td.getSGTData();
+        yrange = data.getYRange();
+        /*
+         * xsize, ysize are the width and height in physical units
+         * of the Layer graphics region.
+         *
+         * xstart, xend are the start and end points for the X axis
+         * ystart, yend are the start and end points for the Y axis
+         */
+        double xsize = 4.0;
+        double xstart = 0.6;
+        double xend = 3.5;
+        double ysize = 3.0;
+        double ystart = 0.6;
+        double yend = 2.75;
+        /*
+         * Create the layer and add it to the Pane.
+         */
+        Layer layer;
 
-    layer = new Layer("Layer 1", new Dimension2D(xsize, ysize));
-    mainPane_.add(layer);
-    /*
-     * Create a CartesianGraph and transforms.
-     */
-    CartesianGraph graph;
-    LogTransform xt, yt;
+        layer = new Layer("Layer 1", new Dimension2D(xsize, ysize));
+        mainPane_.add(layer);
+        /*
+         * Create a CartesianGraph and transforms.
+         */
+        CartesianGraph graph;
+        LogTransform xt, yt;
 
-    graph = new CartesianGraph("Log-Log Graph");
-    layer.setGraph(graph);
-    xt = new LogTransform(xstart, xend, xrange.start, xrange.end);
-    yt = new LogTransform(new Range2D(ystart, yend), yrange);
-    graph.setXTransform(xt);
-    graph.setYTransform(yt);
-    /*
-     * Create the bottom axis, set its range in user units
-     * and its origin. Add the axis to the graph.
-     */
-    LogAxis xbot;
-    String xLabel = "X Label";
+        graph = new CartesianGraph("Log-Log Graph");
+        layer.setGraph(graph);
+        xt = new LogTransform(xstart, xend, xrange.start, xrange.end);
+        yt = new LogTransform(new Range2D(ystart, yend), yrange);
+        graph.setXTransform(xt);
+        graph.setYTransform(yt);
+        /*
+         * Create the bottom axis, set its range in user units
+         * and its origin. Add the axis to the graph.
+         */
+        LogAxis xbot;
+        String xLabel = "X Label";
 
-    xbot = new LogAxis("Botton Axis");
-    xbot.setRangeU(xrange);
-    xbot.setLocationU(new SoTPoint(new SoTValue.Double(xrange.start), yrange.getStart()));
-    Font xbfont = new Font("Helvetica", Font.ITALIC, 14);
-    xbot.setLabelFont(xbfont);
-    SGLabel xtitle = new SGLabel("xaxis title", xLabel,
-                                 new Point2D.Double(0.0, 0.0));
-    Font xtfont = new Font("Helvetica", Font.PLAIN, 14);
-    xtitle.setFont(xtfont);
-    xtitle.setHeightP(0.2);
-    xbot.setTitle(xtitle);
-    graph.addXAxis(xbot);
-    /*
-     * Create the left axis, set its range in user units
-     * and its origin. Add the axis to the graph.
-     */
-    LogAxis yleft;
-    String yLabel = "Y Label";
+        xbot = new LogAxis("Botton Axis");
+        xbot.setRangeU(xrange);
+        xbot.setLocationU(new SoTPoint(new SoTValue.Double(xrange.start), yrange.getStart()));
+        Font xbfont = new Font("Helvetica", Font.ITALIC, 14);
+        xbot.setLabelFont(xbfont);
+        SGLabel xtitle = new SGLabel("xaxis title", xLabel,
+                                     new Point2D.Double(0.0, 0.0));
+        Font xtfont = new Font("Helvetica", Font.PLAIN, 14);
+        xtitle.setFont(xtfont);
+        xtitle.setHeightP(0.2);
+        xbot.setTitle(xtitle);
+        graph.addXAxis(xbot);
+        /*
+         * Create the left axis, set its range in user units
+         * and its origin. Add the axis to the graph.
+         */
+        LogAxis yleft;
+        String yLabel = "Y Label";
 
-    yleft = new LogAxis("Left Axis");
-    yleft.setRangeU(yrange);
-    yleft.setLocationU(new SoTPoint(new SoTValue.Double(xrange.start), yrange.getStart()));
-    yleft.setLabelFont(xbfont);
-    SGLabel ytitle = new SGLabel("yaxis title", yLabel,
-                                 new Point2D.Double(0.0, 0.0));
-    Font ytfont = new Font("Helvetica", Font.PLAIN, 14);
-    ytitle.setFont(ytfont);
-    ytitle.setHeightP(0.2);
-    yleft.setTitle(ytitle);
-    graph.addYAxis(yleft);
-    /*
-     * Create a LineAttribute for the display of the
-     * line.
-     */
-    LineAttribute lattr;
-    lattr = new LineAttribute(LineAttribute.SOLID, Color.red);
-    /*
-     * Associate the attribute and the line
-     * with the graph.
-     */
-    graph.setData(data, lattr);
+        yleft = new LogAxis("Left Axis");
+        yleft.setRangeU(yrange);
+        yleft.setLocationU(new SoTPoint(new SoTValue.Double(xrange.start), yrange.getStart()));
+        yleft.setLabelFont(xbfont);
+        SGLabel ytitle = new SGLabel("yaxis title", yLabel,
+                                     new Point2D.Double(0.0, 0.0));
+        Font ytfont = new Font("Helvetica", Font.PLAIN, 14);
+        ytitle.setFont(ytfont);
+        ytitle.setHeightP(0.2);
+        yleft.setTitle(ytitle);
+        graph.addYAxis(yleft);
+        /*
+         * Create a LineAttribute for the display of the
+         * line.
+         */
+        LineAttribute lattr;
+        lattr = new LineAttribute(LineAttribute.SOLID, Color.red);
+        /*
+         * Associate the attribute and the line
+         * with the graph.
+         */
+        graph.setData(data, lattr);
 
-    return mainPane_;
-  }
+        return mainPane_;
+    }
 
     void tree_actionPerformed(java.awt.event.ActionEvent e) {
         JClassTree ct = new JClassTree();
@@ -208,14 +208,14 @@ public class JLogLogDemo extends JApplet {
         ct.show();
     }
 
-  class MyAction implements java.awt.event.ActionListener {
+    class MyAction implements java.awt.event.ActionListener {
         public void actionPerformed(java.awt.event.ActionEvent event) {
-           Object obj = event.getSource();
-	   if(obj == space_) {
-	     System.out.println("  <<Mark>>");
-	   }
-	   if(obj == tree_)
-	       tree_actionPerformed(event);
+            Object obj = event.getSource();
+            if(obj == space_) {
+                System.out.println("  <<Mark>>");
+            }
+            if(obj == tree_)
+                tree_actionPerformed(event);
         }
     }
 

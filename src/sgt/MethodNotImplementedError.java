@@ -17,10 +17,10 @@ package  sgt;
  * @version $Revision: 1.1.1.1 $, $Date: 1999/12/21 19:23:56 $
  */
 public class MethodNotImplementedError extends java.lang.Error {
-  public MethodNotImplementedError() {
-    super();
-  }
-  public MethodNotImplementedError(String s) {
-    super(s);
-  }
+    public MethodNotImplementedError() {
+        super();
+    }
+    public MethodNotImplementedError(String s) {
+        super(s);
+    }
 }

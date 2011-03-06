@@ -26,48 +26,48 @@ public class Dimension2D
 
 
     public Dimension2D() {
-	super();
-	width = 0.0;
-	height = 0.0;
+        super();
+        width = 0.0;
+        height = 0.0;
     }
     public Dimension2D(double width, double height) {
-	super();
-	this.width = width;
-	this.height = height;
+        super();
+        this.width = width;
+        this.height = height;
     }
 
 
     @Override
-    public double getWidth() {
-	return width;
+        public double getWidth() {
+        return width;
     }
     @Override
-    public double getHeight() {
-	return height;
+        public double getHeight() {
+        return height;
     }
     @Override  
-    public void setSize(double width, double height) {
-	this.width = width;
-	this.height = height;
+        public void setSize(double width, double height) {
+        this.width = width;
+        this.height = height;
     }
     @Override
-    public void setSize(java.awt.geom.Dimension2D d) {
-	setSize(d.getWidth(), d.getHeight());
+        public void setSize(java.awt.geom.Dimension2D d) {
+        setSize(d.getWidth(), d.getHeight());
     }
     @Override
-    public String toString() {
-	return getClass().getName() + "[width=" + width + ",height=" + height +
-	    "]";
+        public String toString() {
+        return getClass().getName() + "[width=" + width + ",height=" + height +
+            "]";
     }
     public boolean equals(Object that){
-	if (this == that)
-	    return true;
-	else if (that instanceof java.awt.geom.Dimension2D)
-	    return this.equals( (java.awt.geom.Dimension2D)that);
-	else
-	    return false;
+        if (this == that)
+            return true;
+        else if (that instanceof java.awt.geom.Dimension2D)
+            return this.equals( (java.awt.geom.Dimension2D)that);
+        else
+            return false;
     }
     public boolean equals(java.awt.geom.Dimension2D d) {
-	return (this.width == d.getWidth() && this.height == d.getHeight());
+        return (this.width == d.getWidth() && this.height == d.getHeight());
     }
 }

@@ -18,31 +18,31 @@ package  sgt.geom;
  * @since sgt 1.0
  */
 public class Range implements java.io.Serializable {
-  /** The range's first value */
-  public int start;
-  /** The range's last value */
-  public int end;
-  /**
-   * Default constructor
-   */
-  public Range() {
-    this(0, 0);
-  }
-  /**
-   * Initializes Range with start and end integral values.
-   *
-   * @param start first value
-   * @param end last value
-   */
-  public Range(int start,int end) {
-    this.start = start;
-    this.end = end;
-  }
-  /**
-   * Test <code>Range</code> for equality.  Both start and end must be
-   * equal for equality.
-   */
-  public boolean equals(Range r) {
-    return (start == r.start && end == r.end);
-  }
+    /** The range's first value */
+    public int start;
+    /** The range's last value */
+    public int end;
+    /**
+     * Default constructor
+     */
+    public Range() {
+        this(0, 0);
+    }
+    /**
+     * Initializes Range with start and end integral values.
+     *
+     * @param start first value
+     * @param end last value
+     */
+    public Range(int start,int end) {
+        this.start = start;
+        this.end = end;
+    }
+    /**
+     * Test <code>Range</code> for equality.  Both start and end must be
+     * equal for equality.
+     */
+    public boolean equals(Range r) {
+        return (start == r.start && end == r.end);
+    }
 }

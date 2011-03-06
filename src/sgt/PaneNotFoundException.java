@@ -17,10 +17,10 @@ package  sgt;
  * @version $Revision: 1.1.1.1 $, $Date: 1999/12/21 19:23:57 $
  */
 public class PaneNotFoundException extends SGException {
-  public PaneNotFoundException() {
-    super();
-}
-  public PaneNotFoundException(String s) {
-    super(s);
-  }
+    public PaneNotFoundException() {
+        super();
+    }
+    public PaneNotFoundException(String s) {
+        super(s);
+    }
 }

@@ -32,99 +32,99 @@ import java.io.Serializable;
  */
 public class SGT3DVector extends SGTVector {
     /**@shapeType AggregationLink
-  * @clientRole w comp*/
+     * @clientRole w comp*/
     SGTGrid wComp_;
-  /**
-   * Default constructor.
-   */
-  public SGT3DVector() {
-  }
-  /**
-   * Construct a SGTVector from two components. The two components
-   * must match in both SGTData and CoordinateSystem Interfaces.
-   * Both components must be the same shape.
-   *
-   * @param uComp U component of the vector
-   * @param vComp V component of the vector
-   * @param vComp W component of the vector
-   */
-  public SGT3DVector(SGTGrid uComp,SGTGrid vComp, SGTGrid wComp) {
-    uComp_ = uComp;
-    vComp_ = vComp;
-    wComp_ = wComp;
-  }
-  /**
-   * Create a copy. Creates a shallow copy.
-   *
-   * @see SGTData
-   */
-  public SGTData copy() {
-    SGT3DVector newSGTVector;
-    try {
-      newSGTVector = (SGT3DVector)clone();
-    } catch (CloneNotSupportedException e) {
-      newSGTVector = new SGT3DVector(this.uComp_, this.vComp_, this.wComp_);
+    /**
+     * Default constructor.
+     */
+    public SGT3DVector() {
     }
-    return (SGTData)newSGTVector;
-  }
-  /**
-   * Get the W component.
-   *
-   * @return W component
-   */
-  public SGTGrid getW() {
-    return wComp_;
-  }
+    /**
+     * Construct a SGTVector from two components. The two components
+     * must match in both SGTData and CoordinateSystem Interfaces.
+     * Both components must be the same shape.
+     *
+     * @param uComp U component of the vector
+     * @param vComp V component of the vector
+     * @param vComp W component of the vector
+     */
+    public SGT3DVector(SGTGrid uComp,SGTGrid vComp, SGTGrid wComp) {
+        uComp_ = uComp;
+        vComp_ = vComp;
+        wComp_ = wComp;
+    }
+    /**
+     * Create a copy. Creates a shallow copy.
+     *
+     * @see SGTData
+     */
+    public SGTData copy() {
+        SGT3DVector newSGTVector;
+        try {
+            newSGTVector = (SGT3DVector)clone();
+        } catch (CloneNotSupportedException e) {
+            newSGTVector = new SGT3DVector(this.uComp_, this.vComp_, this.wComp_);
+        }
+        return (SGTData)newSGTVector;
+    }
+    /**
+     * Get the W component.
+     *
+     * @return W component
+     */
+    public SGTGrid getW() {
+        return wComp_;
+    }
 
-  /**
-   * Set the W component.
-   *
-   * @param uComp W component
-   */
-  public void setU(SGTGrid wComp) {
-    wComp_ = wComp;
-  }
+    /**
+     * Set the W component.
+     *
+     * @param uComp W component
+     */
+    public void setU(SGTGrid wComp) {
+        wComp_ = wComp;
+    }
 
-  /**
-   * Set the vector components.
-   *
-   * @param uComp U component
-   * @param vComp V component
-   */
-  public void setComponents(SGTGrid uComp, SGTGrid vComp, SGTGrid wComp) {
-    uComp_ = uComp;
-    vComp_ = vComp;
-    wComp_ = wComp;
-  }
+    /**
+     * Set the vector components.
+     *
+     * @param uComp U component
+     * @param vComp V component
+     */
+    public void setComponents(SGTGrid uComp, SGTGrid vComp, SGTGrid wComp) {
+        uComp_ = uComp;
+        vComp_ = vComp;
+        wComp_ = wComp;
+    }
 
-  /**
-   * Get the unique identifier.  The presence of the identifier
-   * is optional, but if it is present it should be unique.  This
-   * field is used to search for the layer that contains the data.
-   *
-   * @return unique identifier
-   * @see sgt.Pane
-   * @see sgt.Layer
-   */
-  public String getId() {
-    return id_;
-  }
-  /**
-   * Set the unique identifier.
-   */
-  public void setId(String ident) {
-    id_ = ident;
-  }
+    /**
+     * Get the unique identifier.  The presence of the identifier
+     * is optional, but if it is present it should be unique.  This
+     * field is used to search for the layer that contains the data.
+     *
+     * @return unique identifier
+     * @see sgt.Pane
+     * @see sgt.Layer
+     */
+    public String getId() {
+        return id_;
+    }
+    /**
+     * Set the unique identifier.
+     */
+    public void setId(String ident) {
+        id_ = ident;
+    }
 
 
-  public void addPropertyChangeListener(PropertyChangeListener l) {
-    uComp_.addPropertyChangeListener(l);
-    vComp_.addPropertyChangeListener(l);
-    wComp_.addPropertyChangeListener(l);
-  }
-  public void removePropertyChangeListener(PropertyChangeListener l) {
-    uComp_.removePropertyChangeListener(l);
-    vComp_.removePropertyChangeListener(l);
-    wComp_.removePropertyChangeListener(l);
-  }
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        uComp_.addPropertyChangeListener(l);
+        vComp_.addPropertyChangeListener(l);
+        wComp_.addPropertyChangeListener(l);
+    }
+    public void removePropertyChangeListener(PropertyChangeListener l) {
+        uComp_.removePropertyChangeListener(l);
+        vComp_.removePropertyChangeListener(l);
+        wComp_.removePropertyChangeListener(l);
+    }
 }

@@ -32,29 +32,29 @@ import java.awt.Image;
  * @see Polar
  */
 public interface SGTImage extends SGTData {
-  /**
-   * Get the X coordinate edges.
-   */
-  public double[] getXEdges();
-  /**
-   * Get the Y coordinate edges.
-   */
-  public double[] getYEdges();
-  /**
-   * Get the image.
-   */
-  public Image getImage();
-  /**
-   * Get the X coordinate SGTMetaData.
-   */
-  public SGTMetaData getXMetaData();
-  /**
-   * Get the Y coordinate SGTMetaData.
-   */
-  public SGTMetaData getYMetaData();
-  /**
-   * Get the pixel SGTMetaData.
-   */
-  public SGTMetaData getZMetaData();
+    /**
+     * Get the X coordinate edges.
+     */
+    public double[] getXEdges();
+    /**
+     * Get the Y coordinate edges.
+     */
+    public double[] getYEdges();
+    /**
+     * Get the image.
+     */
+    public Image getImage();
+    /**
+     * Get the X coordinate SGTMetaData.
+     */
+    public SGTMetaData getXMetaData();
+    /**
+     * Get the Y coordinate SGTMetaData.
+     */
+    public SGTMetaData getYMetaData();
+    /**
+     * Get the pixel SGTMetaData.
+     */
+    public SGTMetaData getZMetaData();
 }
 

@@ -20,5 +20,5 @@ import sgt.geom.Range2D;
  * @since 2.0
  */
 public interface TransformAccess {
-  void setRange(Range2D range);
+    void setRange(Range2D range);
 }

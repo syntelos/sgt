@@ -17,10 +17,10 @@ package  sgt;
  * @version $Revision: 1.1.1.1 $, $Date: 1999/12/21 19:23:55 $
  */
 public class ChildNotFoundException extends SGException {
-  public ChildNotFoundException() {
-    super();
-}
-  public ChildNotFoundException(String s) {
-    super(s);
-  }
+    public ChildNotFoundException() {
+        super();
+    }
+    public ChildNotFoundException(String s) {
+        super(s);
+    }
 }

@@ -20,41 +20,41 @@ package  sgt.geom;
  * @deprecated As of sgt 3.0, replaced by {@link sgt.geom.SoTPoint SoTPoint}.
  */
 public class TimePoint {
-  /** Space coordinate  */
-  public double x;
-  /** Time coordinate */
-  public GeoDate t;
-  /**
-   * Default constructor.
-   */
-  public TimePoint() {
-  }
-  /**
-   * Construct a TimePoint.
-   *
-   * @param x space coordinate
-   * @param t time coordinate
-   */
-  public TimePoint(double x,GeoDate t) {
-    this.x = x;
-    this.t = t;
-  }
-  /**
-   * Test for equality.  Both x and t must be equal for equality.
-   */
-  public boolean equals(TimePoint tp) {
-    if(t != null && tp.t != null) {
-      return (x == tp.x && t.equals(tp.t));
-    } else {
-      return false;
+    /** Space coordinate  */
+    public double x;
+    /** Time coordinate */
+    public GeoDate t;
+    /**
+     * Default constructor.
+     */
+    public TimePoint() {
     }
-  }
-  /**
-   * Convert TimePoint to a default string
-   *
-   * @return string representation of the TimePoint.
-   */
-  public String toString() {
-    return new String("(" + x + ", " + t.toString() + ")");
-  }
+    /**
+     * Construct a TimePoint.
+     *
+     * @param x space coordinate
+     * @param t time coordinate
+     */
+    public TimePoint(double x,GeoDate t) {
+        this.x = x;
+        this.t = t;
+    }
+    /**
+     * Test for equality.  Both x and t must be equal for equality.
+     */
+    public boolean equals(TimePoint tp) {
+        if(t != null && tp.t != null) {
+            return (x == tp.x && t.equals(tp.t));
+        } else {
+            return false;
+        }
+    }
+    /**
+     * Convert TimePoint to a default string
+     *
+     * @return string representation of the TimePoint.
+     */
+    public String toString() {
+        return new String("(" + x + ", " + t.toString() + ")");
+    }
 }

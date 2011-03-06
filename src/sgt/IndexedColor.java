@@ -21,19 +21,19 @@ import java.awt.Color;
  **/
 public interface IndexedColor {
 
-  /**
-   *
-   * @param index
-   * @return
-   * @since 3.0
-   */
-  Color getColorByIndex(int index);
+    /**
+     *
+     * @param index
+     * @return
+     * @since 3.0
+     */
+    Color getColorByIndex(int index);
 
-  void setColor(int index, Color color);
+    void setColor(int index, Color color);
 
-  void setColor(int index, int red, int green, int blue);
-  /**
-   * Get the maximum legal value of the color index.
-   */
-  int getMaximumIndex();
+    void setColor(int index, int red, int green, int blue);
+    /**
+     * Get the maximum legal value of the color index.
+     */
+    int getMaximumIndex();
 }

@@ -18,6 +18,6 @@ package  sgt;
  * @since 2.x
  */
 public class MapProj {
-  public MapProj() {
-  }
+    public MapProj() {
+    }
 }

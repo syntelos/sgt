@@ -22,521 +22,521 @@ import java.io.Serializable;
  * @since sgt 2.0
  */
 public abstract class SoTValue implements Serializable {
-  /**
-   * Inner class for <code>SoTRange</code> for type
-   * <code>GeoDate</code>.
-   * @since sgt 2.0
-   * @deprecated As of sgt 3.0, replaced by {@link sgt.geom.SoTValue.Time SoTValue.Time}
-   */
-  public static class GeoDate extends SoTValue {
-    sgt.geom.GeoDate date_;
     /**
-     * Default constructor.
+     * Inner class for <code>SoTRange</code> for type
+     * <code>GeoDate</code>.
+     * @since sgt 2.0
+     * @deprecated As of sgt 3.0, replaced by {@link sgt.geom.SoTValue.Time SoTValue.Time}
      */
-    public GeoDate() {}
-    /**
-     * Construct a <code>SoTValue</code> from a <code>GeoDate</code>.
-     */
-    public GeoDate(sgt.geom.GeoDate date) {
-      date_ = date;
+    public static class GeoDate extends SoTValue {
+        sgt.geom.GeoDate date_;
+        /**
+         * Default constructor.
+         */
+        public GeoDate() {}
+        /**
+         * Construct a <code>SoTValue</code> from a <code>GeoDate</code>.
+         */
+        public GeoDate(sgt.geom.GeoDate date) {
+            date_ = date;
+        }
+        /**
+         * Construct a <code>SoTValue</code> and initialize it to
+         * represent the specified number of milliseconds since the
+         * standard base time known as "the epoch", namely January 1,
+         * 1970, 00:00:00.
+         */
+        public GeoDate(long time) {
+            this(new sgt.geom.GeoDate(time));
+        }
+        /**
+         * Get the value
+         */
+        public sgt.geom.GeoDate getValue() {
+            return date_;
+        }
+        /**
+         * Set the value from a <code>GeoDate</code>
+         */
+        public void setValue(sgt.geom.GeoDate date) {
+            date_ = date;
+        }
+        /**
+         * Set the value from the number of milliseconds since the epoch.
+         */
+        public void setValue(long time) {
+            date_ = new sgt.geom.GeoDate(time);
+        }
+        public Object getObjectValue() {
+            return date_;
+        }
+        /**
+         * Test if <code>SoTValue</code> is time.
+         */
+        public boolean isTime() {
+            return true;
+        }
+        /**
+         * Test for equality
+         */
+        public boolean equals(SoTValue val) {
+            if(val.isTime()) {
+                return date_.equals(((SoTValue.GeoDate)val).getValue());
+            } else {
+                return false;
+            }
+        }
+        /**
+         * Add to value.
+         *
+         * @since 3.0
+         */
+        public void add(SoTValue val) {
+            if(!val.isTime()) return;
+            date_.add(((SoTValue.GeoDate)val).getValue());
+        }
+        /**
+         * Get time as <code>long</code> since 1970-01-01.
+         *
+         * @since 3.0
+         */
+        public long getLongTime() {
+            if(date_ == null) return Long.MAX_VALUE;
+            return date_.getTime();
+        }
+        /**
+         * Get time as <code>GeoDate</code>.
+         *
+         * @since 3.0
+         */
+        public sgt.geom.GeoDate getGeoDate() {
+            return new sgt.geom.GeoDate(date_);
+        }
+
+        public String toString() {
+            return date_.toString();
+        }
     }
     /**
-     * Construct a <code>SoTValue</code> and initialize it to
-     * represent the specified number of milliseconds since the
-     * standard base time known as "the epoch", namely January 1,
-     * 1970, 00:00:00.
+     * Inner class for <code>SoTRange</code> for type
+     * <code>long</code>.  Used for time storage.
+     * @since sgt 3.0
      */
-    public GeoDate(long time) {
-      this(new sgt.geom.GeoDate(time));
-    }
-    /**
-     * Get the value
-     */
-    public sgt.geom.GeoDate getValue() {
-      return date_;
-    }
-    /**
-     * Set the value from a <code>GeoDate</code>
-     */
-    public void setValue(sgt.geom.GeoDate date) {
-      date_ = date;
-    }
-    /**
-     * Set the value from the number of milliseconds since the epoch.
-     */
-    public void setValue(long time) {
-      date_ = new sgt.geom.GeoDate(time);
-    }
-    public Object getObjectValue() {
-      return date_;
-    }
-    /**
-     * Test if <code>SoTValue</code> is time.
-     */
-    public boolean isTime() {
-      return true;
-    }
-    /**
-     * Test for equality
-     */
-    public boolean equals(SoTValue val) {
-      if(val.isTime()) {
-        return date_.equals(((SoTValue.GeoDate)val).getValue());
-      } else {
-        return false;
-      }
-    }
-    /**
-     * Add to value.
-     *
-     * @since 3.0
-     */
-    public void add(SoTValue val) {
-      if(!val.isTime()) return;
-      date_.add(((SoTValue.GeoDate)val).getValue());
-    }
-    /**
-     * Get time as <code>long</code> since 1970-01-01.
-     *
-     * @since 3.0
-     */
-    public long getLongTime() {
-      if(date_ == null) return Long.MAX_VALUE;
-      return date_.getTime();
-    }
-    /**
-     * Get time as <code>GeoDate</code>.
-     *
-     * @since 3.0
-     */
-    public sgt.geom.GeoDate getGeoDate() {
-      return new sgt.geom.GeoDate(date_);
+    public static class Time extends SoTValue {
+        long value_;
+        /**
+         * Default constructor.
+         */
+        public Time() {}
+        /**
+         * Construct and initialize value.
+         */
+        public Time(long value) {
+            value_ = value;
+        }
+        public Time(sgt.geom.GeoDate value) {
+            value_ = value.getTime();
+        }
+        /**
+         * Get the value
+         */
+        public long getValue() {
+            return value_;
+        }
+        /**
+         * Set the value
+         */
+        public void setValue(long value) {
+            value_ = value;
+        }
+        public Object getObjectValue() {
+            return new java.lang.Long(value_);
+        }
+        /**
+         * Test if <code>SoTValue</code> is time
+         */
+        public boolean isTime() {
+            return true;
+        }
+        /**
+         * Test for equality
+         */
+        public boolean equals(SoTValue val) {
+            if(val.isTime()) {
+                return value_ == ((SoTValue.Time)val).getValue();
+            } else {
+                return false;
+            }
+        }
+        /**
+         * Add to value.
+         *
+         * @since 3.0
+         */
+        public void add(SoTValue val) {
+            if(!val.isTime()) return;
+            long dval = val.getLongTime();
+            value_ += dval;
+        }
+        /**
+         * Get time as <code>long</code> since 1970-01-01.
+         *
+         * @since 3.0
+         */
+        public long getLongTime() {
+            return value_;
+        }
+        /**
+         * Get time as <code>GeoDate</code>.
+         *
+         * @since 3.0
+         */
+        public sgt.geom.GeoDate getGeoDate() {
+            return new sgt.geom.GeoDate(value_);
+        }
+
+        public String toString() {
+            //      return java.lang.Long.toString(value_);
+            return getGeoDate().toString();
+        }
     }
 
-    public String toString() {
-      return date_.toString();
-    }
-  }
-  /**
-   * Inner class for <code>SoTRange</code> for type
-   * <code>long</code>.  Used for time storage.
-   * @since sgt 3.0
-   */
-  public static class Time extends SoTValue {
-    long value_;
+
     /**
-     * Default constructor.
+     * Inner class for <code>SoTRange</code> for type
+     * <code>int</code>.
+     * @since sgt 2.0
      */
-    public Time() {}
-    /**
-     * Construct and initialize value.
-     */
-    public Time(long value) {
-      value_ = value;
-    }
-    public Time(sgt.geom.GeoDate value) {
-      value_ = value.getTime();
-    }
-    /**
-     * Get the value
-     */
-    public long getValue() {
-      return value_;
-    }
-    /**
-     * Set the value
-     */
-    public void setValue(long value) {
-      value_ = value;
-    }
-    public Object getObjectValue() {
-      return new java.lang.Long(value_);
-    }
-    /**
-     * Test if <code>SoTValue</code> is time
-     */
-    public boolean isTime() {
-      return true;
-    }
-    /**
-     * Test for equality
-     */
-    public boolean equals(SoTValue val) {
-      if(val.isTime()) {
-        return value_ == ((SoTValue.Time)val).getValue();
-      } else {
-        return false;
-      }
-    }
-    /**
-     * Add to value.
-     *
-     * @since 3.0
-     */
-    public void add(SoTValue val) {
-      if(!val.isTime()) return;
-      long dval = val.getLongTime();
-      value_ += dval;
-    }
-    /**
-     * Get time as <code>long</code> since 1970-01-01.
-     *
-     * @since 3.0
-     */
-    public long getLongTime() {
-      return value_;
-    }
-    /**
-     * Get time as <code>GeoDate</code>.
-     *
-     * @since 3.0
-     */
-    public sgt.geom.GeoDate getGeoDate() {
-      return new sgt.geom.GeoDate(value_);
+    public static class Integer extends SoTValue {
+        int value_;
+        /**
+         * Default constructor.
+         */
+        public Integer() {}
+        /**
+         * Construct and initialize value.
+         */
+        public Integer(int value) {
+            value_ = value;
+        }
+        /**
+         * Get the value
+         */
+        public int getValue() {
+            return value_;
+        }
+        /**
+         * Set the value
+         */
+        public void setValue(int value) {
+            value_ = value;
+        }
+        public Object getObjectValue() {
+            return new java.lang.Integer(value_);
+        }
+        /**
+         * Test if <code>SoTValue</code> is time
+         */
+        public boolean isTime() {
+            return false;
+        }
+        /**
+         * Test for equality
+         */
+        public boolean equals(SoTValue val) {
+            if(val.isTime()) {
+                return false;
+            } else {
+                return value_ == ((SoTValue.Integer)val).getValue();
+            }
+        }
+        /**
+         * Add to value.
+         *
+         * @since 3.0
+         */
+        public void add(SoTValue val) {
+            if(val.isTime()) return;
+            int dval = ((Number)val.getObjectValue()).intValue();
+            value_ += dval;
+        }
+        /**
+         * Get time as <code>long</code> since 1970-01-01.
+         *
+         * @since 3.0
+         */
+        public long getLongTime() {
+            throw new Error("Method not appropriate for SoTValue.Int");
+        }
+        /**
+         * Get time as <code>GeoDate</code>.
+         *
+         * @since 3.0
+         */
+        public sgt.geom.GeoDate getGeoDate() {
+            throw new Error("Method not appropriate for SoTValue.Int");
+        }
+
+        public String toString() {
+            return java.lang.Integer.toString(value_);
+        }
     }
 
-    public String toString() {
-//      return java.lang.Long.toString(value_);
-      return getGeoDate().toString();
-    }
-  }
+    /**
+     * Inner class for <code>SoTRange</code> for type
+     * <code>short</code>.
+     * @since sgt 2.0
+     */
+    public static class Short extends SoTValue {
+        short value_;
+        /**
+         * Default constructor.
+         */
+        public Short() {}
+        /**
+         * Construct and initialize value.
+         */
+        public Short(short value) {
+            value_ = value;
+        }
+        /**
+         * Get the value
+         */
+        public short getValue() {
+            return value_;
+        }
+        /**
+         * Set the value
+         */
+        public void setValue(short value) {
+            value_ = value;
+        }
+        public Object getObjectValue() {
+            return new java.lang.Short(value_);
+        }
+        /**
+         * Test if <code>SoTValue</code> is time
+         */
+        public boolean isTime() {
+            return false;
+        }
+        /**
+         * Test for equality
+         */
+        public boolean equals(SoTValue val) {
+            if(val.isTime()) {
+                return false;
+            } else {
+                return value_ == ((SoTValue.Short)val).getValue();
+            }
+        }
+        /**
+         * Add to value.
+         *
+         * @since 3.0
+         */
+        public void add(SoTValue val) {
+            if(val.isTime()) return;
+            short dval = ((Number)val.getObjectValue()).shortValue();
+            value_ += dval;
+        }
+        /**
+         * Get time as <code>long</code> since 1970-01-01.
+         *
+         * @since 3.0
+         */
+        public long getLongTime() {
+            throw new Error("Method not appropriate for SoTValue.Short");
+        }
+        /**
+         * Get time as <code>GeoDate</code>.
+         *
+         * @since 3.0
+         */
+        public sgt.geom.GeoDate getGeoDate() {
+            throw new Error("Method not appropriate for SoTValue.Short");
+        }
 
-
-  /**
-   * Inner class for <code>SoTRange</code> for type
-   * <code>int</code>.
-   * @since sgt 2.0
-   */
-  public static class Integer extends SoTValue {
-    int value_;
-    /**
-     * Default constructor.
-     */
-    public Integer() {}
-    /**
-     * Construct and initialize value.
-     */
-    public Integer(int value) {
-      value_ = value;
-    }
-    /**
-     * Get the value
-     */
-    public int getValue() {
-      return value_;
-    }
-    /**
-     * Set the value
-     */
-    public void setValue(int value) {
-      value_ = value;
-    }
-    public Object getObjectValue() {
-      return new java.lang.Integer(value_);
-    }
-    /**
-     * Test if <code>SoTValue</code> is time
-     */
-    public boolean isTime() {
-      return false;
-    }
-    /**
-     * Test for equality
-     */
-    public boolean equals(SoTValue val) {
-      if(val.isTime()) {
-        return false;
-      } else {
-        return value_ == ((SoTValue.Integer)val).getValue();
-      }
-    }
-    /**
-     * Add to value.
-     *
-     * @since 3.0
-     */
-    public void add(SoTValue val) {
-      if(val.isTime()) return;
-      int dval = ((Number)val.getObjectValue()).intValue();
-      value_ += dval;
-    }
-    /**
-     * Get time as <code>long</code> since 1970-01-01.
-     *
-     * @since 3.0
-     */
-    public long getLongTime() {
-      throw new Error("Method not appropriate for SoTValue.Int");
-    }
-    /**
-     * Get time as <code>GeoDate</code>.
-     *
-     * @since 3.0
-     */
-    public sgt.geom.GeoDate getGeoDate() {
-      throw new Error("Method not appropriate for SoTValue.Int");
+        public String toString() {
+            return java.lang.Short.toString(value_);
+        }
     }
 
-    public String toString() {
-      return java.lang.Integer.toString(value_);
-    }
-  }
+    /**
+     * Inner class for <code>SoTRange</code> for type
+     * <code>float</code>.
+     * @since sgt 2.0
+     */
+    public static class Float extends SoTValue {
+        float value_;
+        /**
+         * Default constructor.
+         */
+        public Float() {}
+        /**
+         * Construct and initialize value.
+         */
+        public Float(float value) {
+            value_ = value;
+        }
+        /**
+         * Get the value
+         */
+        public float getValue() {
+            return value_;
+        }
+        /**
+         * Set the value
+         */
+        public void setValue(float value) {
+            value_ = value;
+        }
+        public Object getObjectValue() {
+            return new java.lang.Float(value_);
+        }
+        /**
+         * Test if <code>SoTValue</code> is time
+         */
+        public boolean isTime() {
+            return false;
+        }
+        /**
+         * Test for equality
+         */
+        public boolean equals(SoTValue val) {
+            if(val.isTime()) {
+                return false;
+            } else {
+                return value_ == ((SoTValue.Float)val).getValue();
+            }
+        }
+        /**
+         * Add to value.
+         *
+         * @since 3.0
+         */
+        public void add(SoTValue val) {
+            if(val.isTime()) return;
+            float dval = ((Number)val.getObjectValue()).floatValue();
+            value_ += dval;
+        }
+        /**
+         * Get time as <code>long</code> since 1970-01-01.
+         *
+         * @since 3.0
+         */
+        public long getLongTime() {
+            throw new Error("Method not appropriate for SoTValue.Float");
+        }
+        /**
+         * Get time as <code>GeoDate</code>.
+         *
+         * @since 3.0
+         */
+        public sgt.geom.GeoDate getGeoDate() {
+            throw new Error("Method not appropriate for SoTValue.Float");
+        }
 
-  /**
-   * Inner class for <code>SoTRange</code> for type
-   * <code>short</code>.
-   * @since sgt 2.0
-   */
-  public static class Short extends SoTValue {
-    short value_;
-    /**
-     * Default constructor.
-     */
-    public Short() {}
-    /**
-     * Construct and initialize value.
-     */
-    public Short(short value) {
-      value_ = value;
-    }
-    /**
-     * Get the value
-     */
-    public short getValue() {
-      return value_;
-    }
-    /**
-     * Set the value
-     */
-    public void setValue(short value) {
-      value_ = value;
-    }
-    public Object getObjectValue() {
-      return new java.lang.Short(value_);
-    }
-    /**
-     * Test if <code>SoTValue</code> is time
-     */
-    public boolean isTime() {
-      return false;
-    }
-    /**
-     * Test for equality
-     */
-    public boolean equals(SoTValue val) {
-      if(val.isTime()) {
-        return false;
-      } else {
-        return value_ == ((SoTValue.Short)val).getValue();
-      }
-    }
-    /**
-     * Add to value.
-     *
-     * @since 3.0
-     */
-    public void add(SoTValue val) {
-      if(val.isTime()) return;
-      short dval = ((Number)val.getObjectValue()).shortValue();
-      value_ += dval;
-    }
-    /**
-     * Get time as <code>long</code> since 1970-01-01.
-     *
-     * @since 3.0
-     */
-    public long getLongTime() {
-      throw new Error("Method not appropriate for SoTValue.Short");
-    }
-    /**
-     * Get time as <code>GeoDate</code>.
-     *
-     * @since 3.0
-     */
-    public sgt.geom.GeoDate getGeoDate() {
-      throw new Error("Method not appropriate for SoTValue.Short");
-    }
-
-    public String toString() {
-      return java.lang.Short.toString(value_);
-    }
-  }
-
-  /**
-   * Inner class for <code>SoTRange</code> for type
-   * <code>float</code>.
-   * @since sgt 2.0
-   */
-  public static class Float extends SoTValue {
-    float value_;
-    /**
-     * Default constructor.
-     */
-    public Float() {}
-    /**
-     * Construct and initialize value.
-     */
-    public Float(float value) {
-      value_ = value;
-    }
-    /**
-     * Get the value
-     */
-    public float getValue() {
-      return value_;
-    }
-    /**
-     * Set the value
-     */
-    public void setValue(float value) {
-      value_ = value;
-    }
-    public Object getObjectValue() {
-      return new java.lang.Float(value_);
-    }
-    /**
-     * Test if <code>SoTValue</code> is time
-     */
-    public boolean isTime() {
-      return false;
-    }
-    /**
-     * Test for equality
-     */
-    public boolean equals(SoTValue val) {
-      if(val.isTime()) {
-        return false;
-      } else {
-        return value_ == ((SoTValue.Float)val).getValue();
-      }
-    }
-    /**
-     * Add to value.
-     *
-     * @since 3.0
-     */
-    public void add(SoTValue val) {
-      if(val.isTime()) return;
-      float dval = ((Number)val.getObjectValue()).floatValue();
-      value_ += dval;
-    }
-    /**
-     * Get time as <code>long</code> since 1970-01-01.
-     *
-     * @since 3.0
-     */
-    public long getLongTime() {
-      throw new Error("Method not appropriate for SoTValue.Float");
-    }
-    /**
-     * Get time as <code>GeoDate</code>.
-     *
-     * @since 3.0
-     */
-    public sgt.geom.GeoDate getGeoDate() {
-      throw new Error("Method not appropriate for SoTValue.Float");
+        public String toString() {
+            return java.lang.Float.toString(value_);
+        }
     }
 
-    public String toString() {
-      return java.lang.Float.toString(value_);
+    /**
+     * Inner class for <code>SoTRange</code> for type
+     * <code>double</code>.
+     * @since sgt 2.0
+     */
+    public static class Double extends SoTValue {
+        double value_;
+        /**
+         * Default constructor.
+         */
+        public Double() {}
+        /**
+         * Construct and initialize value.
+         */
+        public Double(double value) {
+            value_ = value;
+        }
+        /**
+         * Get the value
+         */
+        public double getValue() {
+            return value_;
+        }
+        /**
+         * Set the value
+         */
+        public void setValue(double value) {
+            value_ = value;
+        }
+        public Object getObjectValue() {
+            return new java.lang.Double(value_);
+        }
+        /**
+         * Test if <code>SoTValue</code> is time
+         */
+        public boolean isTime() {
+            return false;
+        }
+        /**
+         * Test for equality
+         */
+        public boolean equals(SoTValue val) {
+            if(val.isTime()) {
+                return false;
+            } else {
+                return value_ == ((SoTValue.Double)val).getValue();
+            }
+        }
+        /**
+         * Add to value.
+         *
+         * @since 3.0
+         */
+        public void add(SoTValue val) {
+            if(val.isTime()) return;
+            double dval = ((Number)val.getObjectValue()).doubleValue();
+            value_ += dval;
+        }
+        /**
+         * Get time as <code>long</code> since 1970-01-01.
+         *
+         * @since 3.0
+         */
+        public long getLongTime() {
+            throw new Error("Method not appropriate for SoTValue.Double");
+        }
+        /**
+         * Get time as <code>GeoDate</code>.
+         *
+         * @since 3.0
+         */
+        public sgt.geom.GeoDate getGeoDate() {
+            throw new Error("Method not appropriate for SoTValue.Double");
+        }
+        public String toString() {
+            return java.lang.Double.toString(value_);
+        }
     }
-  }
 
-  /**
-   * Inner class for <code>SoTRange</code> for type
-   * <code>double</code>.
-   * @since sgt 2.0
-   */
-  public static class Double extends SoTValue {
-    double value_;
     /**
-     * Default constructor.
-     */
-    public Double() {}
-    /**
-     * Construct and initialize value.
-     */
-    public Double(double value) {
-      value_ = value;
-    }
-    /**
-     * Get the value
-     */
-    public double getValue() {
-      return value_;
-    }
-    /**
-     * Set the value
-     */
-    public void setValue(double value) {
-      value_ = value;
-    }
-    public Object getObjectValue() {
-      return new java.lang.Double(value_);
-    }
-    /**
-     * Test if <code>SoTValue</code> is time
-     */
-    public boolean isTime() {
-      return false;
-    }
-    /**
-     * Test for equality
-     */
-    public boolean equals(SoTValue val) {
-      if(val.isTime()) {
-        return false;
-      } else {
-        return value_ == ((SoTValue.Double)val).getValue();
-      }
-    }
-    /**
-     * Add to value.
+     * This is an abstract class that cannot be instantiated directly.
+     * Type-specific implementation subclasses are available for
+     * instantiation and provide a number of formats for storing
+     * the information necessary to satisfy the various accessor
+     * methods below.
      *
-     * @since 3.0
      */
-    public void add(SoTValue val) {
-      if(val.isTime()) return;
-      double dval = ((Number)val.getObjectValue()).doubleValue();
-      value_ += dval;
-    }
-    /**
-     * Get time as <code>long</code> since 1970-01-01.
-     *
-     * @since 3.0
-     */
-    public long getLongTime() {
-      throw new Error("Method not appropriate for SoTValue.Double");
-    }
-    /**
-     * Get time as <code>GeoDate</code>.
-     *
-     * @since 3.0
-     */
-    public sgt.geom.GeoDate getGeoDate() {
-      throw new Error("Method not appropriate for SoTValue.Double");
-    }
-    public String toString() {
-      return java.lang.Double.toString(value_);
-    }
-  }
+    protected SoTValue() {}
 
-  /**
-   * This is an abstract class that cannot be instantiated directly.
-   * Type-specific implementation subclasses are available for
-   * instantiation and provide a number of formats for storing
-   * the information necessary to satisfy the various accessor
-   * methods below.
-   *
-   */
-  protected SoTValue() {}
-
-  public abstract boolean isTime();
-  public abstract String toString();
-  public abstract boolean equals(SoTValue val);
-  public abstract Object getObjectValue();
-  public abstract long getLongTime();
-  public abstract sgt.geom.GeoDate getGeoDate();
-  public abstract void add(SoTValue val);
+    public abstract boolean isTime();
+    public abstract String toString();
+    public abstract boolean equals(SoTValue val);
+    public abstract Object getObjectValue();
+    public abstract long getLongTime();
+    public abstract sgt.geom.GeoDate getGeoDate();
+    public abstract void add(SoTValue val);
 }
 

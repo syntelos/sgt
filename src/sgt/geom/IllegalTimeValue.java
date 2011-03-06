@@ -17,10 +17,10 @@ package sgt.geom;
  * @version $Revision: 1.2 $, $Date: 2003/08/22 23:02:40 $
  **/
 
- public class IllegalTimeValue extends Exception {
+public class IllegalTimeValue extends Exception {
     public IllegalTimeValue() {
         super();
-}
+    }
     public IllegalTimeValue(String s) {
         super(s);
     }

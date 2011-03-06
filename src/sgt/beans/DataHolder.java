@@ -22,75 +22,75 @@ import sgt.Attribute;
  * @since 3.0
  **/
 class DataHolder {
-  /**
-   * @undirected
-   * @supplierCardinality 1
-   * @link aggregation
-   * @label data
-   */
-  private SGTData data_;
+    /**
+     * @undirected
+     * @supplierCardinality 1
+     * @link aggregation
+     * @label data
+     */
+    private SGTData data_;
 
-  /**
-   * @link aggregation
-   * @undirected
-   * @supplierCardinality 1
-   * @label attr
-   */
-  private Attribute attr_;
+    /**
+     * @link aggregation
+     * @undirected
+     * @supplierCardinality 1
+     * @label attr
+     */
+    private Attribute attr_;
 
-  /**
-   * @supplierCardinality 1
-   * @label pHolder
-   */
-  private PanelHolder pHolder_;
+    /**
+     * @supplierCardinality 1
+     * @label pHolder
+     */
+    private PanelHolder pHolder_;
 
-  /**
-   * @supplierCardinality 1
-   * @label dataGroup */
-  private DataGroup dataGroup_;
+    /**
+     * @supplierCardinality 1
+     * @label dataGroup */
+    private DataGroup dataGroup_;
 
-  /**
-   * @label legend
-   */
-  private Legend legend_;
+    /**
+     * @label legend
+     */
+    private Legend legend_;
 
-  /**
-   * @label dModel 
-   */
-  private DataModel dModel_;
+    /**
+     * @label dModel 
+     */
+    private DataModel dModel_;
 
-  public DataHolder(DataModel model, SGTData data, Attribute attr,
-                    PanelHolder pHolder, DataGroup dataGroup,
-                    Legend legend) {
-    dModel_ = model;
-    data_ = data;
-    attr_ = attr;
-    pHolder_ = pHolder;
-    dataGroup_ = dataGroup;
-    legend_ = legend;
-  }
+    public DataHolder(DataModel model, SGTData data, Attribute attr,
+                      PanelHolder pHolder, DataGroup dataGroup,
+                      Legend legend) {
+        dModel_ = model;
+        data_ = data;
+        attr_ = attr;
+        pHolder_ = pHolder;
+        dataGroup_ = dataGroup;
+        legend_ = legend;
+    }
 
-  SGTData getData() {
-    return data_;
-  }
+    SGTData getData() {
+        return data_;
+    }
 
-  Attribute getAttribute() {
-    return attr_;
-  }
+    Attribute getAttribute() {
+        return attr_;
+    }
 
-  PanelHolder getPanelHolder() {
-    return pHolder_;
-  }
+    PanelHolder getPanelHolder() {
+        return pHolder_;
+    }
 
-  DataGroup getDataGroup() {
-    return dataGroup_;
-  }
+    DataGroup getDataGroup() {
+        return dataGroup_;
+    }
 
-  Legend getLegend() {
-    return legend_;
-  }
+    Legend getLegend() {
+        return legend_;
+    }
 
-  public void notifyPanel() throws DataTargetMismatchException {
-    dModel_.getPage().findPanel(pHolder_).addData(data_, attr_, dataGroup_, legend_);
-  }
+    public void notifyPanel() throws DataTargetMismatchException {
+        dModel_.getPage().findPanel(pHolder_).addData(data_, attr_, dataGroup_, legend_);
+    }
 }

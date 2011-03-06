@@ -20,118 +20,118 @@ import java.io.Serializable;
  * @since sgt 1.0
  */
 public abstract class Point2D implements Serializable, Cloneable {
-  /**
-   * Inner class for <code>Point2D</code> for type
-   * <code>double</code>.
-   * @since sgt 1.0
-   */
-  public static class Double extends Point2D {
-    /** x coordinate */
-    public double x;
-    /** y coordinate */
-    public double y;
     /**
-     * Default constructor
+     * Inner class for <code>Point2D</code> for type
+     * <code>double</code>.
+     * @since sgt 1.0
      */
-    public Double() {
-    }
-    public Double(double x,double y) {
-      this.x = x;
-      this.y = y;
-    }
-    /**
-     * Test for equality.  Both x and y coordinates must be equal for
-     * equality.
-     */
-    public boolean equals(Point2D.Double pt) {
-      return (x == pt.x && y == pt.y) ;
-    }
-    /**
-     * @since sgt 3.0
-     */
-    public boolean equals(Object pt) {
-      if(pt instanceof Point2D.Double) {
-        Point2D.Double pt2 = (Point2D.Double)pt;
-        return (x == pt2.x) && (y == pt2.y);
-      } else {
-        return false;
-      }
-    }
-    public String toString() {
-      return new String("(" + x + ", " + y + ")");
-    }
-    /**
-     * Make a copy of the <code>Rectangle2D</code>.
-     * @since sgt 3.0
-     */
-    public Point2D copy() {
-      try {
-        return (Point2D)clone();
-      } catch (CloneNotSupportedException e) {
-        return null;
-      }
-    }
-  }
-  /**
-   * Inner class for <code>Point2D</code> for type
-   * <code>float</code>.
-   * @since sgt 2.0
-   */
-  public static class Float extends Point2D {
-    /** x coordinate */
-    public float x;
-    /** y coordinate */
-    public float y;
-    /**
-     * Default constructor
-     */
-    public Float() {
-    }
-    public Float(float x,float y) {
-      this.x = x;
-      this.y = y;
+    public static class Double extends Point2D {
+        /** x coordinate */
+        public double x;
+        /** y coordinate */
+        public double y;
+        /**
+         * Default constructor
+         */
+        public Double() {
+        }
+        public Double(double x,double y) {
+            this.x = x;
+            this.y = y;
+        }
+        /**
+         * Test for equality.  Both x and y coordinates must be equal for
+         * equality.
+         */
+        public boolean equals(Point2D.Double pt) {
+            return (x == pt.x && y == pt.y) ;
+        }
+        /**
+         * @since sgt 3.0
+         */
+        public boolean equals(Object pt) {
+            if(pt instanceof Point2D.Double) {
+                Point2D.Double pt2 = (Point2D.Double)pt;
+                return (x == pt2.x) && (y == pt2.y);
+            } else {
+                return false;
+            }
+        }
+        public String toString() {
+            return new String("(" + x + ", " + y + ")");
+        }
+        /**
+         * Make a copy of the <code>Rectangle2D</code>.
+         * @since sgt 3.0
+         */
+        public Point2D copy() {
+            try {
+                return (Point2D)clone();
+            } catch (CloneNotSupportedException e) {
+                return null;
+            }
+        }
     }
     /**
-     * Test for equality.  Both x and y coordinates must be equal for
-     * equality.
+     * Inner class for <code>Point2D</code> for type
+     * <code>float</code>.
+     * @since sgt 2.0
      */
-    public boolean equals(Point2D.Float pt) {
-      return (x == pt.x && y == pt.y) ;
+    public static class Float extends Point2D {
+        /** x coordinate */
+        public float x;
+        /** y coordinate */
+        public float y;
+        /**
+         * Default constructor
+         */
+        public Float() {
+        }
+        public Float(float x,float y) {
+            this.x = x;
+            this.y = y;
+        }
+        /**
+         * Test for equality.  Both x and y coordinates must be equal for
+         * equality.
+         */
+        public boolean equals(Point2D.Float pt) {
+            return (x == pt.x && y == pt.y) ;
+        }
+        /**
+         * @since sgt 3.0
+         */
+        public boolean equals(Object pt) {
+            if(pt instanceof Point2D.Float) {
+                Point2D.Float pt2 = (Point2D.Float)pt;
+                return (x == pt2.x) && (y == pt2.y);
+            } else {
+                return false;
+            }
+        }
+        public String toString() {
+            return new String("(" + x + ", " + y + ")");
+        }
+        /**
+         * Make a copy of the <code>Rectangle2D</code>.
+         * @since sgt 3.0
+         */
+        public Point2D copy() {
+            try {
+                return (Point2D)clone();
+            } catch (CloneNotSupportedException e) {
+                return null;
+            }
+        }
     }
     /**
-     * @since sgt 3.0
+     * This is an abstract class that cannot be instantiated directly.
+     * Type-specific implementation subclasses are available for
+     * instantiation and provide a number of formats for storing
+     * the information necessary to satisfy the various accessor
+     * methods below.
+     *
      */
-    public boolean equals(Object pt) {
-      if(pt instanceof Point2D.Float) {
-        Point2D.Float pt2 = (Point2D.Float)pt;
-        return (x == pt2.x) && (y == pt2.y);
-      } else {
-        return false;
-      }
+    protected Point2D() {
     }
-    public String toString() {
-      return new String("(" + x + ", " + y + ")");
-    }
-    /**
-     * Make a copy of the <code>Rectangle2D</code>.
-     * @since sgt 3.0
-     */
-    public Point2D copy() {
-      try {
-        return (Point2D)clone();
-      } catch (CloneNotSupportedException e) {
-        return null;
-      }
-    }
-  }
-  /**
-   * This is an abstract class that cannot be instantiated directly.
-   * Type-specific implementation subclasses are available for
-   * instantiation and provide a number of formats for storing
-   * the information necessary to satisfy the various accessor
-   * methods below.
-   *
-   */
-  protected Point2D() {
-  }
 }

@@ -21,26 +21,26 @@ import javax.swing.JComponent;
  * @since 3.0
  **/
 class DataModelEditor extends JComponent {
-  /**
-   * @supplierCardinality 1
-   */
-  private DataModel dataModel_;
+    /**
+     * @supplierCardinality 1
+     */
+    private DataModel dataModel_;
 
-  public DataModelEditor() {
-    super();
-    dataModel_ = null;
-  }
+    public DataModelEditor() {
+        super();
+        dataModel_ = null;
+    }
 
-  public DataModelEditor(DataModel model) {
-    super();
-    setDataModel(model);
-  }
+    public DataModelEditor(DataModel model) {
+        super();
+        setDataModel(model);
+    }
 
-  public DataModel getDataModel(){
-    return dataModel_;
-  }
+    public DataModel getDataModel(){
+        return dataModel_;
+    }
 
-  public void setDataModel(DataModel dataModel){
-    dataModel_ = dataModel;
-  }
+    public void setDataModel(DataModel dataModel){
+        dataModel_ = dataModel;
+    }
 }

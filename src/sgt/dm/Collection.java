@@ -36,112 +36,112 @@ import java.beans.PropertyChangeListener;
  * @see SGTVector
  */
 public class Collection extends Vector implements SGTData, Cloneable {
-  private String title_;
-  private SGLabel keyTitle_ = null;
-  private String id_ = null;
-  private PropertyChangeSupport changes_ = new PropertyChangeSupport(this);
-  private SoTRange xRange_ = null;
-  private SoTRange yRange_ = null;
-  private int colLen_ = 0;
+    private String title_;
+    private SGLabel keyTitle_ = null;
+    private String id_ = null;
+    private PropertyChangeSupport changes_ = new PropertyChangeSupport(this);
+    private SoTRange xRange_ = null;
+    private SoTRange yRange_ = null;
+    private int colLen_ = 0;
 
-  public Collection() {
-    this("");
-  }
-  public Collection(String title) {
-    super();
-    title_ = title;
-  }
-  public Collection(String title, int initialCapacity) {
-    super(initialCapacity);
-    title_ = title;
-  }
-  public Collection(String title, int initialCapacity, int increment) {
-    super(initialCapacity, increment);
-    title_ = title;
-  }
-  /**
-   * Create a copy.
-   *
-   * @see SGTData
-   */
-  public SGTData copy() {
-    Collection newCollection;
-    newCollection = (Collection)clone();
-    return (SGTData)newCollection;
-  }
-  /**
-   * Get the title.
-   */
-  public String getTitle() {
-    return title_;
-  }
-  /**
-   * Set the title.
-   */
-  public void setTitle(String title) {
-    title_ = title;
-  }
-  public SGLabel getKeyTitle() {
-    return keyTitle_;
-  }
-  public void setKeyTitle(SGLabel title) {
-    keyTitle_ = title;
-  }
-  /**
-   * Get the unique identifier.  The presence of the identifier
-   * is optional, but if it is present it should be unique.  This
-   * field is used to search for the layer that contains the data.
-   *
-   * @return unique identifier
-   * @see sgt.Pane
-   * @see sgt.Layer
-   */
-  public String getId() {
-    return id_;
-  }
-  /**
-   * Set the unique identifier.
-   */
-  public void setId(String ident) {
-    id_ = ident;
-  }
-  public boolean isXTime() {
-    return ((SGTData)firstElement()).isXTime();
-  }
-  public boolean isYTime() {
-    return ((SGTData)firstElement()).isYTime();
-  }
-  public SGTMetaData getXMetaData() {
-    return ((SGTData)firstElement()).getXMetaData();
-  }
-  public SGTMetaData getYMetaData() {
-    return ((SGTData)firstElement()).getYMetaData();
-  }
-  public SoTRange getXRange() {
-    computeRange();
-    return xRange_.copy();
-  }
-  public SoTRange getYRange() {
-    computeRange();
-    return yRange_.copy();
-  }
-  private void computeRange() {
-    if(colLen_ == size()) return;
-    colLen_ = size();
-    xRange_ = ((SGTData)firstElement()).getXRange();
-    yRange_ = ((SGTData)firstElement()).getYRange();
-
-    Enumeration en = elements();
-    while(en.hasMoreElements()) {
-      SGTData data = (SGTData)en.nextElement();
-      xRange_.add(data.getXRange());
-      yRange_.add(data.getYRange());
+    public Collection() {
+        this("");
     }
-  }
-  public void addPropertyChangeListener(PropertyChangeListener l) {
-    changes_.addPropertyChangeListener(l);
-  }
-  public void removePropertyChangeListener(PropertyChangeListener l) {
-    changes_.removePropertyChangeListener(l);
-  }
+    public Collection(String title) {
+        super();
+        title_ = title;
+    }
+    public Collection(String title, int initialCapacity) {
+        super(initialCapacity);
+        title_ = title;
+    }
+    public Collection(String title, int initialCapacity, int increment) {
+        super(initialCapacity, increment);
+        title_ = title;
+    }
+    /**
+     * Create a copy.
+     *
+     * @see SGTData
+     */
+    public SGTData copy() {
+        Collection newCollection;
+        newCollection = (Collection)clone();
+        return (SGTData)newCollection;
+    }
+    /**
+     * Get the title.
+     */
+    public String getTitle() {
+        return title_;
+    }
+    /**
+     * Set the title.
+     */
+    public void setTitle(String title) {
+        title_ = title;
+    }
+    public SGLabel getKeyTitle() {
+        return keyTitle_;
+    }
+    public void setKeyTitle(SGLabel title) {
+        keyTitle_ = title;
+    }
+    /**
+     * Get the unique identifier.  The presence of the identifier
+     * is optional, but if it is present it should be unique.  This
+     * field is used to search for the layer that contains the data.
+     *
+     * @return unique identifier
+     * @see sgt.Pane
+     * @see sgt.Layer
+     */
+    public String getId() {
+        return id_;
+    }
+    /**
+     * Set the unique identifier.
+     */
+    public void setId(String ident) {
+        id_ = ident;
+    }
+    public boolean isXTime() {
+        return ((SGTData)firstElement()).isXTime();
+    }
+    public boolean isYTime() {
+        return ((SGTData)firstElement()).isYTime();
+    }
+    public SGTMetaData getXMetaData() {
+        return ((SGTData)firstElement()).getXMetaData();
+    }
+    public SGTMetaData getYMetaData() {
+        return ((SGTData)firstElement()).getYMetaData();
+    }
+    public SoTRange getXRange() {
+        computeRange();
+        return xRange_.copy();
+    }
+    public SoTRange getYRange() {
+        computeRange();
+        return yRange_.copy();
+    }
+    private void computeRange() {
+        if(colLen_ == size()) return;
+        colLen_ = size();
+        xRange_ = ((SGTData)firstElement()).getXRange();
+        yRange_ = ((SGTData)firstElement()).getYRange();
+
+        Enumeration en = elements();
+        while(en.hasMoreElements()) {
+            SGTData data = (SGTData)en.nextElement();
+            xRange_.add(data.getXRange());
+            yRange_.add(data.getYRange());
+        }
+    }
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        changes_.addPropertyChangeListener(l);
+    }
+    public void removePropertyChangeListener(PropertyChangeListener l) {
+        changes_.removePropertyChangeListener(l);
+    }
 }

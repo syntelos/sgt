@@ -24,35 +24,35 @@ import java.beans.PropertyChangeEvent;
  * @since 2.x
  */
 public class MapGraph extends Graph implements Cloneable {
-  /**@shapeType AggregationLink*/
-  private MapProj mproj_;
-  public MapGraph() {
-  }
-  public Graph copy() {
-    MapGraph newGraph;
-    try {
-      newGraph = (MapGraph)clone();
-    } catch (CloneNotSupportedException e) {
-      newGraph = new MapGraph();
+    /**@shapeType AggregationLink*/
+    private MapProj mproj_;
+    public MapGraph() {
     }
-    return (Graph)newGraph;
-  }
-  void draw(Graphics g) {
-    throw new MethodNotImplementedError();
-  }
-  public void attachProj(MapProj proj) {
-    throw new MethodNotImplementedError();
-  }
-  public Object getObjectAt(Point pt) {
-    throw new MethodNotImplementedError();
-  }
+    public Graph copy() {
+        MapGraph newGraph;
+        try {
+            newGraph = (MapGraph)clone();
+        } catch (CloneNotSupportedException e) {
+            newGraph = new MapGraph();
+        }
+        return (Graph)newGraph;
+    }
+    void draw(Graphics g) {
+        throw new MethodNotImplementedError();
+    }
+    public void attachProj(MapProj proj) {
+        throw new MethodNotImplementedError();
+    }
+    public Object getObjectAt(Point pt) {
+        throw new MethodNotImplementedError();
+    }
 
-  public void propertyChange(PropertyChangeEvent evt) {
-  }
-  /**
-   * @since 3.0
-   */
-  public SGTData getDataAt(Point pt) {
-    throw new MethodNotImplementedError();
-  }
+    public void propertyChange(PropertyChangeEvent evt) {
+    }
+    /**
+     * @since 3.0
+     */
+    public SGTData getDataAt(Point pt) {
+        throw new MethodNotImplementedError();
+    }
 }

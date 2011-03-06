@@ -17,10 +17,10 @@ package  sgt;
  * @version $Revision: 1.1.1.1 $, $Date: 1999/12/21 19:23:57 $
  */
 public class SGException extends java.lang.Exception {
-  public SGException() {
-    super();
-  }
-  public SGException(String s) {
-    super(s);
-  }
+    public SGException() {
+        super();
+    }
+    public SGException(String s) {
+        super(s);
+    }
 }

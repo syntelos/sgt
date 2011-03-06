@@ -29,45 +29,45 @@ import java.awt.Insets;
  * @see Layer
  */
 public class StackedLayout implements LayoutManager {
-  public Dimension preferredLayoutSize(Container parent) {
-    synchronized (parent.getTreeLock()) {
-      return parent.getSize();
+    public Dimension preferredLayoutSize(Container parent) {
+        synchronized (parent.getTreeLock()) {
+            return parent.getSize();
+        }
     }
-  }
-  public Dimension minimumLayoutSize(Container parent) {
-    synchronized (parent.getTreeLock()) {
-      return parent.getSize();
+    public Dimension minimumLayoutSize(Container parent) {
+        synchronized (parent.getTreeLock()) {
+            return parent.getSize();
+        }
     }
-  }
-  public void layoutContainer(Container parent) {
-    synchronized (parent.getTreeLock()) {
-      JPane pane = null;
-      boolean batch = false;
-      if(parent instanceof JPane) {
-        pane = (JPane)parent;
-        batch = pane.isBatch();
-        pane.setBatch(true, "StackedLayout");
-      } else if(parent instanceof Panel) {
-        pane = ((Panel)parent).getPane();
-        batch = pane.isBatch();
-        pane.setBatch(true, "StackedLayout");
-      }
-      Insets insets = parent.getInsets();
-      Rectangle rect = parent.getBounds();
-      int ncomponents = parent.getComponentCount();
-      int x, y, w, h;
-      x = rect.x + insets.left;
-      y = rect.y + insets.top;
-      w = rect.width - (insets.left + insets.right);
-      h = rect.height - (insets.top + insets.bottom);
-      for(int i=0; i < ncomponents; i++) {
-        parent.getComponent(i).setBounds(x, y, w, h);
-      }
-      if(!batch) pane.setBatch(false, "StackedLayout");
+    public void layoutContainer(Container parent) {
+        synchronized (parent.getTreeLock()) {
+            JPane pane = null;
+            boolean batch = false;
+            if(parent instanceof JPane) {
+                pane = (JPane)parent;
+                batch = pane.isBatch();
+                pane.setBatch(true, "StackedLayout");
+            } else if(parent instanceof Panel) {
+                pane = ((Panel)parent).getPane();
+                batch = pane.isBatch();
+                pane.setBatch(true, "StackedLayout");
+            }
+            Insets insets = parent.getInsets();
+            Rectangle rect = parent.getBounds();
+            int ncomponents = parent.getComponentCount();
+            int x, y, w, h;
+            x = rect.x + insets.left;
+            y = rect.y + insets.top;
+            w = rect.width - (insets.left + insets.right);
+            h = rect.height - (insets.top + insets.bottom);
+            for(int i=0; i < ncomponents; i++) {
+                parent.getComponent(i).setBounds(x, y, w, h);
+            }
+            if(!batch) pane.setBatch(false, "StackedLayout");
+        }
     }
-  }
-  public void removeLayoutComponent(Component comp) {
-  }
-  public void addLayoutComponent(String name, Component comp) {
-  }
+    public void removeLayoutComponent(Component comp) {
+    }
+    public void addLayoutComponent(String name, Component comp) {
+    }
 }

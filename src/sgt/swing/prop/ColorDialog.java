@@ -21,110 +21,110 @@ import javax.swing.border.*;
  * @since 3.0
  **/
 public class ColorDialog extends JDialog {
-  private JPanel panel1 = new JPanel();
-  private JColorChooser colorChooserPanel = new JColorChooser();
-  private JPanel alphaPanel = new JPanel();
-  private JPanel buttonPanel = new JPanel();
-  private JButton cancelButton = new JButton();
-  private JButton okButton = new JButton();
-  private TitledBorder titledBorder1;
-  private JLabel jLabel1 = new JLabel();
-  private Border border1;
-  private GridBagLayout gridBagLayout1 = new GridBagLayout();
-  private JTextField alphaTF = new JTextField();
-  private GridBagLayout gridBagLayout2 = new GridBagLayout();
+    private JPanel panel1 = new JPanel();
+    private JColorChooser colorChooserPanel = new JColorChooser();
+    private JPanel alphaPanel = new JPanel();
+    private JPanel buttonPanel = new JPanel();
+    private JButton cancelButton = new JButton();
+    private JButton okButton = new JButton();
+    private TitledBorder titledBorder1;
+    private JLabel jLabel1 = new JLabel();
+    private Border border1;
+    private GridBagLayout gridBagLayout1 = new GridBagLayout();
+    private JTextField alphaTF = new JTextField();
+    private GridBagLayout gridBagLayout2 = new GridBagLayout();
 
-  private Color color_ = null;
+    private Color color_ = null;
 
-  public ColorDialog(Dialog dialog,  String title, boolean modal) {
-    super(dialog, title, modal);
-    init(dialog);
-  }
-
-  public ColorDialog(Frame frame, String title, boolean modal) {
-    super(frame, title, modal);
-    init(frame);
-  }
-
-  private void init(Window win) {
-    try {
-      jbInit();
-      pack();
+    public ColorDialog(Dialog dialog,  String title, boolean modal) {
+        super(dialog, title, modal);
+        init(dialog);
     }
-    catch(Exception ex) {
-      ex.printStackTrace();
+
+    public ColorDialog(Frame frame, String title, boolean modal) {
+        super(frame, title, modal);
+        init(frame);
     }
-    if(win != null) {
-      Rectangle fBounds = win.getBounds();
-      Point fLoc = win.getLocationOnScreen();
-      Rectangle bounds = getBounds();
-      int x = fLoc.x + fBounds.width/2 - bounds.width/2;
-      int y = fLoc.y + fBounds.height/2 - bounds.height/2;
-      setLocation(x, y);
+
+    private void init(Window win) {
+        try {
+            jbInit();
+            pack();
+        }
+        catch(Exception ex) {
+            ex.printStackTrace();
+        }
+        if(win != null) {
+            Rectangle fBounds = win.getBounds();
+            Point fLoc = win.getLocationOnScreen();
+            Rectangle bounds = getBounds();
+            int x = fLoc.x + fBounds.width/2 - bounds.width/2;
+            int y = fLoc.y + fBounds.height/2 - bounds.height/2;
+            setLocation(x, y);
+        }
     }
-  }
 
-  public ColorDialog() {
-    this((Frame)null, "", false);
-  }
+    public ColorDialog() {
+        this((Frame)null, "", false);
+    }
 
-  private void jbInit() throws Exception {
-    titledBorder1 = new TitledBorder("");
-    border1 = BorderFactory.createLineBorder(Color.gray,1);
-    panel1.setLayout(gridBagLayout1);
-    buttonPanel.setBorder(BorderFactory.createEtchedBorder());
-    cancelButton.setText("Cancel");
-    cancelButton.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        cancelButton_actionPerformed(e);
-      }
-    });
-    okButton.setText("OK");
-    okButton.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        okButton_actionPerformed(e);
-      }
-    });
-    alphaPanel.setBorder(titledBorder1);
-    alphaPanel.setLayout(gridBagLayout2);
-    titledBorder1.setTitle("Alpha Channel");
-    titledBorder1.setBorder(border1);
-    jLabel1.setText("Alpha");
-    alphaTF.setText("0");
-    alphaTF.setColumns(5);
-    getContentPane().add(panel1);
-    panel1.add(colorChooserPanel,    new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0
-            ,GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-    panel1.add(alphaPanel,    new GridBagConstraints(0, 1, 1, 1, 1.0, 1.0
-            ,GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 5, 5, 5), 0, 0));
-    alphaPanel.add(jLabel1,   new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0
-            ,GridBagConstraints.EAST, GridBagConstraints.NONE, new Insets(5, 10, 5, 5), 0, 0));
-    alphaPanel.add(alphaTF,    new GridBagConstraints(1, 0, 1, 1, 1.0, 0.0
-            ,GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 5, 5, 15), 0, 0));
-    panel1.add(buttonPanel,     new GridBagConstraints(0, 2, 1, 1, 1.0, 1.0
-            ,GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 5, 5, 5), 0, 0));
-    buttonPanel.add(okButton, null);
-    buttonPanel.add(cancelButton, null);
-  }
+    private void jbInit() throws Exception {
+        titledBorder1 = new TitledBorder("");
+        border1 = BorderFactory.createLineBorder(Color.gray,1);
+        panel1.setLayout(gridBagLayout1);
+        buttonPanel.setBorder(BorderFactory.createEtchedBorder());
+        cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    cancelButton_actionPerformed(e);
+                }
+            });
+        okButton.setText("OK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    okButton_actionPerformed(e);
+                }
+            });
+        alphaPanel.setBorder(titledBorder1);
+        alphaPanel.setLayout(gridBagLayout2);
+        titledBorder1.setTitle("Alpha Channel");
+        titledBorder1.setBorder(border1);
+        jLabel1.setText("Alpha");
+        alphaTF.setText("0");
+        alphaTF.setColumns(5);
+        getContentPane().add(panel1);
+        panel1.add(colorChooserPanel,    new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0
+                                                                ,GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel1.add(alphaPanel,    new GridBagConstraints(0, 1, 1, 1, 1.0, 1.0
+                                                         ,GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 5, 5, 5), 0, 0));
+        alphaPanel.add(jLabel1,   new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0
+                                                         ,GridBagConstraints.EAST, GridBagConstraints.NONE, new Insets(5, 10, 5, 5), 0, 0));
+        alphaPanel.add(alphaTF,    new GridBagConstraints(1, 0, 1, 1, 1.0, 0.0
+                                                          ,GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 5, 5, 15), 0, 0));
+        panel1.add(buttonPanel,     new GridBagConstraints(0, 2, 1, 1, 1.0, 1.0
+                                                           ,GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 5, 5, 5), 0, 0));
+        buttonPanel.add(okButton, null);
+        buttonPanel.add(cancelButton, null);
+    }
 
-  void cancelButton_actionPerformed(ActionEvent e) {
-    setVisible(false);
-  }
+    void cancelButton_actionPerformed(ActionEvent e) {
+        setVisible(false);
+    }
 
-  void okButton_actionPerformed(ActionEvent e) {
-    Color temp = colorChooserPanel.getColor();
-    int alpha = Integer.parseInt(alphaTF.getText());
-    color_ = new Color(temp.getRed(), temp.getGreen(), temp.getBlue(), alpha);
-    setVisible(false);
-  }
+    void okButton_actionPerformed(ActionEvent e) {
+        Color temp = colorChooserPanel.getColor();
+        int alpha = Integer.parseInt(alphaTF.getText());
+        color_ = new Color(temp.getRed(), temp.getGreen(), temp.getBlue(), alpha);
+        setVisible(false);
+    }
 
-  public void setColor(Color color) {
-    color_ = color;
-    colorChooserPanel.setColor(color_);
-    alphaTF.setText(Integer.toString(color_.getAlpha()));
-  }
+    public void setColor(Color color) {
+        color_ = color;
+        colorChooserPanel.setColor(color_);
+        alphaTF.setText(Integer.toString(color_.getAlpha()));
+    }
 
-  public Color getColor() {
-    return color_;
-  }
+    public Color getColor() {
+        return color_;
+    }
 }

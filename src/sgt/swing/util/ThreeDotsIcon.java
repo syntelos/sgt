@@ -15,65 +15,65 @@ import javax.swing.Icon;
  */
 
 public class ThreeDotsIcon implements Icon {
-  private Color color_;
-  private int size_;
-  private int space_;
-  private int dot_;
-  private int y_;
+    private Color color_;
+    private int size_;
+    private int space_;
+    private int dot_;
+    private int y_;
 
-  public ThreeDotsIcon() {
-    this(Color.black, 14);
-  }
-
-  public ThreeDotsIcon(Color color) {
-    this(color, 14);
-  }
-
-  public ThreeDotsIcon(Color color, int size) {
-    color_ = color;
-    if(size <= 14) {
-      dot_ = 2;
-      space_ = 2;
-      size_ = 14;
-    } else if(size > 14 && size <= 17) {
-      dot_ = 3;
-      space_ = 2;
-      size_ = 17;
-    } else if(size > 17 && size <= 20) {
-      dot_ = 4;
-      space_ = 2;
-      size_ = 20;
-    } else {
-      size_ = size;
-      dot_ = size_/5;
-      space_ = dot_/2;
-      if(space_ <= 1) space_ = 2;
-      dot_ = (size_ - 4*space_)/3;
+    public ThreeDotsIcon() {
+        this(Color.black, 14);
     }
-    y_ = (size_ - dot_)/2;
-  }
 
-  public void paintIcon(Component c, Graphics g, int x, int y) {
-    int xt, yt;
-    Color save = g.getColor();
-    g.setColor(color_);
+    public ThreeDotsIcon(Color color) {
+        this(color, 14);
+    }
 
-    xt = x + space_;
-    yt = y + y_;
-    g.fillOval(xt, yt, dot_, dot_);
-    xt = xt + space_ + dot_;
-    g.fillOval(xt, yt, dot_, dot_);
-    xt = xt + space_ + dot_;
-    g.fillOval(xt, yt, dot_, dot_);
+    public ThreeDotsIcon(Color color, int size) {
+        color_ = color;
+        if(size <= 14) {
+            dot_ = 2;
+            space_ = 2;
+            size_ = 14;
+        } else if(size > 14 && size <= 17) {
+            dot_ = 3;
+            space_ = 2;
+            size_ = 17;
+        } else if(size > 17 && size <= 20) {
+            dot_ = 4;
+            space_ = 2;
+            size_ = 20;
+        } else {
+            size_ = size;
+            dot_ = size_/5;
+            space_ = dot_/2;
+            if(space_ <= 1) space_ = 2;
+            dot_ = (size_ - 4*space_)/3;
+        }
+        y_ = (size_ - dot_)/2;
+    }
 
-    g.setColor(save);
-  }
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+        int xt, yt;
+        Color save = g.getColor();
+        g.setColor(color_);
 
-  public int getIconWidth() {
-    return size_;
-  }
+        xt = x + space_;
+        yt = y + y_;
+        g.fillOval(xt, yt, dot_, dot_);
+        xt = xt + space_ + dot_;
+        g.fillOval(xt, yt, dot_, dot_);
+        xt = xt + space_ + dot_;
+        g.fillOval(xt, yt, dot_, dot_);
 
-  public int getIconHeight() {
-    return size_;
-  }
+        g.setColor(save);
+    }
+
+    public int getIconWidth() {
+        return size_;
+    }
+
+    public int getIconHeight() {
+        return size_;
+    }
 }

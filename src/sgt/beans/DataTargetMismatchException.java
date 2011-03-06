@@ -21,11 +21,11 @@ package sgt.beans;
  **/
 public class DataTargetMismatchException extends Exception {
 
-  public DataTargetMismatchException() {
-    super();
-  }
+    public DataTargetMismatchException() {
+        super();
+    }
 
-  public DataTargetMismatchException(String message) {
-    super(message);
-  }
+    public DataTargetMismatchException(String message) {
+        super(message);
+    }
 }

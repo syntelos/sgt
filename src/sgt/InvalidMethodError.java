@@ -17,10 +17,10 @@ package  sgt;
  * @version $Revision: 1.1.1.1 $, $Date: 1999/12/21 19:23:56 $
  */
 public class InvalidMethodError extends java.lang.Error {
-  public InvalidMethodError() {
-    super();
-}
-  public InvalidMethodError(String s) {
-    super(s);
-  }
+    public InvalidMethodError() {
+        super();
+    }
+    public InvalidMethodError(String s) {
+        super(s);
+    }
 }

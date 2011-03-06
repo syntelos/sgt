@@ -20,19 +20,19 @@ public class LayerStack extends Container implements LayerControl {
     public LayerStack() {
         setLayout(new StackedLayout());
     }
-  public void setPane(AbstractPane pane) {
-    /**@todo Implement this sgt.LayerControl method*/
-    throw new java.lang.UnsupportedOperationException("Method setPane() not yet implemented.");
-  }
-  public void draw(Graphics g) {
-    /**@todo Implement this sgt.LayerControl method*/
-    throw new java.lang.UnsupportedOperationException("Method draw() not yet implemented.");
-  }
-  public void drawDraggableItems(Graphics g) {
-    /**@todo Implement this sgt.LayerControl method*/
-    throw new java.lang.UnsupportedOperationException("Method drawDraggableItems() not yet implemented.");
-  }
-  public String getId() {
-    return getName();
-  }
+    public void setPane(AbstractPane pane) {
+        /**@todo Implement this sgt.LayerControl method*/
+        throw new java.lang.UnsupportedOperationException("Method setPane() not yet implemented.");
+    }
+    public void draw(Graphics g) {
+        /**@todo Implement this sgt.LayerControl method*/
+        throw new java.lang.UnsupportedOperationException("Method draw() not yet implemented.");
+    }
+    public void drawDraggableItems(Graphics g) {
+        /**@todo Implement this sgt.LayerControl method*/
+        throw new java.lang.UnsupportedOperationException("Method drawDraggableItems() not yet implemented.");
+    }
+    public String getId() {
+        return getName();
+    }
 }

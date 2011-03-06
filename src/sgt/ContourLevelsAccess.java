@@ -19,7 +19,7 @@ package sgt;
  */
 public interface ContourLevelsAccess {
 
-  ContourLevels getContourLevels();
+    ContourLevels getContourLevels();
 
-  void setContourLevels(ContourLevels contourLevels);
+    void setContourLevels(ContourLevels contourLevels);
 }

@@ -14,11 +14,11 @@ package sgt.plot;
  * @since 2.x
  */
 final public class PlotPaneMode {
-  /**
-   * @supplierCardinality
-   */
-  private static PlotPaneMode[] values_ = new PlotPaneMode[4];
-  private int value_;
+    /**
+     * @supplierCardinality
+     */
+    private static PlotPaneMode[] values_ = new PlotPaneMode[4];
+    private int value_;
     public final static int _ZOOM_DOMAIN = 0;
     public final static PlotPaneMode ZOOM_DOMAIN = new PlotPaneMode(_ZOOM_DOMAIN);
     public final static int _SELECT_OBJECT = 1;
@@ -28,14 +28,14 @@ final public class PlotPaneMode {
     public final static int _DRAG_AND_DROP = 3;
     public final static PlotPaneMode DRAG_AND_DROP = new PlotPaneMode(_DRAG_AND_DROP);
 
-  protected PlotPaneMode(int value) {
-    values_[value] = this;
-    value_ = value;
-  }
-  public int getValue() {
-    return value_;
-  }
-  public PlotPaneMode from_int(int value) {
-    return values_[value];
-  }
+    protected PlotPaneMode(int value) {
+        values_[value] = this;
+        value_ = value;
+    }
+    public int getValue() {
+        return value_;
+    }
+    public PlotPaneMode from_int(int value) {
+        return values_[value];
+    }
 }

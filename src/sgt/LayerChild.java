@@ -23,79 +23,79 @@ import java.awt.Rectangle;
  */
 public interface LayerChild extends Selectable {
 
-  /**
-   * Draw the <code>LayerChild</code>.
-   * 
-   * @param g Graphics context
-   * @exception LayerNotFoundException No layer is associated with the <code>LayerChild</code>.
-   */
-  public void draw(Graphics g) throws LayerNotFoundException ;
+    /**
+     * Draw the <code>LayerChild</code>.
+     * 
+     * @param g Graphics context
+     * @exception LayerNotFoundException No layer is associated with the <code>LayerChild</code>.
+     */
+    public void draw(Graphics g) throws LayerNotFoundException ;
 
-  /**
-   * Get the associated <code>Layer</code>.
-   * 
-   * @return Associated layer
-   */
-  public Layer getLayer();
+    /**
+     * Get the associated <code>Layer</code>.
+     * 
+     * @return Associated layer
+     */
+    public Layer getLayer();
 
-  /**
-   * Associate a <code>Layer</code> with the <code>LayerChild</code>.
-   * 
-   * @param l Parent layer.
-   */
-  public void setLayer(Layer l);
+    /**
+     * Associate a <code>Layer</code> with the <code>LayerChild</code>.
+     * 
+     * @param l Parent layer.
+     */
+    public void setLayer(Layer l);
 
-  /**
-   * Get the identifier.
-   * 
-   * @return <code>LayerChild</code> identification.
-   */
-  public String getId();
+    /**
+     * Get the identifier.
+     * 
+     * @return <code>LayerChild</code> identification.
+     */
+    public String getId();
 
-  /**
-   * Set the identifier.
-   * 
-   * @param id <code>LayerChild</code> identification.
-   */
-  public void setId(String id);
+    /**
+     * Set the identifier.
+     * 
+     * @param id <code>LayerChild</code> identification.
+     */
+    public void setId(String id);
 
-  /**
-   * Create a copy of the <code>LayerChild</code>.
-   * 
-   * @return A copy of the <code>LayerChild</code>.
-   */
-  public LayerChild copy();
+    /**
+     * Create a copy of the <code>LayerChild</code>.
+     * 
+     * @return A copy of the <code>LayerChild</code>.
+     */
+    public LayerChild copy();
 
-  /**
-   * Return a string that represents the <code>LayerChild</code>.
-   * 
-   * @return Stringified <code>LayerChild</code> representation.
-   */
-  public String toString();
+    /**
+     * Return a string that represents the <code>LayerChild</code>.
+     * 
+     * @return Stringified <code>LayerChild</code> representation.
+     */
+    public String toString();
 
-  /**
-   * Check if <code>LayerChild</code> is visible.
-   *
-   * @since 2.0
-   * @return true if visible
-   */
-  public boolean isVisible();
+    /**
+     * Check if <code>LayerChild</code> is visible.
+     *
+     * @since 2.0
+     * @return true if visible
+     */
+    public boolean isVisible();
 
-  /**
-   * Set visibility for a <code>LayerChild</code>.
-   *
-   * @since 2.0
-   * @param visible visible if true
-   */
-  public void setVisible(boolean visible);
-  /**
-   * Get <code>AbstractPane</code> of the <code>LayerChild</code>.
-   * @since 2.0
-   */
-  public AbstractPane getPane();
-  /**
-   * Used by sgt internally.
-   * @since 2.0
-   */
-  public void modified(String mess);
+    /**
+     * Set visibility for a <code>LayerChild</code>.
+     *
+     * @since 2.0
+     * @param visible visible if true
+     */
+    public void setVisible(boolean visible);
+    /**
+     * Get <code>AbstractPane</code> of the <code>LayerChild</code>.
+     * @since 2.0
+     */
+    public AbstractPane getPane();
+    /**
+     * Used by sgt internally.
+     * @since 2.0
+     */
+    public void modified(String mess);
 }

@@ -20,13 +20,13 @@ import java.awt.Insets;
  * @since SGT 3.0
  **/
 public class ThreeDotsButton extends JButton {
-  private static ThreeDotsIcon dotsIcon_ = new ThreeDotsIcon(Color.black);
+    private static ThreeDotsIcon dotsIcon_ = new ThreeDotsIcon(Color.black);
 
-  public ThreeDotsButton() {
-    super();
-    setIcon(dotsIcon_);
-    if(!MRJUtil.isAquaLookAndFeel()) {
-      setMargin(new Insets(0, 0, 0, 0));
+    public ThreeDotsButton() {
+        super();
+        setIcon(dotsIcon_);
+        if(!MRJUtil.isAquaLookAndFeel()) {
+            setMargin(new Insets(0, 0, 0, 0));
+        }
     }
-   }
 }

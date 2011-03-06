@@ -28,13 +28,13 @@ import java.io.Serializable;
  *     <DD><CODE>Color</CODE> is determined from an array,
  *         the index computed from a <CODE>Transform</CODE>.
  *   <DT><CODE>TransformColorMap</CODE></DT>
- *	 <DD>Red, green, blue <CODE>Color</CODE> components
+ *       <DD>Red, green, blue <CODE>Color</CODE> components
  *         are computed from <CODE>Transform</CODE>s.
  *   <DT><CODE>CLIndexedColorMap</CODE></DT>
- *	 <DD><CODE>Color</CODE> is determined from and array,
+ *       <DD><CODE>Color</CODE> is determined from and array,
  *         the index computed from a <CODE>ContourLevels</CODE> object.
  *   <DT><CODE>CLTransformColorMap</CODE></DT>
- *	 <DD>Red, green, blue <CODE>Color</CODE> components
+ *       <DD>Red, green, blue <CODE>Color</CODE> components
  *         are computed from <CODE>Transform</CODE>s, using
  *         the index computed from a <CODE>ContourLevels</CODE>
  *         object divided by the maximum index value.
@@ -46,90 +46,90 @@ import java.io.Serializable;
  * @since 1.0
  */
 abstract public class ColorMap implements Cloneable, PropertyChangeListener, Serializable {
-  private PropertyChangeSupport changes_ = new PropertyChangeSupport(this);
-  protected boolean batch_ = false;
-  protected boolean local_ = true;
-  protected boolean modified_ = false;
-  abstract public ColorMap copy();
-  /**
-   * Get a <code>Color</code>.
-   *
-   * @param val Value
-   * @return Color
-   *
-   */
-  abstract public Color getColor(double val);
+    private PropertyChangeSupport changes_ = new PropertyChangeSupport(this);
+    protected boolean batch_ = false;
+    protected boolean local_ = true;
+    protected boolean modified_ = false;
+    abstract public ColorMap copy();
+    /**
+     * Get a <code>Color</code>.
+     *
+     * @param val Value
+     * @return Color
+     *
+     */
+    abstract public Color getColor(double val);
 
-  /**
-   * Get the current user range for the <code>Transform</code>s or
-   * <code>ContourLevel</code>.
-   *
-   * @return user range
-   */
-  abstract public Range2D getRange();
-  /**
-   * Test for equality of color maps.
-   */
-  abstract public boolean equals(ColorMap cm);
-  /**
-   * Add listener to changes in <code>ColorMap</code> properties.
-   */
-  public void addPropertyChangeListener(PropertyChangeListener listener) {
-    changes_.addPropertyChangeListener(listener);
-  }
-  /**
-   * Remove listener.
-   */
-  public void removePropertyChangeListener(PropertyChangeListener listener) {
-    changes_.removePropertyChangeListener(listener);
-  }
-  public void propertyChange(PropertyChangeEvent evt) {
-    if(Debug.EVENT) {
-      System.out.println("ColorMap: " + evt);
-      System.out.println("          " + evt.getPropertyName());
+    /**
+     * Get the current user range for the <code>Transform</code>s or
+     * <code>ContourLevel</code>.
+     *
+     * @return user range
+     */
+    abstract public Range2D getRange();
+    /**
+     * Test for equality of color maps.
+     */
+    abstract public boolean equals(ColorMap cm);
+    /**
+     * Add listener to changes in <code>ColorMap</code> properties.
+     */
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        changes_.addPropertyChangeListener(listener);
     }
-    firePropertyChange(evt.getPropertyName(),
-                       evt.getOldValue(),
-                       evt.getNewValue());
-  }
-
-  protected void firePropertyChange(String name, Object oldValue, Object newValue) {
-    if(batch_) {
-      modified_ = true;
-      return;
+    /**
+     * Remove listener.
+     */
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        changes_.removePropertyChangeListener(listener);
     }
-    AttributeChangeEvent ace = new AttributeChangeEvent(this, name,
-                                                        oldValue, newValue,
-                                                        local_);
-    changes_.firePropertyChange(ace);
-    modified_ = false;
-  }
+    public void propertyChange(PropertyChangeEvent evt) {
+        if(Debug.EVENT) {
+            System.out.println("ColorMap: " + evt);
+            System.out.println("          " + evt.getPropertyName());
+        }
+        firePropertyChange(evt.getPropertyName(),
+                           evt.getOldValue(),
+                           evt.getNewValue());
+    }
 
-  /**
-   * Batch the changes to the ColorMap.
-   *
-   * @since 3.0
-   */
-  public void setBatch(boolean batch) {
-    setBatch(batch, true);
-  }
-  /**
-   * Batch the changes to the ColorMap and set local flag.
-   * Determines whether <code>AttributeChangeEvent</code> will be set local.
-   *
-   * @since 3.0
-   */
-  public void setBatch(boolean batch, boolean local) {
-    local_ = local;
-    batch_ = batch;
-    if(!batch && modified_) firePropertyChange("batch", Boolean.TRUE, Boolean.FALSE);
-  }
-  /**
-   * Is the attribute in batch mode?
-   *
-   * @since 3.0
-   */
-  public boolean isBatch() {
-    return batch_;
-  }
+    protected void firePropertyChange(String name, Object oldValue, Object newValue) {
+        if(batch_) {
+            modified_ = true;
+            return;
+        }
+        AttributeChangeEvent ace = new AttributeChangeEvent(this, name,
+                                                            oldValue, newValue,
+                                                            local_);
+        changes_.firePropertyChange(ace);
+        modified_ = false;
+    }
+
+    /**
+     * Batch the changes to the ColorMap.
+     *
+     * @since 3.0
+     */
+    public void setBatch(boolean batch) {
+        setBatch(batch, true);
+    }
+    /**
+     * Batch the changes to the ColorMap and set local flag.
+     * Determines whether <code>AttributeChangeEvent</code> will be set local.
+     *
+     * @since 3.0
+     */
+    public void setBatch(boolean batch, boolean local) {
+        local_ = local;
+        batch_ = batch;
+        if(!batch && modified_) firePropertyChange("batch", Boolean.TRUE, Boolean.FALSE);
+    }
+    /**
+     * Is the attribute in batch mode?
+     *
+     * @since 3.0
+     */
+    public boolean isBatch() {
+        return batch_;
+    }
 }

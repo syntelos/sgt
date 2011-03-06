@@ -5,10 +5,10 @@ package sgt.contour;
  * Not implemented.
  */
 public class TreeEnumerator implements java.util.Enumeration {
-  public boolean hasMoreElements() {
-    return false;
-  }
-  public Object nextElement() {
-    return null;
-  }
+    public boolean hasMoreElements() {
+        return false;
+    }
+    public Object nextElement() {
+        return null;
+    }
 }

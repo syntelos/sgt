@@ -57,399 +57,399 @@ import java.awt.print.Printable;
  * @stereotype bean
  **/
 public class Page extends JComponent implements PropertyChangeListener, Serializable, Printable {
-  public static final boolean DEBUG = false;
-  /**
-   * @link aggregation
-   * @supplierCardinality 1
-   * @undirected
-   * @label dataModel
-   */
-  private DataModel dataModel;
+    public static final boolean DEBUG = false;
+    /**
+     * @link aggregation
+     * @supplierCardinality 1
+     * @undirected
+     * @label dataModel
+     */
+    private DataModel dataModel;
 
-  /**
-   * @link aggregation
-   * @supplierCardinality 1
-   * @undirected
-   * @label panelModel
-   */
-  private PanelModel panelModel;
+    /**
+     * @link aggregation
+     * @supplierCardinality 1
+     * @undirected
+     * @label panelModel
+     */
+    private PanelModel panelModel;
 
-  /**
-   *@link aggregation
-   *     @associates <{Panel}>
-   * @supplierCardinality 1..*
-   * @clientCardinality 1
-   * @undirected
-   */
-//  transient private Vector panels_;
+    /**
+     *@link aggregation
+     *     @associates <{Panel}>
+     * @supplierCardinality 1..*
+     * @clientCardinality 1
+     * @undirected
+     */
+    //  transient private Vector panels_;
 
-  /**
-   * @link aggregationByValue
-   * @clientCardinality 1
-   * @supplierCardinality 1
-   * @undirected
-   * @label pane
-   */
-  private JPane pane_;
-  private String name;
-  transient private boolean isDesignTime_ = Beans.isDesignTime();
+    /**
+     * @link aggregationByValue
+     * @clientCardinality 1
+     * @supplierCardinality 1
+     * @undirected
+     * @label pane
+     */
+    private JPane pane_;
+    private String name;
+    transient private boolean isDesignTime_ = Beans.isDesignTime();
 
-  /**
-   * <code>Page</code> constructor.
-   */
-  public Page() {
-    pane_ = new JPane("SGT Bean Pane", new Dimension(200, 200));
-    pane_.addPropertyChangeListener(this);
-    pane_.setBackground(Color.white);
-    pane_.setOpaque(true);
-    this.setOpaque(true);
-    this.setLayout(new BorderLayout());
-    this.setBackground(Color.white);
-    this.add(pane_, BorderLayout.CENTER);
-    pane_.addMouseListener(new PageMouse());
-  }
+    /**
+     * <code>Page</code> constructor.
+     */
+    public Page() {
+        pane_ = new JPane("SGT Bean Pane", new Dimension(200, 200));
+        pane_.addPropertyChangeListener(this);
+        pane_.setBackground(Color.white);
+        pane_.setOpaque(true);
+        this.setOpaque(true);
+        this.setLayout(new BorderLayout());
+        this.setBackground(Color.white);
+        this.add(pane_, BorderLayout.CENTER);
+        pane_.addMouseListener(new PageMouse());
+    }
 
-  /**
-   * Get <code>JPane</code> associated with <code>Page</code>
-   * @return JPane
-   */
-  public JPane getJPane() {
-    return pane_;
-  }
+    /**
+     * Get <code>JPane</code> associated with <code>Page</code>
+     * @return JPane
+     */
+    public JPane getJPane() {
+        return pane_;
+    }
 
-  /**
-   * Get <code>JPane</code> size.
-   * @return JPane size
-   */
-  public Dimension getJPaneSize() {
-    return pane_.getSize();
-  }
+    /**
+     * Get <code>JPane</code> size.
+     * @return JPane size
+     */
+    public Dimension getJPaneSize() {
+        return pane_.getSize();
+    }
 
-  protected void paintComponent(Graphics g) {
-    super.paintComponent(g);
-  }
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+    }
 
-  /**
-   * Get <code>DataModel</code>.
-   * @return DataModel
-   * @see DataModel
-   */
-  public DataModel getDataModel() {
-      return dataModel;
-  }
+    /**
+     * Get <code>DataModel</code>.
+     * @return DataModel
+     * @see DataModel
+     */
+    public DataModel getDataModel() {
+        return dataModel;
+    }
 
-  /**
-   * Set <code>DataModel</code>. <code>DataModel</code> is used to define the
-   * relationship between <code>SGTData</code> and the graphical representation.
-   * @param dataModel DataModel
-   * @see DataModel
-   */
-  public void setDataModel(DataModel dataModel) {
-    if(DEBUG) System.out.println("Page.setDataModel()");
+    /**
+     * Set <code>DataModel</code>. <code>DataModel</code> is used to define the
+     * relationship between <code>SGTData</code> and the graphical representation.
+     * @param dataModel DataModel
+     * @see DataModel
+     */
+    public void setDataModel(DataModel dataModel) {
+        if(DEBUG) System.out.println("Page.setDataModel()");
 
-    DataModel saved = this.dataModel;
-    if(this.dataModel != null) this.dataModel.removePropertyChangeListener(this);
-    if(dataModel != null) dataModel.addPropertyChangeListener(this);
+        DataModel saved = this.dataModel;
+        if(this.dataModel != null) this.dataModel.removePropertyChangeListener(this);
+        if(dataModel != null) dataModel.addPropertyChangeListener(this);
 
-    this.dataModel = dataModel;
-    this.dataModel.setPage(this);
-    if(isDesignTime_) repaint();
-    firePropertyChange("dataModel", saved, this.dataModel);
-  }
+        this.dataModel = dataModel;
+        this.dataModel.setPage(this);
+        if(isDesignTime_) repaint();
+        firePropertyChange("dataModel", saved, this.dataModel);
+    }
 
-  /**
-   * Get <code>PanelModel</code>.
-   * @return PanelModel
-   * @see PanelModel
-   */
-  public PanelModel getPanelModel(){
-    return panelModel;
-  }
+    /**
+     * Get <code>PanelModel</code>.
+     * @return PanelModel
+     * @see PanelModel
+     */
+    public PanelModel getPanelModel(){
+        return panelModel;
+    }
 
-  /**
-   * Set <code>PanelModel</code>.  The <code>PanelModel</code> contains the information
-   * that indicates placement of <code>Panel</code>s and <code>DataGroupLayer</code>s.
-   * @param panelModel PanelModel
-   * @see PanelModel
-   */
-  public void setPanelModel(PanelModel panelModel){
-    if(DEBUG) System.out.println("Page.setPanelModel()");
-    PanelModel saved = this.panelModel;
-    setSize(panelModel.getPageSize());
-    setBackground(panelModel.getPageBackgroundColor());
-    setPreferredSize(panelModel.getPageSize());
-    this.panelModel = panelModel;
-    this.panelModel.setPage(this);
-    updatePanels();
-    if(isDesignTime_) repaint();
-    firePropertyChange("panelModel", saved, this.panelModel);
-  }
+    /**
+     * Set <code>PanelModel</code>.  The <code>PanelModel</code> contains the information
+     * that indicates placement of <code>Panel</code>s and <code>DataGroupLayer</code>s.
+     * @param panelModel PanelModel
+     * @see PanelModel
+     */
+    public void setPanelModel(PanelModel panelModel){
+        if(DEBUG) System.out.println("Page.setPanelModel()");
+        PanelModel saved = this.panelModel;
+        setSize(panelModel.getPageSize());
+        setBackground(panelModel.getPageBackgroundColor());
+        setPreferredSize(panelModel.getPageSize());
+        this.panelModel = panelModel;
+        this.panelModel.setPage(this);
+        updatePanels();
+        if(isDesignTime_) repaint();
+        firePropertyChange("panelModel", saved, this.panelModel);
+    }
 
-  public String getName() {
-    return name;
-  }
-  public void setBackground(Color color) {
-    super.setBackground(color);
-    pane_.setBackground(color);
-  }
-  public void setName(String name) {
-    firePropertyChange("name", this.name, name);
-    this.name = name;
-  }
+    public String getName() {
+        return name;
+    }
+    public void setBackground(Color color) {
+        super.setBackground(color);
+        pane_.setBackground(color);
+    }
+    public void setName(String name) {
+        firePropertyChange("name", this.name, name);
+        this.name = name;
+    }
 
-  public void propertyChange(PropertyChangeEvent evt) {
-    Object source = evt.getSource();
-    String property = evt.getPropertyName();
-    if(source instanceof PanelModel) {
-      if(DEBUG) System.out.println("Page.propertyChange(PanelModel): " + property);
-      updatePanels();
-    } else if(source instanceof DataModel) {
-      Object obj = evt.getNewValue();
-      if(obj instanceof DataHolder) {
-        try {
-          pane_.setBatch(true);
-          ((DataHolder)obj).notifyPanel();
-          pane_.setModified(true, "Page");
-          pane_.setBatch(false);
-        } catch (DataTargetMismatchException dtme) {
-          dtme.printStackTrace();
+    public void propertyChange(PropertyChangeEvent evt) {
+        Object source = evt.getSource();
+        String property = evt.getPropertyName();
+        if(source instanceof PanelModel) {
+            if(DEBUG) System.out.println("Page.propertyChange(PanelModel): " + property);
+            updatePanels();
+        } else if(source instanceof DataModel) {
+            Object obj = evt.getNewValue();
+            if(obj instanceof DataHolder) {
+                try {
+                    pane_.setBatch(true);
+                    ((DataHolder)obj).notifyPanel();
+                    pane_.setModified(true, "Page");
+                    pane_.setBatch(false);
+                } catch (DataTargetMismatchException dtme) {
+                    dtme.printStackTrace();
+                }
+            }
+            if(DEBUG) System.out.println("Page.propertyChange(DataModel): " + property);
+        } else if(source == pane_) {
+            if(property.equals("objectSelected")) {
+
+            } else if(property.equals("zoomRectangle")) {
+
+            }
+            if(DEBUG) System.out.println("Page.propertyChange(JPane): " + property);
+
         }
-      }
-      if(DEBUG) System.out.println("Page.propertyChange(DataModel): " + property);
-    } else if(source == pane_) {
-      if(property.equals("objectSelected")) {
-
-      } else if(property.equals("zoomRectangle")) {
-
-      }
-      if(DEBUG) System.out.println("Page.propertyChange(JPane): " + property);
-
     }
-  }
 
-  private void updatePanels() {
-    // check for deleted PanelHolders
-    setSize(panelModel.getPageSize());
-    setBackground(panelModel.getPageBackgroundColor());
-    setPrintHAlign(panelModel.getPrintHAlign());
-    setPrintVAlign(panelModel.getPrintVAlign());
-    setPrintOrigin(panelModel.getPrintOrigin());
-    setPrintScaleMode(panelModel.getPrintScaleMode());
-    pane_.setBatch(true);
-    Component[] comps = pane_.getComponents();
-    for(int i=0; i < comps.length; i++) {
-      if(comps[i] instanceof Panel) {
-        Panel pnl = (Panel)comps[i];
-        if(!panelModel.hasPanelHolder(pnl.getName())) {
-          pane_.remove(pnl);
+    private void updatePanels() {
+        // check for deleted PanelHolders
+        setSize(panelModel.getPageSize());
+        setBackground(panelModel.getPageBackgroundColor());
+        setPrintHAlign(panelModel.getPrintHAlign());
+        setPrintVAlign(panelModel.getPrintVAlign());
+        setPrintOrigin(panelModel.getPrintOrigin());
+        setPrintScaleMode(panelModel.getPrintScaleMode());
+        pane_.setBatch(true);
+        Component[] comps = pane_.getComponents();
+        for(int i=0; i < comps.length; i++) {
+            if(comps[i] instanceof Panel) {
+                Panel pnl = (Panel)comps[i];
+                if(!panelModel.hasPanelHolder(pnl.getName())) {
+                    pane_.remove(pnl);
+                }
+            }
         }
-      }
-    }
-    // check for new PanelHolders then create otherwise update
-    Panel panel = null;
-    Iterator phIter = panelModel.panelIterator();
-    while(phIter.hasNext()) {
-      PanelHolder ph = (PanelHolder)phIter.next();
-      panel = findPanel(ph);
-      if(panel == null) {
-        panel = new Panel(ph);
-        ph.setInstantiated(true);
-//        panel.setBorder(new EtchedBorder());
-        pane_.add(panel);
-      } else {
-        panel.update();
-      }
-    }
-    validate();
-    pane_.setModified(true, "Page");
-    pane_.setBatch(false);
-  }
-
-  /**
-   * Find the <code>Panel</code> associated with <code>PanelHolder</code>, a
-   * <code>PanelModel</code> component.
-   * @param pHolder PanelHolder
-   * @return Panel
-   * @see PanelModel
-   * @see PanelHolder
-   * @see Panel
-   */
-  public Panel findPanel(PanelHolder pHolder) {
-    Component[] comps = pane_.getComponents();
-    for(int i=0; i < comps.length; i++) {
-      if(comps[i] instanceof Panel) {
-        if(((Panel)comps[i]).getName().equals(pHolder.getId())) return (Panel)comps[i];
-      }
-    }
-    return null;
-  }
-
-  private void pageMousePressed(MouseEvent event) {
-    if(!event.isControlDown()) return;
-
-    pane_.setBatch(true);
-    Component[] comps = pane_.getComponents();
-    for(int i=0; i < comps.length; i++) {
-      if(comps[i] instanceof Panel) {
-        Panel pnl = (Panel)comps[i];
-        pnl.resetZoom(event.getX(), event.getY());
-      }
-    }
-    pane_.setBatch(false);
-  }
-
-  /**
-   * Reset the zoom for all <code>Panel</code>s and <code>DataGroupLayer</code>s.
-   */
-  public void resetZoom() {
-    pane_.setBatch(true);
-    Component[] comps = pane_.getComponents();
-    for(int i=0; i < comps.length; i++) {
-      if(comps[i] instanceof Panel) {
-        Panel pnl = (Panel)comps[i];
-        pnl.resetZoom();
-      }
-    }
-    pane_.setBatch(false);
-  }
-
-  private void pageMouseClicked(MouseEvent event) {
-    if(event.isControlDown()) return;  // ignore zoom resets
-    if(event.isPopupTrigger()) System.out.println("Page.pageMouseClicked(): isPopupTrigger()");
-    Object obj = pane_.getSelectedObject();
-    if((event.getModifiers()&InputEvent.BUTTON3_MASK) != 0) System.out.println("Page.pageMouseClicked(): Button3!");
-  }
-
-  private void pageMouseReleased(MouseEvent event) {
-    //
-    // continue only if button1 is pressed
-    //
-    if((event.getModifiers()&InputEvent.BUTTON1_MASK) == 0) return;
-    Rectangle zm = pane_.getZoomBounds();
-    Point zmStart = pane_.getZoomStart();
-    if(zm.width <= 1 || zm.height <= 1) return;
-
-    pane_.setBatch(true);
-    Component[] comps = pane_.getComponents();
-    for(int i=0; i < comps.length; i++) {
-      if(comps[i] instanceof Panel) {
-        Panel pnl = (Panel)comps[i];
-        pnl.zoomTo(zmStart, zm);
-      }
-    }
-    pane_.setBatch(false);
-  }
-
-  class PageMouse extends MouseAdapter  {
-    public void mousePressed(MouseEvent event) {
-      if(!pane_.isMouseEventsEnabled()) return;
-      pageMousePressed(event);
+        // check for new PanelHolders then create otherwise update
+        Panel panel = null;
+        Iterator phIter = panelModel.panelIterator();
+        while(phIter.hasNext()) {
+            PanelHolder ph = (PanelHolder)phIter.next();
+            panel = findPanel(ph);
+            if(panel == null) {
+                panel = new Panel(ph);
+                ph.setInstantiated(true);
+                //        panel.setBorder(new EtchedBorder());
+                pane_.add(panel);
+            } else {
+                panel.update();
+            }
+        }
+        validate();
+        pane_.setModified(true, "Page");
+        pane_.setBatch(false);
     }
 
-    public void mouseClicked(MouseEvent event) {
-      if(!pane_.isMouseEventsEnabled()) return;
-      pageMouseClicked(event);
+    /**
+     * Find the <code>Panel</code> associated with <code>PanelHolder</code>, a
+     * <code>PanelModel</code> component.
+     * @param pHolder PanelHolder
+     * @return Panel
+     * @see PanelModel
+     * @see PanelHolder
+     * @see Panel
+     */
+    public Panel findPanel(PanelHolder pHolder) {
+        Component[] comps = pane_.getComponents();
+        for(int i=0; i < comps.length; i++) {
+            if(comps[i] instanceof Panel) {
+                if(((Panel)comps[i]).getName().equals(pHolder.getId())) return (Panel)comps[i];
+            }
+        }
+        return null;
     }
 
-    public void mouseReleased(MouseEvent event) {
-      if(!pane_.isMouseEventsEnabled()) return;
-      pageMouseReleased(event);
+    private void pageMousePressed(MouseEvent event) {
+        if(!event.isControlDown()) return;
+
+        pane_.setBatch(true);
+        Component[] comps = pane_.getComponents();
+        for(int i=0; i < comps.length; i++) {
+            if(comps[i] instanceof Panel) {
+                Panel pnl = (Panel)comps[i];
+                pnl.resetZoom(event.getX(), event.getY());
+            }
+        }
+        pane_.setBatch(false);
     }
-  }
-  public int print(Graphics g, PageFormat pf, int pageIndex) throws PrinterException {
-    int result = NO_SUCH_PAGE;
-    Color saveColor = getBackground();
-    if(panelModel.isPrintWhitePage()) {
-      setBackground(Color.white);
+
+    /**
+     * Reset the zoom for all <code>Panel</code>s and <code>DataGroupLayer</code>s.
+     */
+    public void resetZoom() {
+        pane_.setBatch(true);
+        Component[] comps = pane_.getComponents();
+        for(int i=0; i < comps.length; i++) {
+            if(comps[i] instanceof Panel) {
+                Panel pnl = (Panel)comps[i];
+                pnl.resetZoom();
+            }
+        }
+        pane_.setBatch(false);
     }
-    result = pane_.print(g, pf, pageIndex);
-    if(result == PAGE_EXISTS && panelModel.isPrintBorders()) {
-      Component[] comps = pane_.getComponents();
-       for(int i=0; i < comps.length; i++) {
-         if(comps[i] instanceof Panel) {
-           Panel pnl = (Panel)comps[i];
-           Rectangle r = pnl.getBounds();
-           Border bdr = pnl.getBorder();
-           bdr.paintBorder(pnl, g, r.x, r.y, r.width, r.height);
-         }
-       }
+
+    private void pageMouseClicked(MouseEvent event) {
+        if(event.isControlDown()) return;  // ignore zoom resets
+        if(event.isPopupTrigger()) System.out.println("Page.pageMouseClicked(): isPopupTrigger()");
+        Object obj = pane_.getSelectedObject();
+        if((event.getModifiers()&InputEvent.BUTTON3_MASK) != 0) System.out.println("Page.pageMouseClicked(): Button3!");
     }
-    setBackground(saveColor);
-    return result;
-  }
-  /**
-   * Set printing  scale mode.  Legal values are AbstractPane.DEFAULT_SCALE,
-   * AbstractPane.TO_FIT, and AbstractPane.SHRINK_TO_FIT.  Default =
-   * AbstractPane.DEFAULT_SCALE.
-   * @param mode scale mode
-   * @see sgt.AbstractPane#DEFAULT_SCALE AbstractPane.DEFAULT_SCALE
-   * @see sgt.AbstractPane#TO_FIT AbstractPane.TO_FIT
-   * @see sgt.AbstractPane#SHRINK_TO_FIT AbstractPane.SHRINK_TO_FIT
-   */
-  public void setPrintScaleMode(int mode) {
-    pane_.setPageScaleMode(mode);
-  }
-  /**
-   * Get printing scale mode.
-   * @return scale mode
-   */
-  public int  getPrintScaleMode() {
-    return pane_.getPageScaleMode();
-  }
-  /**
-   * Set vertical  alignment for printing.  Legal values are AbstractPane.TOP,
-   * AbstractPane.MIDDLE, AbstractPane.BOTTOM, and AbstractPane.SPECIFIED_LOCATION.
-   * Default = AbstractPane.TOP;
-   * @param pageVAlign vertical alignment
-   * @see sgt.AbstractPane#TOP AbstractPane.TOP
-   * @see sgt.AbstractPane#MIDDLE AbstractPane.MIDDLE
-   * @see sgt.AbstractPane#BOTTOM AbstractPane.BOTTOM
-   * @see sgt.AbstractPane#SPECIFIED_LOCATION AbstractPane.SPECIFIED_LOCATION
-   */
-  public void setPrintVAlign(int vert) {
-    pane_.setPageVAlign(vert);
-  }
-  /**
-   * Set horizontal alignment for printing.  Legal values are AbstractPane.LEFT,
-   * AbstractPane.CENTER, AbstractPane.RIGHT, and AbstractPane.SPECIFIED_LOCATION.
-   * Default = AbstractPane.CENTER.
-   * @param pageHAlign horizontal alignment
-   * @see sgt.AbstractPane#LEFT AbstractPane.LEFT
-   * @see sgt.AbstractPane#CENTER AbstractPane.CENTER
-   * @see sgt.AbstractPane#RIGHT AbstractPane.RIGHT
-   * @see sgt.AbstractPane#SPECIFIED_LOCATION AbstractPane.SPECIFIED_LOCATION
-   */
-  public void setPrintHAlign(int horz) {
-    pane_.setPageHAlign(horz);
-  }
-  /**
-   * Get vertical alignment for printing.
-   * @return vertical alignment.
-   */
-  public int getPrintVAlign() {
-    return pane_.getPageVAlign();
-  }
-  /**
-   * Get horizontal alignment for printing.
-   * @return horizontal alignment
-   */
-  public int getPrintHAlign() {
-    return pane_.getPageHAlign();
-  }
-  /**
-   * Set page origin for printing.  Will be used if the horizontal or vertical alignment is
-   * AbstractPane.SPECIFIED_LOCATION.  Default = (0,0).
-   * @param pageOrigin page origin
-   * @see sgt.AbstractPane AbstractPane
-   */
-  public void setPrintOrigin(Point pt) {
-    pane_.setPageOrigin(pt);
-  }
-  /**
-   * Get page origin for printing.
-   * @return page origin.
-   */
-  public Point  getPrintOrigin() {
-    return pane_.getPageOrigin();
-  }
+
+    private void pageMouseReleased(MouseEvent event) {
+        //
+        // continue only if button1 is pressed
+        //
+        if((event.getModifiers()&InputEvent.BUTTON1_MASK) == 0) return;
+        Rectangle zm = pane_.getZoomBounds();
+        Point zmStart = pane_.getZoomStart();
+        if(zm.width <= 1 || zm.height <= 1) return;
+
+        pane_.setBatch(true);
+        Component[] comps = pane_.getComponents();
+        for(int i=0; i < comps.length; i++) {
+            if(comps[i] instanceof Panel) {
+                Panel pnl = (Panel)comps[i];
+                pnl.zoomTo(zmStart, zm);
+            }
+        }
+        pane_.setBatch(false);
+    }
+
+    class PageMouse extends MouseAdapter  {
+        public void mousePressed(MouseEvent event) {
+            if(!pane_.isMouseEventsEnabled()) return;
+            pageMousePressed(event);
+        }
+
+        public void mouseClicked(MouseEvent event) {
+            if(!pane_.isMouseEventsEnabled()) return;
+            pageMouseClicked(event);
+        }
+
+        public void mouseReleased(MouseEvent event) {
+            if(!pane_.isMouseEventsEnabled()) return;
+            pageMouseReleased(event);
+        }
+    }
+    public int print(Graphics g, PageFormat pf, int pageIndex) throws PrinterException {
+        int result = NO_SUCH_PAGE;
+        Color saveColor = getBackground();
+        if(panelModel.isPrintWhitePage()) {
+            setBackground(Color.white);
+        }
+        result = pane_.print(g, pf, pageIndex);
+        if(result == PAGE_EXISTS && panelModel.isPrintBorders()) {
+            Component[] comps = pane_.getComponents();
+            for(int i=0; i < comps.length; i++) {
+                if(comps[i] instanceof Panel) {
+                    Panel pnl = (Panel)comps[i];
+                    Rectangle r = pnl.getBounds();
+                    Border bdr = pnl.getBorder();
+                    bdr.paintBorder(pnl, g, r.x, r.y, r.width, r.height);
+                }
+            }
+        }
+        setBackground(saveColor);
+        return result;
+    }
+    /**
+     * Set printing  scale mode.  Legal values are AbstractPane.DEFAULT_SCALE,
+     * AbstractPane.TO_FIT, and AbstractPane.SHRINK_TO_FIT.  Default =
+     * AbstractPane.DEFAULT_SCALE.
+     * @param mode scale mode
+     * @see sgt.AbstractPane#DEFAULT_SCALE AbstractPane.DEFAULT_SCALE
+     * @see sgt.AbstractPane#TO_FIT AbstractPane.TO_FIT
+     * @see sgt.AbstractPane#SHRINK_TO_FIT AbstractPane.SHRINK_TO_FIT
+     */
+    public void setPrintScaleMode(int mode) {
+        pane_.setPageScaleMode(mode);
+    }
+    /**
+     * Get printing scale mode.
+     * @return scale mode
+     */
+    public int  getPrintScaleMode() {
+        return pane_.getPageScaleMode();
+    }
+    /**
+     * Set vertical  alignment for printing.  Legal values are AbstractPane.TOP,
+     * AbstractPane.MIDDLE, AbstractPane.BOTTOM, and AbstractPane.SPECIFIED_LOCATION.
+     * Default = AbstractPane.TOP;
+     * @param pageVAlign vertical alignment
+     * @see sgt.AbstractPane#TOP AbstractPane.TOP
+     * @see sgt.AbstractPane#MIDDLE AbstractPane.MIDDLE
+     * @see sgt.AbstractPane#BOTTOM AbstractPane.BOTTOM
+     * @see sgt.AbstractPane#SPECIFIED_LOCATION AbstractPane.SPECIFIED_LOCATION
+     */
+    public void setPrintVAlign(int vert) {
+        pane_.setPageVAlign(vert);
+    }
+    /**
+     * Set horizontal alignment for printing.  Legal values are AbstractPane.LEFT,
+     * AbstractPane.CENTER, AbstractPane.RIGHT, and AbstractPane.SPECIFIED_LOCATION.
+     * Default = AbstractPane.CENTER.
+     * @param pageHAlign horizontal alignment
+     * @see sgt.AbstractPane#LEFT AbstractPane.LEFT
+     * @see sgt.AbstractPane#CENTER AbstractPane.CENTER
+     * @see sgt.AbstractPane#RIGHT AbstractPane.RIGHT
+     * @see sgt.AbstractPane#SPECIFIED_LOCATION AbstractPane.SPECIFIED_LOCATION
+     */
+    public void setPrintHAlign(int horz) {
+        pane_.setPageHAlign(horz);
+    }
+    /**
+     * Get vertical alignment for printing.
+     * @return vertical alignment.
+     */
+    public int getPrintVAlign() {
+        return pane_.getPageVAlign();
+    }
+    /**
+     * Get horizontal alignment for printing.
+     * @return horizontal alignment
+     */
+    public int getPrintHAlign() {
+        return pane_.getPageHAlign();
+    }
+    /**
+     * Set page origin for printing.  Will be used if the horizontal or vertical alignment is
+     * AbstractPane.SPECIFIED_LOCATION.  Default = (0,0).
+     * @param pageOrigin page origin
+     * @see sgt.AbstractPane AbstractPane
+     */
+    public void setPrintOrigin(Point pt) {
+        pane_.setPageOrigin(pt);
+    }
+    /**
+     * Get page origin for printing.
+     * @return page origin.
+     */
+    public Point  getPrintOrigin() {
+        return pane_.getPageOrigin();
+    }
 }

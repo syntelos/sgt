@@ -18,10 +18,10 @@ package  sgt;
  * @since 2.0
  */
 public class DataNotFoundException extends SGException {
-  public DataNotFoundException() {
-    super();
-}
-  public DataNotFoundException(String s) {
-    super(s);
-  }
+    public DataNotFoundException() {
+        super();
+    }
+    public DataNotFoundException(String s) {
+        super(s);
+    }
 }

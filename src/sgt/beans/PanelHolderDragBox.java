@@ -31,183 +31,183 @@ import javax.swing.event.ChangeListener;
  * @since 3.0
  **/
 class PanelHolderDragBox extends DragBox implements ChangeListener {
-  private List dragBox_ = new Vector();
-  private boolean ignoreStateChange_ = false;
+    private List dragBox_ = new Vector();
+    private boolean ignoreStateChange_ = false;
 
-  public PanelHolderDragBox(PanelHolder ph) {
-    super(ph);
-//    ph.setPanelDragBox(this);
-    ignoreStateChange_ = true;
-    pHolder_.addChangeListener(this);
-    Iterator iter = pHolder_.dataGroupIterator();
-    while(iter.hasNext()) {
-      DataGroup dg = (DataGroup)iter.next();
-      DataGroupDragBox agdb = new DataGroupDragBox(dg, pHolder_);
-      AxisHolderDragBox xAxdb = new AxisHolderDragBox(dg.getXAxisHolder(), dg, pHolder_);
-      AxisHolderDragBox yAxdb = new AxisHolderDragBox(dg.getYAxisHolder(), dg, pHolder_);
-      dragBox_.add(xAxdb);
-      dragBox_.add(yAxdb);
-      dragBox_.add(agdb);
-    }
-    iter = pHolder_.labelIterator();
-    while(iter.hasNext()) {
-      LabelDragBox ldb = new LabelDragBox((Label)iter.next(),  pHolder_);
-      dragBox_.add(ldb);
-    }
-    iter = pHolder_.legendIterator();
-    while(iter.hasNext()) {
-      LegendDragBox lgdb = new LegendDragBox((Legend)iter.next(), pHolder_);
-      dragBox_.add(lgdb);
-    }
+    public PanelHolderDragBox(PanelHolder ph) {
+        super(ph);
+        //    ph.setPanelDragBox(this);
+        ignoreStateChange_ = true;
+        pHolder_.addChangeListener(this);
+        Iterator iter = pHolder_.dataGroupIterator();
+        while(iter.hasNext()) {
+            DataGroup dg = (DataGroup)iter.next();
+            DataGroupDragBox agdb = new DataGroupDragBox(dg, pHolder_);
+            AxisHolderDragBox xAxdb = new AxisHolderDragBox(dg.getXAxisHolder(), dg, pHolder_);
+            AxisHolderDragBox yAxdb = new AxisHolderDragBox(dg.getYAxisHolder(), dg, pHolder_);
+            dragBox_.add(xAxdb);
+            dragBox_.add(yAxdb);
+            dragBox_.add(agdb);
+        }
+        iter = pHolder_.labelIterator();
+        while(iter.hasNext()) {
+            LabelDragBox ldb = new LabelDragBox((Label)iter.next(),  pHolder_);
+            dragBox_.add(ldb);
+        }
+        iter = pHolder_.legendIterator();
+        while(iter.hasNext()) {
+            LegendDragBox lgdb = new LegendDragBox((Legend)iter.next(), pHolder_);
+            dragBox_.add(lgdb);
+        }
 
-    for(int i=0; i < handles_.length;  i++) {
-      handles_[i] = new Rectangle(0,0,0,0);
-    }
-    ignoreStateChange_ = false;
-    computeHandles();
-  }
-
-  public PanelHolder getPanelHolder() {
-    return pHolder_;
-  }
-
-  public DragBox[] getDragBoxArray() {
-    DragBox[] dba = new DragBox[1];
-    return (DragBox[])dragBox_.toArray(dba);
-  }
-
-  public Iterator getDragBoxIterator() {
-    return dragBox_.iterator();
-  }
-
-  public void setSelected(boolean sel) {
-    super.setSelected(sel);
-    if(!selected_) {
-      Iterator iter = dragBox_.iterator();
-      while(iter.hasNext()) {
-        ((DragBox)iter.next()).setSelected(sel);
-      }
-    }
-  }
-
-  public void update(String message) {
-//    if(Page.DEBUG) System.out.println("PanelDragBox.update(" + message + ")");
-    computeHandles();
-    Iterator iter = dragBox_.iterator();
-    while(iter.hasNext()) {
-      ((DragBox)iter.next()).update(message);
-    }
-  }
-
-  public void draw(Graphics g) {
-    Color saved = g.getColor();
-    Rectangle bounds = pHolder_.getBounds();
-    if(!pHolder_.isUsePageBackground()) {
-      g.setColor(pHolder_.getBackground());
-      g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
-    }
-    g.setColor(Color.darkGray);
-    g.drawString(pHolder_.getId(), bounds.x + 10, bounds.y + 12);
-    g.drawString("["+bounds.width+"x"+bounds.height+"]",
-                 bounds.x + 10, bounds.y + 22);
-    g.setColor(color_);
-    if(pHolder_.isVisible()) g.drawRect(bounds.x, bounds.y, bounds.width-1, bounds.height-1);
-    if(selected_) {
-      for(int i=0; i < handles_.length; i++) {
-        Rectangle r = handles_[i];
-        g.fillRect(r.x, r.y, r.width-1, r.height-1);
-      }
+        for(int i=0; i < handles_.length;  i++) {
+            handles_[i] = new Rectangle(0,0,0,0);
+        }
+        ignoreStateChange_ = false;
+        computeHandles();
     }
 
-    if(pHolder_.isVisible()) {
-      Iterator iter = dragBox_.iterator();
-      while(iter.hasNext()) {
-        ((DragBox)iter.next()).draw(g);
-      }
+    public PanelHolder getPanelHolder() {
+        return pHolder_;
     }
 
-    g.setColor(saved);
-  }
+    public DragBox[] getDragBoxArray() {
+        DragBox[] dba = new DragBox[1];
+        return (DragBox[])dragBox_.toArray(dba);
+    }
 
-  public String getId() {
-    return pHolder_.getId();
-  }
+    public Iterator getDragBoxIterator() {
+        return dragBox_.iterator();
+    }
 
-  public void setId(String id) {
-    pHolder_.setId(id);
-  }
+    public void setSelected(boolean sel) {
+        super.setSelected(sel);
+        if(!selected_) {
+            Iterator iter = dragBox_.iterator();
+            while(iter.hasNext()) {
+                ((DragBox)iter.next()).setSelected(sel);
+            }
+        }
+    }
 
-  public void setBounds(Rectangle bounds) {
-    ignoreStateChange_ = true;
-    pHolder_.setBounds(bounds);
-    update("PanelDragBox.setBounds()");
-    ignoreStateChange_ = false;
-  }
+    public void update(String message) {
+        //    if(Page.DEBUG) System.out.println("PanelDragBox.update(" + message + ")");
+        computeHandles();
+        Iterator iter = dragBox_.iterator();
+        while(iter.hasNext()) {
+            ((DragBox)iter.next()).update(message);
+        }
+    }
 
-  public Rectangle getBounds() {
-    return pHolder_.getBounds();
-  }
+    public void draw(Graphics g) {
+        Color saved = g.getColor();
+        Rectangle bounds = pHolder_.getBounds();
+        if(!pHolder_.isUsePageBackground()) {
+            g.setColor(pHolder_.getBackground());
+            g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+        }
+        g.setColor(Color.darkGray);
+        g.drawString(pHolder_.getId(), bounds.x + 10, bounds.y + 12);
+        g.drawString("["+bounds.width+"x"+bounds.height+"]",
+                     bounds.x + 10, bounds.y + 22);
+        g.setColor(color_);
+        if(pHolder_.isVisible()) g.drawRect(bounds.x, bounds.y, bounds.width-1, bounds.height-1);
+        if(selected_) {
+            for(int i=0; i < handles_.length; i++) {
+                Rectangle r = handles_[i];
+                g.fillRect(r.x, r.y, r.width-1, r.height-1);
+            }
+        }
 
-  public void setLocation(Point pt) {
-    setLocation(pt.x, pt.y);
-  }
+        if(pHolder_.isVisible()) {
+            Iterator iter = dragBox_.iterator();
+            while(iter.hasNext()) {
+                ((DragBox)iter.next()).draw(g);
+            }
+        }
 
-  public void setLocation(int x, int y) {
-    Rectangle bounds = pHolder_.getBounds();
-    bounds.x = x;
-    bounds.y = y;
-    ignoreStateChange_ = true;
-    pHolder_.setBounds(bounds);
-    update("PanelDragBox.setLocation()");
-    ignoreStateChange_ = false;
-  }
+        g.setColor(saved);
+    }
 
-  public Point getLocation() {
-    Rectangle bounds = pHolder_.getBounds();
-    return new Point(bounds.x, bounds.y);
-  }
+    public String getId() {
+        return pHolder_.getId();
+    }
 
-  public void addDragBox(DataGroup ag) {
-    DataGroupDragBox agdb = new DataGroupDragBox(ag, pHolder_);
-    AxisHolderDragBox xAxdb = new AxisHolderDragBox(ag.getXAxisHolder(), ag, pHolder_);
-    AxisHolderDragBox yAxdb = new AxisHolderDragBox(ag.getYAxisHolder(), ag, pHolder_);
-    agdb.setAxisHolderDB(xAxdb, yAxdb);
-    dragBox_.add(xAxdb);
-    dragBox_.add(yAxdb);
-    dragBox_.add(agdb);
-  }
+    public void setId(String id) {
+        pHolder_.setId(id);
+    }
 
-  public void addDragBox(Legend legend) {
-    LegendDragBox ldb = new LegendDragBox(legend, pHolder_);
-    dragBox_.add(ldb);
-  }
+    public void setBounds(Rectangle bounds) {
+        ignoreStateChange_ = true;
+        pHolder_.setBounds(bounds);
+        update("PanelDragBox.setBounds()");
+        ignoreStateChange_ = false;
+    }
 
-  public void addDragBox(Label label) {
-    LabelDragBox lbdb = new LabelDragBox(label, pHolder_);
-    dragBox_.add(lbdb);
-  }
+    public Rectangle getBounds() {
+        return pHolder_.getBounds();
+    }
 
-  public void removeDragBox(DataGroupDragBox ag) {
-    dragBox_.remove(ag.getXAxisHolderDB());
-    dragBox_.remove(ag.getYAxisHolderDB());
-    dragBox_.remove(ag);
-    update("PanelDragBox.removeDragBox(DataGroupDragBox)");
-  }
+    public void setLocation(Point pt) {
+        setLocation(pt.x, pt.y);
+    }
 
-  public void removeDragBox(LegendDragBox legend) {
-    dragBox_.remove(legend);
-    update("PanelDragBox.removeDragBox(LegendDragBox)");
-  }
+    public void setLocation(int x, int y) {
+        Rectangle bounds = pHolder_.getBounds();
+        bounds.x = x;
+        bounds.y = y;
+        ignoreStateChange_ = true;
+        pHolder_.setBounds(bounds);
+        update("PanelDragBox.setLocation()");
+        ignoreStateChange_ = false;
+    }
 
-  public void removeDragBox(LabelDragBox label) {
-    dragBox_.remove(label);
-    update("PanelDragBox.removeDragBox(LabelDragBox)");
-  }
+    public Point getLocation() {
+        Rectangle bounds = pHolder_.getBounds();
+        return new Point(bounds.x, bounds.y);
+    }
 
-  public void stateChanged(ChangeEvent e) {
-    if(ignoreStateChange_) return;
-    update("PanelDragBox.stateChanged");
-/*    System.out.println("PanelDragBox.stateChanged(" +
-                       e.getSource().getClass().getName() + ")"); */
-  }
+    public void addDragBox(DataGroup ag) {
+        DataGroupDragBox agdb = new DataGroupDragBox(ag, pHolder_);
+        AxisHolderDragBox xAxdb = new AxisHolderDragBox(ag.getXAxisHolder(), ag, pHolder_);
+        AxisHolderDragBox yAxdb = new AxisHolderDragBox(ag.getYAxisHolder(), ag, pHolder_);
+        agdb.setAxisHolderDB(xAxdb, yAxdb);
+        dragBox_.add(xAxdb);
+        dragBox_.add(yAxdb);
+        dragBox_.add(agdb);
+    }
+
+    public void addDragBox(Legend legend) {
+        LegendDragBox ldb = new LegendDragBox(legend, pHolder_);
+        dragBox_.add(ldb);
+    }
+
+    public void addDragBox(Label label) {
+        LabelDragBox lbdb = new LabelDragBox(label, pHolder_);
+        dragBox_.add(lbdb);
+    }
+
+    public void removeDragBox(DataGroupDragBox ag) {
+        dragBox_.remove(ag.getXAxisHolderDB());
+        dragBox_.remove(ag.getYAxisHolderDB());
+        dragBox_.remove(ag);
+        update("PanelDragBox.removeDragBox(DataGroupDragBox)");
+    }
+
+    public void removeDragBox(LegendDragBox legend) {
+        dragBox_.remove(legend);
+        update("PanelDragBox.removeDragBox(LegendDragBox)");
+    }
+
+    public void removeDragBox(LabelDragBox label) {
+        dragBox_.remove(label);
+        update("PanelDragBox.removeDragBox(LabelDragBox)");
+    }
+
+    public void stateChanged(ChangeEvent e) {
+        if(ignoreStateChange_) return;
+        update("PanelDragBox.stateChanged");
+        /*    System.out.println("PanelDragBox.stateChanged(" +
+              e.getSource().getClass().getName() + ")"); */
+    }
 }

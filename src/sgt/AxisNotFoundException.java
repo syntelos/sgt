@@ -17,10 +17,10 @@ package  sgt;
  * @version $Revision: 1.1.1.1 $, $Date: 1999/12/21 19:23:55 $
  */
 public class AxisNotFoundException extends SGException {
-  public AxisNotFoundException() {
-    super();
-}
-  public AxisNotFoundException(String s) {
-    super(s);
-  }
+    public AxisNotFoundException() {
+        super();
+    }
+    public AxisNotFoundException(String s) {
+        super(s);
+    }
 }

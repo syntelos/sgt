@@ -19,10 +19,10 @@ package sgt;
  */
 public class NegativeLogException extends SGException {
 
-  public NegativeLogException() {
-    super();
-  }
-  public NegativeLogException(String message) {
-    super(message);
-  }
+    public NegativeLogException() {
+        super();
+    }
+    public NegativeLogException(String message) {
+        super(message);
+    }
 }

@@ -24,143 +24,143 @@ import sgt.Transform;
  * @version $Revision: 1.3 $, $Date: 2002/12/03 16:35:50 $
  */
 public class LinearTransform implements Transform {
-	Range2D mPhysRange = null;
-	Range2D mUserRange = null;
-	double mPUSlope, mPUYintercept;
-	double mUPSlope, mUPYintercept;
+    Range2D mPhysRange = null;
+    Range2D mUserRange = null;
+    double mPUSlope, mPUYintercept;
+    double mUPSlope, mUPYintercept;
 
-	public LinearTransform(double p1, double p2, double u1, double u2) {
-		setRangeP(p1, p2);
-		setRangeU(u1, u2);
-		computeTransforms();
-	}
+    public LinearTransform(double p1, double p2, double u1, double u2) {
+        setRangeP(p1, p2);
+        setRangeU(u1, u2);
+        computeTransforms();
+    }
 
-	public LinearTransform(Range2D prange, Range2D urange) {
-		setRangeP(prange);
-		setRangeU(urange);
-		computeTransforms();
-	}
+    public LinearTransform(Range2D prange, Range2D urange) {
+        setRangeP(prange);
+        setRangeU(urange);
+        computeTransforms();
+    }
 
-	public LinearTransform() {
-	}
-	
-	/**
-	* Set physical coordinate range.
-	*
-	* @param p1 minimum value, physical coordinates
-	* @param p2 maximum value, physical coordinates
-	* @see LinearTransform
-	**/
-	public void setRangeP(double p1,double p2) {
-		mPhysRange = new Range2D(p1, p2);
-	}
+    public LinearTransform() {
+    }
+        
+    /**
+     * Set physical coordinate range.
+     *
+     * @param p1 minimum value, physical coordinates
+     * @param p2 maximum value, physical coordinates
+     * @see LinearTransform
+     **/
+    public void setRangeP(double p1,double p2) {
+        mPhysRange = new Range2D(p1, p2);
+    }
 
-	/**
-	* Set physical coordinate range.
-	*
-	* @param prange physcial coordinate range
-	* @see Range2D
-	* @see LinearTransform
-	**/
-	public void setRangeP(Range2D prange) {
-		mPhysRange = null;
-		mPhysRange = new Range2D();
-		mPhysRange.add(prange);
-	}
+    /**
+     * Set physical coordinate range.
+     *
+     * @param prange physcial coordinate range
+     * @see Range2D
+     * @see LinearTransform
+     **/
+    public void setRangeP(Range2D prange) {
+        mPhysRange = null;
+        mPhysRange = new Range2D();
+        mPhysRange.add(prange);
+    }
 
-	/**
-	* Get the physical coordinate range.
-	*
-	* @return physcial coordinate range
-	* @see Range2D
-	**/
-	public Range2D getRangeP() {
-		return mPhysRange;
-	}
+    /**
+     * Get the physical coordinate range.
+     *
+     * @return physcial coordinate range
+     * @see Range2D
+     **/
+    public Range2D getRangeP() {
+        return mPhysRange;
+    }
 
-	/**
-	* Set the user coordinate range for double values.
-	*
-	* @param u1 minimum value, user coordinates
-	* @param u2 maximum value, user coordinates
-	* @see LinearTransform
-	**/
-	public void setRangeU(double u1,double u2) {
-		mUserRange = new Range2D(u1, u2);
-	}
+    /**
+     * Set the user coordinate range for double values.
+     *
+     * @param u1 minimum value, user coordinates
+     * @param u2 maximum value, user coordinates
+     * @see LinearTransform
+     **/
+    public void setRangeU(double u1,double u2) {
+        mUserRange = new Range2D(u1, u2);
+    }
 
-	/**
-	* Set the user coordinate range for double values.
-	*
-	* @param urange user coordinate range
-	* @see Range2D
-	* @see LinearTransform
-	**/
-	public void setRangeU(Range2D urange) {
-		mUserRange = null;
-		mUserRange = new Range2D();
-		mUserRange.add(urange);
-		computeTransforms();
-	}
+    /**
+     * Set the user coordinate range for double values.
+     *
+     * @param urange user coordinate range
+     * @see Range2D
+     * @see LinearTransform
+     **/
+    public void setRangeU(Range2D urange) {
+        mUserRange = null;
+        mUserRange = new Range2D();
+        mUserRange.add(urange);
+        computeTransforms();
+    }
 
-	/**
-	* Get the user coordinate range for double values.
-	*
-	* @return user range
-	* @see Range2D
-	**/
-	public Range2D getRangeU() {
-		return mUserRange;
-	}
+    /**
+     * Get the user coordinate range for double values.
+     *
+     * @return user range
+     * @see Range2D
+     **/
+    public Range2D getRangeU() {
+        return mUserRange;
+    }
 
-	/**
-	* Transform from user to physical coordinates.
-	*
-	* @param u user value
-	* @return physical value
-	*/
-	public double getTransP(double u) {
-		return (mUPSlope * u) + mUPYintercept;
-	}
+    /**
+     * Transform from user to physical coordinates.
+     *
+     * @param u user value
+     * @return physical value
+     */
+    public double getTransP(double u) {
+        return (mUPSlope * u) + mUPYintercept;
+    }
 
-	/**
-	* Transform from physical to user coordinates.
-	*
-	* @param p physical value
-	* @return user value
-	*/
-	public double getTransU(double p) {
-		return (mPUSlope *p) + mPUYintercept;
-	}
+    /**
+     * Transform from physical to user coordinates.
+     *
+     * @param p physical value
+     * @return user value
+     */
+    public double getTransU(double p) {
+        return (mPUSlope *p) + mPUYintercept;
+    }
 
-	/**
-	* Add listener for changes to transform properties.
-	*/
-	public void addPropertyChangeListener(PropertyChangeListener listener) {
+    /**
+     * Add listener for changes to transform properties.
+     */
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
 
-	}
+    }
 
-	public void removePropertyChangeListener(PropertyChangeListener listener) {
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
 
-	}
-	
-	public void computeTransforms() {
-		computePULine();
-		computeUPLine();
-	}
-	
-	private void computePULine() {
-		double denom = mPhysRange.start - mPhysRange.end;
-		double num = mUserRange.start - mUserRange.end;
-		mPUSlope = num/denom;
-		mPUYintercept = mUserRange.start - (mPUSlope * mPhysRange.start);
-	}
-	
-	private void computeUPLine() {
-		double num = mPhysRange.start - mPhysRange.end;
-		double denom = mUserRange.start - mUserRange.end;
-		mUPSlope = num/denom;
-		mUPYintercept = mPhysRange.start - (mPUSlope * mUserRange.start);
-	}
+    }
+        
+    public void computeTransforms() {
+        computePULine();
+        computeUPLine();
+    }
+        
+    private void computePULine() {
+        double denom = mPhysRange.start - mPhysRange.end;
+        double num = mUserRange.start - mUserRange.end;
+        mPUSlope = num/denom;
+        mPUYintercept = mUserRange.start - (mPUSlope * mPhysRange.start);
+    }
+        
+    private void computeUPLine() {
+        double num = mPhysRange.start - mPhysRange.end;
+        double denom = mUserRange.start - mUserRange.end;
+        mUPSlope = num/denom;
+        mUPYintercept = mPhysRange.start - (mPUSlope * mUserRange.start);
+    }
 }
 

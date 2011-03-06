@@ -29,114 +29,114 @@ import java.awt.Graphics;
  * @see Icon
  */
 public class PlotMarkIcon extends PlotMark implements Icon {
-  private int size_;
-  private double scale_;
-  /**
-   * Construct a <code>PlotMarkIcon</code>.
-   *
-   * @param mark the plot mark code
-   * @param size plot mark size in device units
-   */
-  public PlotMarkIcon(int mark, int size) {
-    super(mark);
-    setSize(size);
-  }
-  /**
-   * Construct a <code>PlotMarkIcon</code>.
-   *
-   * @param mark the plot mark code
-   */
-  public PlotMarkIcon(int mark) {
-    this(mark, 16);
-  }
-  /**
-   * Set the size of the plot mark in device units.
-   */
-  public void setSize(int size) {
-    size_ = size;
-    scale_ = (double)size_/8.0;
-  }
-  /**
-   * Get the size of the plot mark
-   */
-  public int getSize() {
-    return size_;
-  }
-  /**
-   * Paint the icon at the specified location
-   */
-  public void paintIcon(Component c, Graphics g, int x, int y) {
-    int ib;
-    boolean penf;
-    int movex, movey;
-    int xt, yt;
-    int xtOld, ytOld;
-
-    g.setColor(c.getForeground());
-
-    if(circle_) {
-      xt = (int)(scale_*2.0) + x;
-      yt = (int)(scale_*2.0) + y;
-      int w = (int)(scale_*4.0);
-      if(fill_) {
-        g.fillOval(xt, yt, w, w);
-      } else {
-        g.drawOval(xt, yt, w, w);
-      }
-      return;
+    private int size_;
+    private double scale_;
+    /**
+     * Construct a <code>PlotMarkIcon</code>.
+     *
+     * @param mark the plot mark code
+     * @param size plot mark size in device units
+     */
+    public PlotMarkIcon(int mark, int size) {
+        super(mark);
+        setSize(size);
     }
+    /**
+     * Construct a <code>PlotMarkIcon</code>.
+     *
+     * @param mark the plot mark code
+     */
+    public PlotMarkIcon(int mark) {
+        this(mark, 16);
+    }
+    /**
+     * Set the size of the plot mark in device units.
+     */
+    public void setSize(int size) {
+        size_ = size;
+        scale_ = (double)size_/8.0;
+    }
+    /**
+     * Get the size of the plot mark
+     */
+    public int getSize() {
+        return size_;
+    }
+    /**
+     * Paint the icon at the specified location
+     */
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+        int ib;
+        boolean penf;
+        int movex, movey;
+        int xt, yt;
+        int xtOld, ytOld;
 
-    int[] xl = new int[lastPoint_-firstPoint_];
-    int[] yl = new int[lastPoint_-firstPoint_];
+        g.setColor(c.getForeground());
 
-    double scale;
-
-    xtOld = x;
-    ytOld = y;
-
-    penf = false;
-    int i=0;
-    for(int count=firstPoint_; count < lastPoint_; count++) {
-      ib = table[count];
-      if(ib == 0) {
-        penf=false;
-      } else {
-        movex = (ib>>3);
-        movey = 7 - (ib&7);
-        xt = (int)(scale_*(double)movex) + x;
-        yt = (int)(scale_*(double)movey) + y;
-        if(penf) {
-          if(fill_) {
-            xl[i] = xt;
-            yl[i] = yt;
-            i++;
-          } else {
-            g.drawLine(xtOld, ytOld, xt, yt);
-          }
+        if(circle_) {
+            xt = (int)(scale_*2.0) + x;
+            yt = (int)(scale_*2.0) + y;
+            int w = (int)(scale_*4.0);
+            if(fill_) {
+                g.fillOval(xt, yt, w, w);
+            } else {
+                g.drawOval(xt, yt, w, w);
+            }
+            return;
         }
-        penf = true;
-        xtOld = xt;
-        ytOld = yt;
-      }
-    }
-    if(fill_) g.fillPolygon(xl, yl, i);
-  }
-  /**
-   * Get the icon with
-   */
-  public int getIconWidth() {
-    return size_;
-  }
-  /**
-   * Set the icon height
-   */
-  public int getIconHeight() {
-    return size_;
-  }
 
-  public String toString() {
-    return "PlotMarkIcon: " + mark_;
-  }
+        int[] xl = new int[lastPoint_-firstPoint_];
+        int[] yl = new int[lastPoint_-firstPoint_];
+
+        double scale;
+
+        xtOld = x;
+        ytOld = y;
+
+        penf = false;
+        int i=0;
+        for(int count=firstPoint_; count < lastPoint_; count++) {
+            ib = table[count];
+            if(ib == 0) {
+                penf=false;
+            } else {
+                movex = (ib>>3);
+                movey = 7 - (ib&7);
+                xt = (int)(scale_*(double)movex) + x;
+                yt = (int)(scale_*(double)movey) + y;
+                if(penf) {
+                    if(fill_) {
+                        xl[i] = xt;
+                        yl[i] = yt;
+                        i++;
+                    } else {
+                        g.drawLine(xtOld, ytOld, xt, yt);
+                    }
+                }
+                penf = true;
+                xtOld = xt;
+                ytOld = yt;
+            }
+        }
+        if(fill_) g.fillPolygon(xl, yl, i);
+    }
+    /**
+     * Get the icon with
+     */
+    public int getIconWidth() {
+        return size_;
+    }
+    /**
+     * Set the icon height
+     */
+    public int getIconHeight() {
+        return size_;
+    }
+
+    public String toString() {
+        return "PlotMarkIcon: " + mark_;
+    }
 }
 
 

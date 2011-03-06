@@ -23,50 +23,50 @@ import java.beans.PropertyChangeListener;
  * @since 2.0
  */
 public interface Moveable {
-  /**
-   * Gets the bounding rectangle in device coordinates.
-   *
-   * @since 2.0
-   * @return bounding rectangle
-   */
-  public Rectangle getBounds();
-  /**
-   * Gets the location in device coordinates.
-   *
-   * @since 2.0
-   * @return location
-   */
-  public Point getLocation();
-  /**
-   * Sets the location in device coordinates.
-   * @since 2.0
-   *
-   */
-  public void setLocation(Point point);
-  /**
-   * Returns true if the current state is moveable
-   *
-   * @since 2.0
-   * @return true if moveable
-   */
-  public boolean isMoveable();
-  /**
-   * Set the moveable property.
-   *
-   * @since 2.0
-   * @param select if true object is moveable
-   */
-  public void setMoveable(boolean move);
-  /**
-   * Add a new PropertyChangeListener.  Properties will include
-   * "moved".  Implementation of the following two methods will
-   * normally be via the PropertyChangeSupport class.
-   * @since 2.0
-   */
-  public void addPropertyChangeListener(PropertyChangeListener l);
-  /**
-   * Remove a listener.
-   * @since 2.0
-   */
-  public void removePropertyChangeListener(PropertyChangeListener l);
+    /**
+     * Gets the bounding rectangle in device coordinates.
+     *
+     * @since 2.0
+     * @return bounding rectangle
+     */
+    public Rectangle getBounds();
+    /**
+     * Gets the location in device coordinates.
+     *
+     * @since 2.0
+     * @return location
+     */
+    public Point getLocation();
+    /**
+     * Sets the location in device coordinates.
+     * @since 2.0
+     *
+     */
+    public void setLocation(Point point);
+    /**
+     * Returns true if the current state is moveable
+     *
+     * @since 2.0
+     * @return true if moveable
+     */
+    public boolean isMoveable();
+    /**
+     * Set the moveable property.
+     *
+     * @since 2.0
+     * @param select if true object is moveable
+     */
+    public void setMoveable(boolean move);
+    /**
+     * Add a new PropertyChangeListener.  Properties will include
+     * "moved".  Implementation of the following two methods will
+     * normally be via the PropertyChangeSupport class.
+     * @since 2.0
+     */
+    public void addPropertyChangeListener(PropertyChangeListener l);
+    /**
+     * Remove a listener.
+     * @since 2.0
+     */
+    public void removePropertyChangeListener(PropertyChangeListener l);
 }

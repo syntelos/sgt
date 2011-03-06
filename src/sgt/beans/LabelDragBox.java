@@ -25,77 +25,77 @@ import javax.swing.event.ChangeListener;
  * @since 3.0
  **/
 class LabelDragBox extends DragBox implements ChangeListener {
-  Label label_ = null;
-  Rectangle boundsD_ = null;
+    Label label_ = null;
+    Rectangle boundsD_ = null;
 
-  // deal with angles later
+    // deal with angles later
 
-  public LabelDragBox(Label label, PanelHolder pHolder) {
-    super(pHolder);
-    label_ = label;
-    label_.addChangeListener(this);
-    for(int i=0; i < handles_.length;  i++) {
-      handles_[i] = new Rectangle(0,0,0,0);
+    public LabelDragBox(Label label, PanelHolder pHolder) {
+        super(pHolder);
+        label_ = label;
+        label_.addChangeListener(this);
+        for(int i=0; i < handles_.length;  i++) {
+            handles_[i] = new Rectangle(0,0,0,0);
+        }
+        boundsD_ = toRectangle(label_.getBoundsP());
+        computeHandles();
     }
-    boundsD_ = toRectangle(label_.getBoundsP());
-    computeHandles();
-  }
 
-  public Label getLabel() {
-    return label_;
-  }
-
-  public void setBounds(Rectangle bounds) {
-    boundsD_ = bounds;
-    label_.setBoundsP(toRectangle(boundsD_));
-    computeHandles();
-  }
-
-  public void draw(Graphics g) {
-    Rectangle bounds = getBounds();
-    Color saved = g.getColor();
-    g.setColor(Color.darkGray);
-    g.drawString(getId(), bounds.x + 5, bounds.y + 12);
-    g.setColor(color_);
-    if(label_.isVisible()) g.drawRect(bounds.x, bounds.y, bounds.width-1, bounds.height-1);
-    if(selected_) {
-      for(int i=0; i < handles_.length; i++) {
-        Rectangle r = handles_[i];
-        g.fillRect(r.x, r.y, r.width-1, r.height-1);
-      }
+    public Label getLabel() {
+        return label_;
     }
-    g.setColor(saved);
-  }
 
-  public void setLocation(Point point) {
-    boundsD_.x = point.x;
-    boundsD_.y = point.y;
-    label_.setBoundsP(toRectangle(boundsD_));
-    computeHandles();
-  }
+    public void setBounds(Rectangle bounds) {
+        boundsD_ = bounds;
+        label_.setBoundsP(toRectangle(boundsD_));
+        computeHandles();
+    }
 
-  public Point getLocation() {
-    return new Point(boundsD_.x, boundsD_.y);
-  }
+    public void draw(Graphics g) {
+        Rectangle bounds = getBounds();
+        Color saved = g.getColor();
+        g.setColor(Color.darkGray);
+        g.drawString(getId(), bounds.x + 5, bounds.y + 12);
+        g.setColor(color_);
+        if(label_.isVisible()) g.drawRect(bounds.x, bounds.y, bounds.width-1, bounds.height-1);
+        if(selected_) {
+            for(int i=0; i < handles_.length; i++) {
+                Rectangle r = handles_[i];
+                g.fillRect(r.x, r.y, r.width-1, r.height-1);
+            }
+        }
+        g.setColor(saved);
+    }
 
-  public Rectangle getBounds() {
-    return boundsD_;
-  }
+    public void setLocation(Point point) {
+        boundsD_.x = point.x;
+        boundsD_.y = point.y;
+        label_.setBoundsP(toRectangle(boundsD_));
+        computeHandles();
+    }
 
-  public String getId() {
-    return label_.getId();
-  }
+    public Point getLocation() {
+        return new Point(boundsD_.x, boundsD_.y);
+    }
 
-  public void update(String message) {
-    boundsD_ = toRectangle(label_.getBoundsP());
-    computeHandles();
-   }
+    public Rectangle getBounds() {
+        return boundsD_;
+    }
 
-  public void setId(String id) {
-    label_.setId(id);
-  }
+    public String getId() {
+        return label_.getId();
+    }
 
-  public void stateChanged(ChangeEvent e) {
-    update("LabelDragBox.stateChanged()");
-  }
+    public void update(String message) {
+        boundsD_ = toRectangle(label_.getBoundsP());
+        computeHandles();
+    }
+
+    public void setId(String id) {
+        label_.setId(id);
+    }
+
+    public void stateChanged(ChangeEvent e) {
+        update("LabelDragBox.stateChanged()");
+    }
 }

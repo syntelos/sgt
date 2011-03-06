@@ -32,108 +32,108 @@ import java.awt.Color;
  * @see Icon
  */
 public class ColorSwatchIcon implements Icon, PropertyChangeListener {
-  private int width_;
-  private int height_;
-//  private int size_;
-  private IndexedColor cmap_;
-  private int index_;
-  private Color color_ = null;
-  /**
-   * Construct a <code>ColorSwatchIcon</code>.
-   *
-   * @param cmap indexed color map
-   * @param index color index
-   * @param size swatch size in pixels
-   */
-  public ColorSwatchIcon(IndexedColor cmap, int index, int size) {
-    setSize(size);
-    cmap_ = cmap;
-    index_ = index;
-    ((ColorMap)cmap_).addPropertyChangeListener(this);
-    color_ = cmap_.getColorByIndex(index_);
-  }
-
-  /**
-   * @since version 1.3
-   * @param color
-   * @param size
-   */
-  public ColorSwatchIcon(Color color, int width, int height) {
-    index_ = -1;
-    cmap_ = null;
-    color_ = color;
-    width_ = width;
-    height_ = height;
-  }
-  /**
-   * Get color index.
-   */
-  public int getIndex() {
-    return index_;
-  }
-  /**
-   * Get icon color.
-   */
-  public Color getColor() {
-    return color_;
-  }
-  /**
-   * Change the size of the swatch.
-   */
-  public void setSize(int size) {
-    width_ = size;
-    height_ = size;
-  }
-  /**
-   * Get the size of the icon.
-   */
-//  public int getSize() {
-//    return size_;
-//  }
-  /**
-   * Paint the icon at the specified location
-   */
-  public void paintIcon(Component c, Graphics g, int x, int y) {
-    g.setColor(color_);
-    g.fillRect(x, y, width_, height_);
-  }
-  /**
-   * Get the icon width.
-   */
-  public int getIconWidth() {
-    return width_;
-  }
-  /**
-   * Get the icon heigth.
-   */
-  public int getIconHeight() {
-    return height_;
-  }
-
-  public String toString() {
-    return "ColorSwatchIcon: ";
-  }
-  /**
-   * <code>ColorSwatchIcon</code> listens for changes to the
-   * <code>IndexedColor</code> color map. If changes occur the swatch
-   * is updated.
-   */
-  public void propertyChange(PropertyChangeEvent event) {
-    if(Debug.EVENT) {
-      System.out.println("ColorSwatchIcon: " + event);
-      System.out.println("                 " + event.getPropertyName());
+    private int width_;
+    private int height_;
+    //  private int size_;
+    private IndexedColor cmap_;
+    private int index_;
+    private Color color_ = null;
+    /**
+     * Construct a <code>ColorSwatchIcon</code>.
+     *
+     * @param cmap indexed color map
+     * @param index color index
+     * @param size swatch size in pixels
+     */
+    public ColorSwatchIcon(IndexedColor cmap, int index, int size) {
+        setSize(size);
+        cmap_ = cmap;
+        index_ = index;
+        ((ColorMap)cmap_).addPropertyChangeListener(this);
+        color_ = cmap_.getColorByIndex(index_);
     }
-    if(event.getPropertyName().equals("color")) {
-      //
-      // color has changed
-      //
-      Color ncolor = cmap_.getColorByIndex(index_);
-      if(!ncolor.equals(color_)) {
-        color_ = ncolor;
-        // notify here?
-      }
+
+    /**
+     * @since version 1.3
+     * @param color
+     * @param size
+     */
+    public ColorSwatchIcon(Color color, int width, int height) {
+        index_ = -1;
+        cmap_ = null;
+        color_ = color;
+        width_ = width;
+        height_ = height;
     }
-  }
+    /**
+     * Get color index.
+     */
+    public int getIndex() {
+        return index_;
+    }
+    /**
+     * Get icon color.
+     */
+    public Color getColor() {
+        return color_;
+    }
+    /**
+     * Change the size of the swatch.
+     */
+    public void setSize(int size) {
+        width_ = size;
+        height_ = size;
+    }
+    /**
+     * Get the size of the icon.
+     */
+    //  public int getSize() {
+    //    return size_;
+    //  }
+    /**
+     * Paint the icon at the specified location
+     */
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+        g.setColor(color_);
+        g.fillRect(x, y, width_, height_);
+    }
+    /**
+     * Get the icon width.
+     */
+    public int getIconWidth() {
+        return width_;
+    }
+    /**
+     * Get the icon heigth.
+     */
+    public int getIconHeight() {
+        return height_;
+    }
+
+    public String toString() {
+        return "ColorSwatchIcon: ";
+    }
+    /**
+     * <code>ColorSwatchIcon</code> listens for changes to the
+     * <code>IndexedColor</code> color map. If changes occur the swatch
+     * is updated.
+     */
+    public void propertyChange(PropertyChangeEvent event) {
+        if(Debug.EVENT) {
+            System.out.println("ColorSwatchIcon: " + event);
+            System.out.println("                 " + event.getPropertyName());
+        }
+        if(event.getPropertyName().equals("color")) {
+            //
+            // color has changed
+            //
+            Color ncolor = cmap_.getColorByIndex(index_);
+            if(!ncolor.equals(color_)) {
+                color_ = ncolor;
+                // notify here?
+            }
+        }
+    }
 }
 
 

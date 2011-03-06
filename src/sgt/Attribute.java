@@ -22,54 +22,54 @@ import java.beans.PropertyChangeListener;
  */
 public interface Attribute extends java.io.Serializable {
 
-  /**
-   * Return a printable representation of the object.
-   *
-   * @return Description
-   */
-  public String toString();
-  /**
-   * Add listener for changes to attribute properties. The properties
-   * that can be listened for depend on the implementing class.
-   *
-   * @since 2.0
-   */
-  public void addPropertyChangeListener(PropertyChangeListener listener);
-  /**
-   * Remove change listener.
-   *
-   * @since 2.0
-   */
-  public void removePropertyChangeListener(PropertyChangeListener listener);
-  /**
-   * Set attribute id.
-   *
-   * @since 3.0
-   */
-  public void setId(String id);
-  /**
-   * Get attribute id.
-   *
-   * @since 3.0
-   */
-  public String getId();
-  /**
-   * Batch the changes to the attribute.
-   *
-   * @since 3.0
-   */
-  public void setBatch(boolean batch);
-  /**
-   * Batch the changes to the attribute and set local flag.
-   * Determines whether <code>AttributeChangeEvent</code> will be set local.
-   *
-   * @since 3.0
-   */
-  public void setBatch(boolean batch, boolean local);
-  /**
-   * Is the attribute in batch mode?
-   *
-   * @since 3.0
-   */
-  public boolean isBatch();
+    /**
+     * Return a printable representation of the object.
+     *
+     * @return Description
+     */
+    public String toString();
+    /**
+     * Add listener for changes to attribute properties. The properties
+     * that can be listened for depend on the implementing class.
+     *
+     * @since 2.0
+     */
+    public void addPropertyChangeListener(PropertyChangeListener listener);
+    /**
+     * Remove change listener.
+     *
+     * @since 2.0
+     */
+    public void removePropertyChangeListener(PropertyChangeListener listener);
+    /**
+     * Set attribute id.
+     *
+     * @since 3.0
+     */
+    public void setId(String id);
+    /**
+     * Get attribute id.
+     *
+     * @since 3.0
+     */
+    public String getId();
+    /**
+     * Batch the changes to the attribute.
+     *
+     * @since 3.0
+     */
+    public void setBatch(boolean batch);
+    /**
+     * Batch the changes to the attribute and set local flag.
+     * Determines whether <code>AttributeChangeEvent</code> will be set local.
+     *
+     * @since 3.0
+     */
+    public void setBatch(boolean batch, boolean local);
+    /**
+     * Is the attribute in batch mode?
+     *
+     * @since 3.0
+     */
+    public boolean isBatch();
 }

@@ -15,18 +15,18 @@ import sgt.Layer;
  * @since 2.x
  */
 public class PlotLayer extends Layer {
-  public PlotLayerHints getPlotLayerHints(){
-      return plotLayerHints_;
+    public PlotLayerHints getPlotLayerHints(){
+        return plotLayerHints_;
     }
 
-  public void setPlotLayerHints(PlotLayerHints plotLayerHints){
-      this.plotLayerHints_ = plotLayerHints;
+    public void setPlotLayerHints(PlotLayerHints plotLayerHints){
+        this.plotLayerHints_ = plotLayerHints;
     }
 
-  /**
-   * @link aggregation
-   * @undirected
-   * @label plotLayerHints 
-   */
-  private PlotLayerHints plotLayerHints_;
+    /**
+     * @link aggregation
+     * @undirected
+     * @label plotLayerHints 
+     */
+    private PlotLayerHints plotLayerHints_;
 }

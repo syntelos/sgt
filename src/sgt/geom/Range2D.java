@@ -18,88 +18,88 @@ package sgt.geom;
  * @since sgt 1.0
  */
 public class Range2D implements java.io.Serializable, Cloneable {
-  /** The range's first value  */
-  public double start;
-  /** The range's last value  */
-  public double end;
-  /**  The value of the increment  */
-  public double delta;
-  /**
-   * Default constructor.
-   */
-  public Range2D() {
-    this(Double.NaN, Double.NaN, Double.NaN);
-  }
-  /**
-   * Construct Range2D with start and end. Default for
-   * delta is NaN
-   *
-   * @param ustart first value
-   * @param uend last value
-   */
-  public Range2D(double ustart,double uend) {
-    this(ustart, uend, Double.NaN);
-  }
-  /**
-   * Range2D constructor. 
-   *
-   * @param ustart first value
-   * @param uend last value
-   * @param udel increment value
-   */
-  public Range2D(double ustart,double uend,double udel) {
-    start = ustart;
-    end = uend;
-    delta = udel;
-  }
-  /**
-   * Adds the <code>Range2D</code> object to this
-   * <code>Range2D</code>. The resulting <code>Range2D</code> is
-   * the smallest <code>Range2D</code> that contains both the
-   * origial <code>Range2D</code> and the specified 
-   * <code>Range2D</code>.
-   */
-  public void add(Range2D range) {
-    start = Math.min(start, range.start);
-    end = Math.max(end, range.end);
-  }
-  /**
-   * Test for equality.  Both start, end, and delta must be equal for
-   * equality. 
-   */
-  public boolean equals(Range2D r) {
-    if(!Double.isNaN(start) && !Double.isNaN(r.start)) {
-      if(Double.isNaN(start) || Double.isNaN(r.start)) return false;
-      if(start != r.start) return false;
+    /** The range's first value  */
+    public double start;
+    /** The range's last value  */
+    public double end;
+    /**  The value of the increment  */
+    public double delta;
+    /**
+     * Default constructor.
+     */
+    public Range2D() {
+        this(Double.NaN, Double.NaN, Double.NaN);
     }
-    if(!Double.isNaN(end) && !Double.isNaN(r.end)) {
-      if(Double.isNaN(end) || Double.isNaN(r.end)) return false;
-      if(end != r.end) return false;
+    /**
+     * Construct Range2D with start and end. Default for
+     * delta is NaN
+     *
+     * @param ustart first value
+     * @param uend last value
+     */
+    public Range2D(double ustart,double uend) {
+        this(ustart, uend, Double.NaN);
     }
-    if(!Double.isNaN(delta) && !Double.isNaN(r.delta)) {
-      if(Double.isNaN(delta) || Double.isNaN(r.delta)) return false;
-      if(delta != r.delta) return false;
+    /**
+     * Range2D constructor. 
+     *
+     * @param ustart first value
+     * @param uend last value
+     * @param udel increment value
+     */
+    public Range2D(double ustart,double uend,double udel) {
+        start = ustart;
+        end = uend;
+        delta = udel;
     }
-    return true;
-  }
-  public String toString() {
-    StringBuffer buf = new StringBuffer(50);
-    buf.append("[").append(start).append(";").append(end);
-    if(Double.isNaN(delta)) {
-      buf.append("]");
-    } else {
-      buf.append(";").append(delta).append("]");
+    /**
+     * Adds the <code>Range2D</code> object to this
+     * <code>Range2D</code>. The resulting <code>Range2D</code> is
+     * the smallest <code>Range2D</code> that contains both the
+     * origial <code>Range2D</code> and the specified 
+     * <code>Range2D</code>.
+     */
+    public void add(Range2D range) {
+        start = Math.min(start, range.start);
+        end = Math.max(end, range.end);
     }
-    return buf.toString();
-  }
-  /**
-   * Create a copy of <code>Range2D</code> object.
-   */
-  public Range2D copy() {
-    try {
-      return (Range2D)clone();
-    } catch (CloneNotSupportedException e) {
-      return null;
+    /**
+     * Test for equality.  Both start, end, and delta must be equal for
+     * equality. 
+     */
+    public boolean equals(Range2D r) {
+        if(!Double.isNaN(start) && !Double.isNaN(r.start)) {
+            if(Double.isNaN(start) || Double.isNaN(r.start)) return false;
+            if(start != r.start) return false;
+        }
+        if(!Double.isNaN(end) && !Double.isNaN(r.end)) {
+            if(Double.isNaN(end) || Double.isNaN(r.end)) return false;
+            if(end != r.end) return false;
+        }
+        if(!Double.isNaN(delta) && !Double.isNaN(r.delta)) {
+            if(Double.isNaN(delta) || Double.isNaN(r.delta)) return false;
+            if(delta != r.delta) return false;
+        }
+        return true;
     }
-  }
+    public String toString() {
+        StringBuffer buf = new StringBuffer(50);
+        buf.append("[").append(start).append(";").append(end);
+        if(Double.isNaN(delta)) {
+            buf.append("]");
+        } else {
+            buf.append(";").append(delta).append("]");
+        }
+        return buf.toString();
+    }
+    /**
+     * Create a copy of <code>Range2D</code> object.
+     */
+    public Range2D copy() {
+        try {
+            return (Range2D)clone();
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
 }

@@ -24,17 +24,17 @@ import java.awt.*;
  */
 public interface StrokeDrawer {
 
-  public void drawHeavy(Graphics g, int[] xout, int[] yout, int size,
-                        LineAttribute attr);
+    public void drawHeavy(Graphics g, int[] xout, int[] yout, int size,
+                          LineAttribute attr);
 
-  public void drawDashed(Graphics g, int[] xout, int[] yout, int size,
-                         LineAttribute attr);
+    public void drawDashed(Graphics g, int[] xout, int[] yout, int size,
+                           LineAttribute attr);
 
-  public void drawStroke(Graphics g, int[] xout, int[] yout, int size,
-                         LineAttribute attr);
+    public void drawStroke(Graphics g, int[] xout, int[] yout, int size,
+                           LineAttribute attr);
 
-  public void drawHighlight(Graphics g, int[] xout, int[] yout, int size,
-			    LineAttribute attr);
+    public void drawHighlight(Graphics g, int[] xout, int[] yout, int size,
+                              LineAttribute attr);
 }
 
 

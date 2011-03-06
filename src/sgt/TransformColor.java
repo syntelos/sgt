@@ -18,17 +18,17 @@ package sgt;
  * @since 2.0
  */
 public interface TransformColor {
-  Transform getRedTransform();
+    Transform getRedTransform();
 
-  void setRedTransform(Transform redTransform);
+    void setRedTransform(Transform redTransform);
 
-  Transform getGreenTransform();
+    Transform getGreenTransform();
 
-  void setGreenTransform(Transform greenTransform);
+    void setGreenTransform(Transform greenTransform);
 
-  Transform getBlueTransform();
+    Transform getBlueTransform();
 
-  void setBlueTransform(Transform blueTransform);
+    void setBlueTransform(Transform blueTransform);
 
-  void setColorTransforms(Transform red, Transform green, Transform blue);
+    void setColorTransforms(Transform red, Transform green, Transform blue);
 }

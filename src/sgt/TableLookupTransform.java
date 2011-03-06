@@ -23,57 +23,57 @@ import java.beans.PropertyChangeSupport;
  * @since 2.x
  */
 public class TableLookupTransform implements Cloneable, Transform {
-  private PropertyChangeSupport changes_ = new PropertyChangeSupport(this);
-  private double[] pvals_;
-  private double[] uvals_;
-  public TableLookupTransform() {
-  }
-  public TableLookupTransform(double p1,double p2,double u1,double u2) {
-  }
-  public TableLookupTransform(Range2D pr,Range2D ur) {
-  }
-  public TableLookupTransform(double[] p,double[] u) throws DataNotSameShapeException  {
-  }
-  public void setRangeP(Range2D pr) {
-    throw new MethodNotImplementedError();
-  }
-  public void setRangeP(double pmin,double pmax) {
-    throw new MethodNotImplementedError();
-  }
-  public Range2D getRangeP() {
-    throw new MethodNotImplementedError();
-  }
-  public void setRangeU(Range2D ur) {
-    throw new MethodNotImplementedError();
-  }
-  public void setRangeU(double umin,double umax) {
-    throw new MethodNotImplementedError();
-  }
-  public Range2D getRangeU() {
-    throw new MethodNotImplementedError();
-  }
-  public void setDoInteger(boolean si) {
-    throw new MethodNotImplementedError();
-  }
-  public boolean getDoInteger() {
-    throw new MethodNotImplementedError();
-  }
-  public double getTransP(double u) {
-    throw new MethodNotImplementedError();
-  }
-  public double getTransU(double p) {
-    throw new MethodNotImplementedError();
-  }
-  void computeTransform() {
-    throw new MethodNotImplementedError();
-  }
-  /**
-   * Add listener to changes in <code>TableLookupTransform</code> properties.
-   */
-  public void addPropertyChangeListener(PropertyChangeListener listener) {
-    changes_.addPropertyChangeListener(listener);
-  }
-  public void removePropertyChangeListener(PropertyChangeListener listener) {
-    changes_.removePropertyChangeListener(listener);
-  }
+    private PropertyChangeSupport changes_ = new PropertyChangeSupport(this);
+    private double[] pvals_;
+    private double[] uvals_;
+    public TableLookupTransform() {
+    }
+    public TableLookupTransform(double p1,double p2,double u1,double u2) {
+    }
+    public TableLookupTransform(Range2D pr,Range2D ur) {
+    }
+    public TableLookupTransform(double[] p,double[] u) throws DataNotSameShapeException  {
+    }
+    public void setRangeP(Range2D pr) {
+        throw new MethodNotImplementedError();
+    }
+    public void setRangeP(double pmin,double pmax) {
+        throw new MethodNotImplementedError();
+    }
+    public Range2D getRangeP() {
+        throw new MethodNotImplementedError();
+    }
+    public void setRangeU(Range2D ur) {
+        throw new MethodNotImplementedError();
+    }
+    public void setRangeU(double umin,double umax) {
+        throw new MethodNotImplementedError();
+    }
+    public Range2D getRangeU() {
+        throw new MethodNotImplementedError();
+    }
+    public void setDoInteger(boolean si) {
+        throw new MethodNotImplementedError();
+    }
+    public boolean getDoInteger() {
+        throw new MethodNotImplementedError();
+    }
+    public double getTransP(double u) {
+        throw new MethodNotImplementedError();
+    }
+    public double getTransU(double p) {
+        throw new MethodNotImplementedError();
+    }
+    void computeTransform() {
+        throw new MethodNotImplementedError();
+    }
+    /**
+     * Add listener to changes in <code>TableLookupTransform</code> properties.
+     */
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        changes_.addPropertyChangeListener(listener);
+    }
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        changes_.removePropertyChangeListener(listener);
+    }
 }

@@ -27,47 +27,47 @@ import sgt.Transform;
  * @since 1.0
  */
 public class ColorTransform implements TransformColor {
-	Transform mRedTransform;
-	Transform mGreenTransform;
-	Transform mBlueTransform;;
-	
-	public ColorTransform() {
-	}
-	
-	public ColorTransform(Transform redTransform, Transform greenTransform, Transform blueTransform) {
-		mRedTransform = redTransform;
-		mGreenTransform = greenTransform;
-		mBlueTransform = blueTransform;
-	}
-	
-	public Transform getRedTransform() {
-		return mRedTransform;
-	}
+    Transform mRedTransform;
+    Transform mGreenTransform;
+    Transform mBlueTransform;;
+        
+    public ColorTransform() {
+    }
+        
+    public ColorTransform(Transform redTransform, Transform greenTransform, Transform blueTransform) {
+        mRedTransform = redTransform;
+        mGreenTransform = greenTransform;
+        mBlueTransform = blueTransform;
+    }
+        
+    public Transform getRedTransform() {
+        return mRedTransform;
+    }
 
-	public void setRedTransform(Transform redTransform) {
-		mRedTransform = redTransform;
-	}
+    public void setRedTransform(Transform redTransform) {
+        mRedTransform = redTransform;
+    }
 
-	public Transform getGreenTransform()  {
-		return mGreenTransform;
-	}
+    public Transform getGreenTransform()  {
+        return mGreenTransform;
+    }
 
-	public void setGreenTransform(Transform greenTransform) {
-		mGreenTransform = greenTransform;
-	}
+    public void setGreenTransform(Transform greenTransform) {
+        mGreenTransform = greenTransform;
+    }
 
-	public Transform getBlueTransform() {
-		return mBlueTransform;
-	}
+    public Transform getBlueTransform() {
+        return mBlueTransform;
+    }
 
-	public void setBlueTransform(Transform blueTransform) {
-		mBlueTransform = blueTransform;
-	}
+    public void setBlueTransform(Transform blueTransform) {
+        mBlueTransform = blueTransform;
+    }
 
-	public void setColorTransforms(Transform red, Transform green, Transform blue) {
-		mRedTransform = red;
-		mGreenTransform = green;
-		mBlueTransform = blue;
-	}
+    public void setColorTransforms(Transform red, Transform green, Transform blue) {
+        mRedTransform = red;
+        mGreenTransform = green;
+        mBlueTransform = blue;
+    }
 }
 

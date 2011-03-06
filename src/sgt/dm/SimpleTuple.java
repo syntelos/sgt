@@ -30,339 +30,339 @@ import java.io.Serializable;
  * @see Cartesian
  */
 public class SimpleTuple implements Cloneable, SGTTuple, Cartesian, Serializable {
-  private boolean xTime_ = false;
-  private boolean yTime_ = false;
-  private String title_ = null;
-  private SGLabel keyTitle_ = null;
-  private String id_ = null;
-  private double[] xArray_ = null;
-  private double[] yArray_ = null;
-//  private GeoDate[] tArray_ = null;
-  private GeoDateArray tArray_ = null;
-  private double[] zArray_ = null;
-  private double[] assocArray_ = null;
+    private boolean xTime_ = false;
+    private boolean yTime_ = false;
+    private String title_ = null;
+    private SGLabel keyTitle_ = null;
+    private String id_ = null;
+    private double[] xArray_ = null;
+    private double[] yArray_ = null;
+    //  private GeoDate[] tArray_ = null;
+    private GeoDateArray tArray_ = null;
+    private double[] zArray_ = null;
+    private double[] assocArray_ = null;
 
-  /**
-   * @link aggregation
-   * @clientRole x
-   */
-  protected SGTMetaData xMetaData_ = null;
+    /**
+     * @link aggregation
+     * @clientRole x
+     */
+    protected SGTMetaData xMetaData_ = null;
 
-  /**
-   * @link aggregation
-   * @clientRole y
-   */
-  protected SGTMetaData yMetaData_ = null;
+    /**
+     * @link aggregation
+     * @clientRole y
+     */
+    protected SGTMetaData yMetaData_ = null;
 
-  /**
-   * @link aggregation
-   * @clientRole z*/
-  protected SGTMetaData zMetaData_ = null;
-  private SoTRange xRange_ = null;
-  private SoTRange yRange_ = null;
-  private Range2D zRange_ = null;
+    /**
+     * @link aggregation
+     * @clientRole z*/
+    protected SGTMetaData zMetaData_ = null;
+    private SoTRange xRange_ = null;
+    private SoTRange yRange_ = null;
+    private Range2D zRange_ = null;
 
-  private PropertyChangeSupport changes_ = new PropertyChangeSupport(this);
+    private PropertyChangeSupport changes_ = new PropertyChangeSupport(this);
 
     public SimpleTuple(double[] xArray, double[] yArray, String title) {
-      xArray_ = xArray;
-      yArray_ = yArray;
-      xTime_ = false;
-      yTime_ = false;
-      title_ = title;
-      xRange_ = computeSoTRange(xArray);
-      yRange_ = computeSoTRange(yArray);
+        xArray_ = xArray;
+        yArray_ = yArray;
+        xTime_ = false;
+        yTime_ = false;
+        title_ = title;
+        xRange_ = computeSoTRange(xArray);
+        yRange_ = computeSoTRange(yArray);
     }
 
     public SimpleTuple(GeoDate[] xArray, double[] yArray, String title) {
-      tArray_ = new GeoDateArray(xArray);
-      yArray_ = yArray;
-      xTime_ = true;
-      yTime_ = false;
-      title_ = title;
-      xRange_ = computeSoTRange(tArray_);
-      yRange_ = computeSoTRange(yArray);
+        tArray_ = new GeoDateArray(xArray);
+        yArray_ = yArray;
+        xTime_ = true;
+        yTime_ = false;
+        title_ = title;
+        xRange_ = computeSoTRange(tArray_);
+        yRange_ = computeSoTRange(yArray);
     }
 
     public SimpleTuple(double[] xArray, GeoDate[] yArray, String title) {
-      xArray_ = xArray;
-      tArray_ = new GeoDateArray(yArray);
-      xTime_ = false;
-      yTime_ = true;
-      title_ = title;
-      xRange_ = computeSoTRange(xArray);
-      yRange_ = computeSoTRange(tArray_);
+        xArray_ = xArray;
+        tArray_ = new GeoDateArray(yArray);
+        xTime_ = false;
+        yTime_ = true;
+        title_ = title;
+        xRange_ = computeSoTRange(xArray);
+        yRange_ = computeSoTRange(tArray_);
     }
 
     public SimpleTuple(double[] xArray, double[] yArray,
                        double[] zArray, String title) {
-      xArray_ = xArray;
-      yArray_ = yArray;
-      zArray_ = zArray;
-      xTime_ = false;
-      yTime_ = false;
-      title_ = title;
-      xRange_ = computeSoTRange(xArray);
-      yRange_ = computeSoTRange(yArray);
-      zRange_ = computeRange2D(zArray);
+        xArray_ = xArray;
+        yArray_ = yArray;
+        zArray_ = zArray;
+        xTime_ = false;
+        yTime_ = false;
+        title_ = title;
+        xRange_ = computeSoTRange(xArray);
+        yRange_ = computeSoTRange(yArray);
+        zRange_ = computeRange2D(zArray);
     }
 
     public SimpleTuple(GeoDate[] xArray, double[] yArray,
                        double[] zArray, String title) {
-      tArray_ = new GeoDateArray(xArray);
-      yArray_ = yArray;
-      zArray_ = zArray;
-      xTime_ = true;
-      yTime_ = false;
-      title_ = title;
-      xRange_ = computeSoTRange(tArray_);
-      yRange_ = computeSoTRange(yArray);
-      zRange_ = computeRange2D(zArray);
+        tArray_ = new GeoDateArray(xArray);
+        yArray_ = yArray;
+        zArray_ = zArray;
+        xTime_ = true;
+        yTime_ = false;
+        title_ = title;
+        xRange_ = computeSoTRange(tArray_);
+        yRange_ = computeSoTRange(yArray);
+        zRange_ = computeRange2D(zArray);
     }
 
     public SimpleTuple(double[] xArray, GeoDate[] yArray,
                        double[] zArray, String title) {
-      xArray_ = xArray;
-      tArray_ = new GeoDateArray(yArray);
-      zArray_ = zArray;
-      xTime_ = false;
-      yTime_ = true;
-      title_ = title;
-      xRange_ = computeSoTRange(xArray);
-      yRange_ = computeSoTRange(tArray_);
-      zRange_ = computeRange2D(zArray);
+        xArray_ = xArray;
+        tArray_ = new GeoDateArray(yArray);
+        zArray_ = zArray;
+        xTime_ = false;
+        yTime_ = true;
+        title_ = title;
+        xRange_ = computeSoTRange(xArray);
+        yRange_ = computeSoTRange(tArray_);
+        zRange_ = computeRange2D(zArray);
     }
 
-  public SimpleTuple() {
-    xTime_ = false;
-    yTime_ = false;
-  }
-
-  public double[] getXArray() {
-    return xArray_;
-  }
-
-  public void setXArray(double[] xArray) {
-    xArray_ = xArray;
-    xTime_ = false;
-    xRange_ = computeSoTRange(xArray);
-    changes_.firePropertyChange("dataModified",
-                                new Integer(0),
-                                new Integer(xArray.length));
-  }
-
-  public void setXArray(GeoDate[] tArray) {
-    setXArray(new GeoDateArray(tArray));
-  }
-  /**
-   * @since 3.0
-   */
-  public void setXArray(GeoDateArray tArray) {
-    tArray_ = tArray;
-    xTime_ = true;
-    xArray_ = null;
-    xRange_ = computeSoTRange(tArray);
-    changes_.firePropertyChange("dataModified",
-                                new Integer(0),
-                                new Integer(tArray.getLength()));
-  }
-
-  public double[] getYArray() {
-    return yArray_;
-  }
-
-  public void setYArray(double[] yArray) {
-    yArray_ = yArray;
-    yTime_ = false;
-    yRange_ = computeSoTRange(yArray);
-    changes_.firePropertyChange("dataModified",
-                                new Integer(0),
-                                new Integer(yArray.length));
-  }
-
-  public void setYArray(GeoDate[] tArray) {
-    setYArray(new GeoDateArray(tArray));
-  }
-  /**
-   * @since 3.0
-   */
-  public void setYArray(GeoDateArray tArray) {
-    tArray_ = tArray;
-    yTime_ = true;
-    yArray_ = null;
-    yRange_ = computeSoTRange(tArray);
-    changes_.firePropertyChange("dataModified",
-                                new Integer(0),
-                                new Integer(tArray.getLength()));
-  }
-  public double[] getZArray() {
-    return zArray_;
-  }
-
-  public void setZArray(double[] zArray) {
-    zArray_ = zArray;
-    zRange_ = computeRange2D(zArray);
-    changes_.firePropertyChange("dataModified",
-                                new Integer(0),
-                                new Integer(zArray.length));
-  }
-
-  public int getSize() {
-    if(xTime_) {
-      return tArray_.getLength();
-    } else {
-      return xArray_.length;
+    public SimpleTuple() {
+        xTime_ = false;
+        yTime_ = false;
     }
-  }
 
-  public GeoDate[] getTimeArray() {
-    return tArray_.getGeoDate();
-  }
-  /**
-   * @since 3.0
-   */
-  public GeoDateArray getGeoDateArray() {
-    return tArray_;
-  }
-
-  public double[] getAssociatedData() {
-    return assocArray_;
-  }
-
-  public void setAssociatedData(double[] assocArray) {
-    assocArray_ = assocArray;
-  }
-
-  public boolean hasAssociatedData() {
-    return (assocArray_ != null);
-  }
-
-  public SGTMetaData getZMetaData() {
-    return zMetaData_;
-  }
-
-  public void setZMetaData(SGTMetaData zMeta) {
-    zMetaData_ = zMeta;
-  }
-
-  public String getTitle() {
-    return title_;
-  }
-
-  public void setTitle(String title) {
-    title_ = title;
-  }
-
-  public SGLabel getKeyTitle() {
-    return keyTitle_;
-  }
-
-  public void setKeyTitle(SGLabel title) {
-    keyTitle_ = title;
-  }
-
-  public String getId() {
-    return id_;
-  }
-
-  public void setId(String id) {
-    id_ = id;
-  }
-
-  public SGTData copy() {
-    SGTTuple newTuple;
-    try {
-      newTuple = (SGTTuple)clone();
-    } catch (CloneNotSupportedException e) {
-      newTuple = new SimpleTuple();
+    public double[] getXArray() {
+        return xArray_;
     }
-    return (SGTData)newTuple;
-  }
 
-  public boolean isXTime() {
-    return xTime_;
-  }
-
-  public boolean isYTime() {
-    return yTime_;
-  }
-
-  public SGTMetaData getXMetaData() {
-    return xMetaData_;
-  }
-
-  public void setXMetaData(SGTMetaData xMeta) {
-    xMetaData_ = xMeta;
-  }
-
-  public SGTMetaData getYMetaData() {
-    return yMetaData_;
-  }
-
-  public void setYMetaData(SGTMetaData yMeta) {
-    yMetaData_ = yMeta;
-  }
-
-  public SoTRange getXRange() {
-    return xRange_;
-  }
-
-  public SoTRange getYRange() {
-    return yRange_;
-  }
-
-  public Range2D getZRange() {
-    return zRange_;
-  }
-
-  public void addPropertyChangeListener(PropertyChangeListener l) {
-    changes_.addPropertyChangeListener(l);
-  }
-
-  public void removePropertyChangeListener(PropertyChangeListener l) {
-    changes_.removePropertyChangeListener(l);
-  }
-
-  private SoTRange computeSoTRange(double[] array) {
-    Range2D range = computeRange2D(array);
-    return new SoTRange.Double(range.start, range.end);
-  }
-
-  private SoTRange computeSoTRange(GeoDateArray tarray) {
-    long start = Long.MAX_VALUE;
-    long end = Long.MIN_VALUE;
-    long[] tar = tarray.getTime();
-    int count = 0;
-    for(int i=0; i < tar.length; i++) {
-      if(!(tar[i] == Long.MAX_VALUE)) {
-        start = Math.min(start, tar[i]);
-        end = Math.max(end, tar[i]);
-        count++;
-      }
+    public void setXArray(double[] xArray) {
+        xArray_ = xArray;
+        xTime_ = false;
+        xRange_ = computeSoTRange(xArray);
+        changes_.firePropertyChange("dataModified",
+                                    new Integer(0),
+                                    new Integer(xArray.length));
     }
-    if(count == 0) {
-      return new SoTRange.Time(Long.MAX_VALUE,
-                               Long.MAX_VALUE);
-    } else {
-      return new SoTRange.Time(start, end);
-    }
-  }
 
-  private Range2D computeRange2D(double[] array) {
-    double start = Double.POSITIVE_INFINITY;
-    double end = Double.NEGATIVE_INFINITY;
-    int count = 0;
-    for(int i=0; i < array.length; i++) {
-      if(!Double.isNaN(array[i])) {
-        start = Math.min(start, array[i]);
-        end = Math.max(end, array[i]);
-        count++;
-      }
+    public void setXArray(GeoDate[] tArray) {
+        setXArray(new GeoDateArray(tArray));
     }
-    if(count == 0) {
-      return new Range2D(Double.NaN, Double.NaN);
-    } else {
-      return new Range2D(start, end);
+    /**
+     * @since 3.0
+     */
+    public void setXArray(GeoDateArray tArray) {
+        tArray_ = tArray;
+        xTime_ = true;
+        xArray_ = null;
+        xRange_ = computeSoTRange(tArray);
+        changes_.firePropertyChange("dataModified",
+                                    new Integer(0),
+                                    new Integer(tArray.getLength()));
     }
-  }
+
+    public double[] getYArray() {
+        return yArray_;
+    }
+
+    public void setYArray(double[] yArray) {
+        yArray_ = yArray;
+        yTime_ = false;
+        yRange_ = computeSoTRange(yArray);
+        changes_.firePropertyChange("dataModified",
+                                    new Integer(0),
+                                    new Integer(yArray.length));
+    }
+
+    public void setYArray(GeoDate[] tArray) {
+        setYArray(new GeoDateArray(tArray));
+    }
+    /**
+     * @since 3.0
+     */
+    public void setYArray(GeoDateArray tArray) {
+        tArray_ = tArray;
+        yTime_ = true;
+        yArray_ = null;
+        yRange_ = computeSoTRange(tArray);
+        changes_.firePropertyChange("dataModified",
+                                    new Integer(0),
+                                    new Integer(tArray.getLength()));
+    }
+    public double[] getZArray() {
+        return zArray_;
+    }
+
+    public void setZArray(double[] zArray) {
+        zArray_ = zArray;
+        zRange_ = computeRange2D(zArray);
+        changes_.firePropertyChange("dataModified",
+                                    new Integer(0),
+                                    new Integer(zArray.length));
+    }
+
+    public int getSize() {
+        if(xTime_) {
+            return tArray_.getLength();
+        } else {
+            return xArray_.length;
+        }
+    }
+
+    public GeoDate[] getTimeArray() {
+        return tArray_.getGeoDate();
+    }
+    /**
+     * @since 3.0
+     */
+    public GeoDateArray getGeoDateArray() {
+        return tArray_;
+    }
+
+    public double[] getAssociatedData() {
+        return assocArray_;
+    }
+
+    public void setAssociatedData(double[] assocArray) {
+        assocArray_ = assocArray;
+    }
+
+    public boolean hasAssociatedData() {
+        return (assocArray_ != null);
+    }
+
+    public SGTMetaData getZMetaData() {
+        return zMetaData_;
+    }
+
+    public void setZMetaData(SGTMetaData zMeta) {
+        zMetaData_ = zMeta;
+    }
+
+    public String getTitle() {
+        return title_;
+    }
+
+    public void setTitle(String title) {
+        title_ = title;
+    }
+
+    public SGLabel getKeyTitle() {
+        return keyTitle_;
+    }
+
+    public void setKeyTitle(SGLabel title) {
+        keyTitle_ = title;
+    }
+
+    public String getId() {
+        return id_;
+    }
+
+    public void setId(String id) {
+        id_ = id;
+    }
+
+    public SGTData copy() {
+        SGTTuple newTuple;
+        try {
+            newTuple = (SGTTuple)clone();
+        } catch (CloneNotSupportedException e) {
+            newTuple = new SimpleTuple();
+        }
+        return (SGTData)newTuple;
+    }
+
+    public boolean isXTime() {
+        return xTime_;
+    }
+
+    public boolean isYTime() {
+        return yTime_;
+    }
+
+    public SGTMetaData getXMetaData() {
+        return xMetaData_;
+    }
+
+    public void setXMetaData(SGTMetaData xMeta) {
+        xMetaData_ = xMeta;
+    }
+
+    public SGTMetaData getYMetaData() {
+        return yMetaData_;
+    }
+
+    public void setYMetaData(SGTMetaData yMeta) {
+        yMetaData_ = yMeta;
+    }
+
+    public SoTRange getXRange() {
+        return xRange_;
+    }
+
+    public SoTRange getYRange() {
+        return yRange_;
+    }
+
+    public Range2D getZRange() {
+        return zRange_;
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        changes_.addPropertyChangeListener(l);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener l) {
+        changes_.removePropertyChangeListener(l);
+    }
+
+    private SoTRange computeSoTRange(double[] array) {
+        Range2D range = computeRange2D(array);
+        return new SoTRange.Double(range.start, range.end);
+    }
+
+    private SoTRange computeSoTRange(GeoDateArray tarray) {
+        long start = Long.MAX_VALUE;
+        long end = Long.MIN_VALUE;
+        long[] tar = tarray.getTime();
+        int count = 0;
+        for(int i=0; i < tar.length; i++) {
+            if(!(tar[i] == Long.MAX_VALUE)) {
+                start = Math.min(start, tar[i]);
+                end = Math.max(end, tar[i]);
+                count++;
+            }
+        }
+        if(count == 0) {
+            return new SoTRange.Time(Long.MAX_VALUE,
+                                     Long.MAX_VALUE);
+        } else {
+            return new SoTRange.Time(start, end);
+        }
+    }
+
+    private Range2D computeRange2D(double[] array) {
+        double start = Double.POSITIVE_INFINITY;
+        double end = Double.NEGATIVE_INFINITY;
+        int count = 0;
+        for(int i=0; i < array.length; i++) {
+            if(!Double.isNaN(array[i])) {
+                start = Math.min(start, array[i]);
+                end = Math.max(end, array[i]);
+                count++;
+            }
+        }
+        if(count == 0) {
+            return new Range2D(Double.NaN, Double.NaN);
+        } else {
+            return new Range2D(start, end);
+        }
+    }
 }

@@ -17,10 +17,10 @@ package  sgt;
  * @version $Revision: 1.1.1.1 $, $Date: 1999/12/21 19:23:56 $
  */
 public class LabelNotFoundException extends SGException {
-  public LabelNotFoundException() {
-    super();
-}
-  public LabelNotFoundException(String s) {
-    super(s);
-  }
+    public LabelNotFoundException() {
+        super();
+    }
+    public LabelNotFoundException(String s) {
+        super(s);
+    }
 }

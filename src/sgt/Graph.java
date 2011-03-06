@@ -91,197 +91,197 @@ import java.beans.PropertyChangeListener;
  * @see CartesianGraph
  */
 public abstract class Graph implements PropertyChangeListener {
-  private String ident_;
-/** @directed
- * @label layer */
-  protected Layer layer_;
-  /**
-   * Default constructor.
-   **/
-  public Graph() {
-    this("");
-  }
-  /**
-   * Constructor for <code>Graph</code> class.
-   *
-   * @param id identifier
-   **/
-  public Graph(String id) {
-    ident_ = id;
-  }
-  /**
-   * Copy the <code>Graph</code> object and all attached classes.
-   */
-  public abstract Graph copy();
-  /**
-   * Get the <code>Graph</code> identifier
-   *
-   * @return ident
-   **/
-  public String getId() {
-    return ident_;
-  }
-  //
-  abstract void draw(Graphics g);
-  //
-  void setLayer(Layer l) {
-    layer_ = l;
-  }
-  /**
-   * Get the associated <code>Layer</code>.
-   *
-   * @return <code>Layer</code> object
-   **/
-  public Layer getLayer() {
-    return layer_;
-  }
-  /**
-   * Return parent pane.
-   * @since 2.0
-   */
-  public AbstractPane getPane() {
-    return layer_.getPane();
-  }
-  /**
-   * Used internally by sgt.
-   * @since 2.0
-   */
-  public void modified(String mess) {
-    if(layer_ != null)
-      layer_.modified(mess);
-  }
-  /**
-   * Compute a "nice" range from a range and number of intervals.
-   *
-   * @param range min and max values
-   * @param num number of intervals
-   * @return "nice" range
-   */
-  public static Range2D computeRange(Range2D range,int num) {
-    return computeRange(range.start, range.end, num);
-  }
-  /**
-   * Compute a "nice" range from a range and number of intervals.
-   *
-   * @since 2.0
-   * @param range min and max values
-   * @param num number of intervals
-   * @return "nice" range
-   */
-  public static SoTRange computeRange(SoTRange range, int num) {
-    if(!range.isTime()) {
-      SoTRange.Double drange = (SoTRange.Double)range;
-      return new SoTRange.Double(computeRange(drange.start,
-                                              drange.end, num));
+    private String ident_;
+    /** @directed
+     * @label layer */
+    protected Layer layer_;
+    /**
+     * Default constructor.
+     **/
+    public Graph() {
+        this("");
     }
-    return null;
-  }
-  /**
-   * Compute a "nice" range from the minimum, maximum, and number of intervals.
-   *
-   * @param min minimum value
-   * @param max maximum value
-   * @param num number of intervals
-   * @return "nice" range
-   *
-   **/
-  public static Range2D computeRange(double min,double max,int num) {
-    int interval = Math.abs(num);
-    double temp, pow, delta;
-    int nt;
-    boolean reversed = false;
-    //
-    // check inputs to make sure that they are valid
-    //
-    if(min == max) {
-      if(min == 0.0) {
-        min = -1.0;
-        max = 1.0;
-      } else {
-        min = 0.9*max;
-        max = 1.1*max;
-      }
+    /**
+     * Constructor for <code>Graph</code> class.
+     *
+     * @param id identifier
+     **/
+    public Graph(String id) {
+        ident_ = id;
     }
-    if(min > max) {
-      temp = min;
-      min = max;
-      max = temp;
-      reversed = true;
-    }
-    if(interval == 0) interval = 1;
-    //
-    // find the approximate size of the interval
-    //
-    temp = (max - min)/(double)interval;
-    if(temp == 0.0) temp = max;
-    if(temp == 0.0) {
-      min = -1.0;
-      max = 1.0;
-      temp = 2.0/(double)interval;
+    /**
+     * Copy the <code>Graph</code> object and all attached classes.
+     */
+    public abstract Graph copy();
+    /**
+     * Get the <code>Graph</code> identifier
+     *
+     * @return ident
+     **/
+    public String getId() {
+        return ident_;
     }
     //
-    // scale the interval size by powers of ten to a value between
-    // one and ten
+    abstract void draw(Graphics g);
     //
-    nt = (int)log10(temp);
-    if(temp < 1.0) nt--;
-    pow = Math.pow(10.0, (double)nt);
-    temp = temp/pow;
-    //
-    // find the closest permissible value for the interval size
-    //
-    if(temp < 1.414213562) {
-      delta = pow;
-    } else if(temp < 3.162277660) {
-      delta = 2.0 * pow;
-    } else if(temp < 7.071067812) {
-      delta = 5.0 * pow;
-    } else {
-      delta = 10.0 * pow;
+    void setLayer(Layer l) {
+        layer_ = l;
+    }
+    /**
+     * Get the associated <code>Layer</code>.
+     *
+     * @return <code>Layer</code> object
+     **/
+    public Layer getLayer() {
+        return layer_;
+    }
+    /**
+     * Return parent pane.
+     * @since 2.0
+     */
+    public AbstractPane getPane() {
+        return layer_.getPane();
+    }
+    /**
+     * Used internally by sgt.
+     * @since 2.0
+     */
+    public void modified(String mess) {
+        if(layer_ != null)
+            layer_.modified(mess);
+    }
+    /**
+     * Compute a "nice" range from a range and number of intervals.
+     *
+     * @param range min and max values
+     * @param num number of intervals
+     * @return "nice" range
+     */
+    public static Range2D computeRange(Range2D range,int num) {
+        return computeRange(range.start, range.end, num);
+    }
+    /**
+     * Compute a "nice" range from a range and number of intervals.
+     *
+     * @since 2.0
+     * @param range min and max values
+     * @param num number of intervals
+     * @return "nice" range
+     */
+    public static SoTRange computeRange(SoTRange range, int num) {
+        if(!range.isTime()) {
+            SoTRange.Double drange = (SoTRange.Double)range;
+            return new SoTRange.Double(computeRange(drange.start,
+                                                    drange.end, num));
+        }
+        return null;
+    }
+    /**
+     * Compute a "nice" range from the minimum, maximum, and number of intervals.
+     *
+     * @param min minimum value
+     * @param max maximum value
+     * @param num number of intervals
+     * @return "nice" range
+     *
+     **/
+    public static Range2D computeRange(double min,double max,int num) {
+        int interval = Math.abs(num);
+        double temp, pow, delta;
+        int nt;
+        boolean reversed = false;
+        //
+        // check inputs to make sure that they are valid
+        //
+        if(min == max) {
+            if(min == 0.0) {
+                min = -1.0;
+                max = 1.0;
+            } else {
+                min = 0.9*max;
+                max = 1.1*max;
+            }
+        }
+        if(min > max) {
+            temp = min;
+            min = max;
+            max = temp;
+            reversed = true;
+        }
+        if(interval == 0) interval = 1;
+        //
+        // find the approximate size of the interval
+        //
+        temp = (max - min)/(double)interval;
+        if(temp == 0.0) temp = max;
+        if(temp == 0.0) {
+            min = -1.0;
+            max = 1.0;
+            temp = 2.0/(double)interval;
+        }
+        //
+        // scale the interval size by powers of ten to a value between
+        // one and ten
+        //
+        nt = (int)log10(temp);
+        if(temp < 1.0) nt--;
+        pow = Math.pow(10.0, (double)nt);
+        temp = temp/pow;
+        //
+        // find the closest permissible value for the interval size
+        //
+        if(temp < 1.414213562) {
+            delta = pow;
+        } else if(temp < 3.162277660) {
+            delta = 2.0 * pow;
+        } else if(temp < 7.071067812) {
+            delta = 5.0 * pow;
+        } else {
+            delta = 10.0 * pow;
+        }
+        //
+        // calculate the minimum value of the range
+        //
+        temp = min / delta;
+        nt = (int) temp;
+        if(temp < 0.0) nt--;
+        min = delta*nt;
+        //
+        // calculate the maximum value of the range
+        //
+        temp = max /delta;
+        nt = (int) temp;
+        if(temp > 0.0) nt++;
+        max = delta*nt;
+        //
+        if(reversed) {
+            temp = min;
+            min = max;
+            max = temp;
+            delta = -delta;
+        }
+        return new Range2D(min, max, delta);
+    }
+    static final double log10(double x) {
+        return 0.4342944819*Math.log(x);
     }
     //
-    // calculate the minimum value of the range
-    //
-    temp = min / delta;
-    nt = (int) temp;
-    if(temp < 0.0) nt--;
-    min = delta*nt;
-    //
-    // calculate the maximum value of the range
-    //
-    temp = max /delta;
-    nt = (int) temp;
-    if(temp > 0.0) nt++;
-    max = delta*nt;
-    //
-    if(reversed) {
-      temp = min;
-      min = max;
-      max = temp;
-      delta = -delta;
+    abstract Object getObjectAt(Point pt);
+    /**
+     * Get a <code>String</code> representation of the
+     * <code>Graph</code>.
+     *
+     * @return <code>String</code> representation
+     */
+    public String toString() {
+        String name = getClass().getName();
+        return name.substring(name.lastIndexOf(".")+1) + ": " + ident_;
     }
-    return new Range2D(min, max, delta);
-  }
-  static final double log10(double x) {
-    return 0.4342944819*Math.log(x);
-  }
-  //
-  abstract Object getObjectAt(Point pt);
-  /**
-   * Get a <code>String</code> representation of the
-   * <code>Graph</code>.
-   *
-   * @return <code>String</code> representation
-   */
-  public String toString() {
-    String name = getClass().getName();
-    return name.substring(name.lastIndexOf(".")+1) + ": " + ident_;
-  }
-  /**
-   * Find data at a <code>Point</code>
-   * @since 3.0
-   */
-  public abstract SGTData getDataAt(Point pt);
+    /**
+     * Find data at a <code>Point</code>
+     * @since 3.0
+     */
+    public abstract SGTData getDataAt(Point pt);
 }
 
 
