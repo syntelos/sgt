@@ -5,7 +5,6 @@
     -->
   <tstamp/>
   <property name="bin" value="bin"/>
-  <property name="lib" value="lib"/>
   <property name="src" value="src"/>
   <property name="dst" value="."/>
   <property name="demo" value="demo"/>
