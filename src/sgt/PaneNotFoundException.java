@@ -1,6 +1,4 @@
 /*
- * $Id: PaneNotFoundException.java,v 1.1.1.1 1999/12/21 19:23:57 dwd Exp $
- *
  * This software is provided by NOAA for full, free and open release.  It is
  * understood by the recipient/user that NOAA assumes no liability for any
  * errors contained in the code.  Although this software is released without

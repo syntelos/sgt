@@ -1,6 +1,4 @@
 /*
- * $Id: SGT3DGrid.java,v 1.2 2003/08/22 22:08:16 dwd Exp $
- *
  * This software is provided by NOAA for full, free and open release.  It is
  * understood by the recipient/user that NOAA assumes no liability for any
  * errors contained in the code.  Although this software is released without

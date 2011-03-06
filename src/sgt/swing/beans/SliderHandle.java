@@ -1,5 +1,4 @@
 /*
- * $Id: SliderHandle.java,v 1.2 2000/02/09 00:21:57 dwd Exp $
  */
  
 package sgt.swing.beans;

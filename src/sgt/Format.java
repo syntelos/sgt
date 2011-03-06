@@ -1,5 +1,4 @@
 /*
- * $Id: Format.java,v 1.4 2002/03/04 16:37:57 dwd Exp $
  *
  * Gary Cornell and Cay S. Horstmann, Core Java (Book/CD-ROM)
  * Published By SunSoft Press/Prentice-Hall

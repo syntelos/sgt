@@ -1,6 +1,4 @@
 /*
- * $Id: Units.java,v 1.5 2001/02/09 18:42:31 dwd Exp $
- *
  * This software is provided by NOAA for full, free and open release.  It is
  * understood by the recipient/user that NOAA assumes no liability for any
  * errors contained in the code.  Although this software is released without

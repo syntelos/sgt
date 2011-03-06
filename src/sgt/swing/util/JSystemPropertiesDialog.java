@@ -1,5 +1,4 @@
 /*
- * $Id: JSystemPropertiesDialog.java,v 1.10 2003/08/19 21:19:22 dwd Exp $
  */
 package sgt.swing.util;
 

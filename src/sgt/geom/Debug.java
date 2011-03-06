@@ -1,5 +1,4 @@
 /*
- * $Id: Debug.java,v 1.14 2000/11/02 21:23:48 dwd Exp $
  */
 
 package sgt.geom

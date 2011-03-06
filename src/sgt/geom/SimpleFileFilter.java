@@ -1,5 +1,4 @@
 /*
- * $Id: SimpleFileFilter.java,v 1.2 2003/08/22 23:02:40 dwd Exp $
  */
 package sgt.geom;
 

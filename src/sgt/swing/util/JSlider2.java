@@ -1,5 +1,4 @@
 /*
- * $Id: JSlider2.java,v 1.9 2000/11/02 21:22:03 dwd Exp $
  */
 
 package sgt.swing.util;

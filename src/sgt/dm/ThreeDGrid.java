@@ -1,6 +1,4 @@
 /**
- * $Id: ThreeDGrid.java,v 1.3 2003/02/11 01:47:40 oz Exp $
- *
  * This software is provided by NOAA for full, free and open release.  It is
  * understood by the recipient/user that NOAA assumes no liability for any
  * errors contained in the code.  Although this software is released without

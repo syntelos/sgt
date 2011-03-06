@@ -1,6 +1,4 @@
 /*
- * $Id: YearDecadeAxis.java,v 1.6 2001/03/22 20:06:59 dwd Exp $
- *
  * This software is provided by NOAA for full, free and open release.  It is
  * understood by the recipient/user that NOAA assumes no liability for any
  * errors contained in the code.  Although this software is released without

@@ -1,6 +1,4 @@
 /*
- * $Id: MinuteHourAxis.java,v 1.7 2001/01/05 18:59:27 dwd Exp $
- *
  * This software is provided by NOAA for full, free and open release.  It is
  * understood by the recipient/user that NOAA assumes no liability for any
  * errors contained in the code.  Although this software is released without

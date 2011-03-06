@@ -1,6 +1,4 @@
 /*
- * $Id: ExponentialTransformUp.java,v 1.2 2002/12/04 01:27:38 oz Exp $
- *
  * This software is provided by NOAA for full, free and open release.  It is
  * understood by the recipient/user that NOAA assumes no liability for any
  * errors contained in the code.  Although this software is released without

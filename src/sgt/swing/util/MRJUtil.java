@@ -1,6 +1,4 @@
 /*
- * $Id: MRJUtil.java,v 1.3 2003/09/15 16:48:49 dwd Exp $
- *
  * This software is provided by NOAA for full, free and open release.  It is
  * understood by the recipient/user that NOAA assumes no liability for any
  * errors contained in the code.  Although this software is released without
