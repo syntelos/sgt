@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Main-Class: sgt.beans.PanelModelEditor
+
+Name: sgt/beans/Page.class
+Java-Bean: True
+
+Name: sgt/beans/PageBeanInfo.class
+Design-Time-Only: True
+
+Name: sgt/beans/DataModel.class
+Java-Bean: True
+
+Name: sgt/beans/DataModelBeanInfo.class
+Design-Time-Only: True
+
+Name: sgt/beans/PanelModel.class
+Java-Bean: True
+
+Name: sgt/beans/PanelModelBeanInfo.class
+Design-Time-Only: True
+
+Name: sgt/beans/PanelModelCustomizer.class
+Design-Time-Only: True
+
+Name: sgt/swing/util/JSlider2.class
+Java-Bean: True
+
+Name: sgt/swing/util/JSlider2Double.class
+Java-Bean: True
+
+Name: sgt/swing/beans/SliderHandle.class
+Java-Bean: False
