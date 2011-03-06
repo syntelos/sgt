@@ -1,5 +1,5 @@
 
- package sgt.geom;
+package sgt.geom;
 
 /**
 * LatitudeValue translates between float and deg/min/sec.

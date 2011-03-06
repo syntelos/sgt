@@ -18,16 +18,16 @@ import sgt.geom.Point2D;
 import sgt.geom.TimeRange;
 import sgt.geom.GeoDateArray;
 
-import sgt.sgt.dm.SGTData;
-import sgt.sgt.dm.SGTPoint;
-import sgt.sgt.dm.SGTLine;
-import sgt.sgt.dm.SGTGrid;
-import sgt.sgt.dm.SGTMetaData;
-import sgt.sgt.dm.SimplePoint;
-import sgt.sgt.dm.SimpleLine;
-import sgt.sgt.dm.SimpleGrid;
-import sgt.sgt.dm.Collection;
-import sgt.sgt.SGLabel;
+import sgt.dm.SGTData;
+import sgt.dm.SGTPoint;
+import sgt.dm.SGTLine;
+import sgt.dm.SGTGrid;
+import sgt.dm.SGTMetaData;
+import sgt.dm.SimplePoint;
+import sgt.dm.SimpleLine;
+import sgt.dm.SimpleGrid;
+import sgt.dm.Collection;
+import sgt.SGLabel;
 
 /**
  * Create <code>SGTData</code> objects containing test data.

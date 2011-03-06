@@ -11,9 +11,9 @@
  */
 package sgt.demo;
 
-import sgt.sgt.JPane;
+import sgt.JPane;
 import sgt.swing.JPlotLayout;
-import sgt.sgt.dm.SGTData;
+import sgt.dm.SGTData;
 
 import sgt.geom.Range2D;
 import sgt.geom.Dimension2D;

@@ -15,8 +15,8 @@ package sgt.geom;
 import java.beans.PropertyChangeListener;
 import sgt.geom.Range2D;
 import java.awt.*;
-import sgt.sgt.TransformColor;
-import sgt.sgt.Transform;
+import sgt.TransformColor;
+import sgt.Transform;
  
 /**
  * <code>Transform</code> defines an interface for transformations between 

@@ -24,30 +24,30 @@ import java.util.List;
 
 import sgt.geom.Debug;
 
-import sgt.sgt.JPane;
-import sgt.sgt.Layer;
-import sgt.sgt.LayerChild;
-import sgt.sgt.SGLabel;
-import sgt.sgt.Graph;
-import sgt.sgt.CartesianGraph;
-import sgt.sgt.CartesianRenderer;
-import sgt.sgt.PointCartesianRenderer;
-import sgt.sgt.LineCartesianRenderer;
-import sgt.sgt.GridCartesianRenderer;
-import sgt.sgt.VectorCartesianRenderer;
-import sgt.sgt.Axis;
-import sgt.sgt.SpaceAxis;
-import sgt.sgt.PlainAxis;
-import sgt.sgt.TimeAxis;
-import sgt.sgt.Transform;
-import sgt.sgt.PointAttribute;
-import sgt.sgt.LineAttribute;
-import sgt.sgt.GridAttribute;
-import sgt.sgt.VectorAttribute;
-import sgt.sgt.Logo;
+import sgt.JPane;
+import sgt.Layer;
+import sgt.LayerChild;
+import sgt.SGLabel;
+import sgt.Graph;
+import sgt.CartesianGraph;
+import sgt.CartesianRenderer;
+import sgt.PointCartesianRenderer;
+import sgt.LineCartesianRenderer;
+import sgt.GridCartesianRenderer;
+import sgt.VectorCartesianRenderer;
+import sgt.Axis;
+import sgt.SpaceAxis;
+import sgt.PlainAxis;
+import sgt.TimeAxis;
+import sgt.Transform;
+import sgt.PointAttribute;
+import sgt.LineAttribute;
+import sgt.GridAttribute;
+import sgt.VectorAttribute;
+import sgt.Logo;
 
-import sgt.sgt.beans.Panel;
-import sgt.sgt.beans.DataGroupLayer;
+import sgt.beans.Panel;
+import sgt.beans.DataGroupLayer;
 
 import sgt.swing.prop.LineAttributeDialog;
 import sgt.swing.prop.GridAttributeDialog;
@@ -63,14 +63,14 @@ import sgt.swing.prop.VectorAttributeDialog;
  * in a <code>JDialog</code> using a <code>JTree</code>.  Many
  * <code>sgt</code> classes can be selected from the
  * <code>JTree</code> to edit their properties.  They include:
- * {@link sgt.sgt.SGLabel SGLabel},
- * {@link sgt.sgt.LineAttribute LineAttribute},
- * {@link sgt.sgt.GridAttribute GridAttribute},
- * {@link sgt.sgt.CartesianGraph CartesianGraph},
- * {@link sgt.sgt.TimeAxis TimeAxis},
- * {@link sgt.sgt.SpaceAxis SpaceAxis},
- * {@link sgt.sgt.PointAttribute PointAttribute}, and
- * {@link sgt.sgt.Logo Logo}.
+ * {@link sgt.SGLabel SGLabel},
+ * {@link sgt.LineAttribute LineAttribute},
+ * {@link sgt.GridAttribute GridAttribute},
+ * {@link sgt.CartesianGraph CartesianGraph},
+ * {@link sgt.TimeAxis TimeAxis},
+ * {@link sgt.SpaceAxis SpaceAxis},
+ * {@link sgt.PointAttribute PointAttribute}, and
+ * {@link sgt.Logo Logo}.
  *
  * @author Donald Denbo
  * @version $Revision: 1.17 $, $Date: 2003/08/22 23:02:39 $

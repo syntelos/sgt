@@ -20,9 +20,9 @@ import java.io.*;
 import java.beans.XMLEncoder;
 import java.beans.XMLDecoder;
 
-import sgt.sgt.beans.*;
-import sgt.sgt.AbstractPane;
-import sgt.sgt.JPane;
+import sgt.beans.*;
+import sgt.AbstractPane;
+import sgt.JPane;
 import sgt.swing.util.*;
 import sgt.swing.JClassTree;
 import sgt.geom.SimpleFileFilter;

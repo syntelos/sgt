@@ -11,22 +11,22 @@
  */
 package sgt.demo;
 
-import sgt.sgt.JPane;
-import sgt.sgt.Layer;
-import sgt.sgt.PlainAxis;
-import sgt.sgt.LineKey;
-import sgt.sgt.LinearTransform;
-import sgt.sgt.Graph;
-import sgt.sgt.CartesianGraph;
-import sgt.sgt.SGLabel;
-import sgt.sgt.PointAttribute;
-import sgt.sgt.LineCartesianRenderer;
-import sgt.sgt.StackedLayout;
-import sgt.sgt.Axis;
+import sgt.JPane;
+import sgt.Layer;
+import sgt.PlainAxis;
+import sgt.LineKey;
+import sgt.LinearTransform;
+import sgt.Graph;
+import sgt.CartesianGraph;
+import sgt.SGLabel;
+import sgt.PointAttribute;
+import sgt.LineCartesianRenderer;
+import sgt.StackedLayout;
+import sgt.Axis;
 import sgt.swing.JClassTree;
-import sgt.sgt.Logo;
+import sgt.Logo;
 
-import sgt.sgt.dm.Collection;
+import sgt.dm.Collection;
 
 import sgt.geom.Point2D;
 import sgt.geom.Range2D;

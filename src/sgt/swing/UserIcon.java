@@ -12,10 +12,10 @@
 
 package sgt.swing;
 
-import sgt.sgt.LayerChild;
-import sgt.sgt.Layer;
-import sgt.sgt.CartesianGraph;
-import sgt.sgt.AbstractPane;
+import sgt.LayerChild;
+import sgt.Layer;
+import sgt.CartesianGraph;
+import sgt.AbstractPane;
 
 import sgt.geom.Point2D;
 import sgt.geom.Debug;

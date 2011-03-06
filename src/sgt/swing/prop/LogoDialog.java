@@ -12,8 +12,8 @@
 package sgt.swing.prop;
 
 
-import sgt.sgt.Logo;
-import sgt.sgt.JPane;
+import sgt.Logo;
+import sgt.JPane;
 import sgt.geom.Point2D;
 import sgt.geom.Debug;
 
@@ -266,7 +266,7 @@ public class LogoDialog extends JDialog implements PropertyChangeListener {
   /**
    * Set the <code>Logo</code> to be edited and <code>JPane</code>.  With
    * <code>JPane</code> set the dialog will use
-   * {@link sgt.sgt.JPane#setBatch(boolean) batching} when
+   * {@link sgt.JPane#setBatch(boolean) batching} when
    * updating the <code>Logo</code> properties.
    */
   public void setLogo(Logo logo, JPane pane) {
@@ -291,7 +291,7 @@ public class LogoDialog extends JDialog implements PropertyChangeListener {
   /**
    * Set the parent <code>JPane</code>. With
    * <code>JPane</code> set the dialog will use
-   * {@link sgt.sgt.JPane#setBatch(boolean) batching} when
+   * {@link sgt.JPane#setBatch(boolean) batching} when
    * updating the <code>Logo</code> properties.
    */
   public void setJPane(JPane pane) {

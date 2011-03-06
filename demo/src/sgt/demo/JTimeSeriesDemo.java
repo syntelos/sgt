@@ -15,16 +15,16 @@ package sgt.demo;
 import sgt.swing.JPlotLayout;
 import sgt.swing.JClassTree;
 import sgt.swing.prop.LineAttributeDialog;
-import sgt.sgt.JPane;
-import sgt.sgt.LineCartesianRenderer;
-import sgt.sgt.LineAttribute;
+import sgt.JPane;
+import sgt.LineCartesianRenderer;
+import sgt.LineAttribute;
 
 import sgt.geom.GeoDate;
 import sgt.geom.TimeRange;
 import sgt.geom.IllegalTimeValue;
 
-import sgt.sgt.dm.SGTData;
-import sgt.sgt.dm.SGTLine;
+import sgt.dm.SGTData;
+import sgt.dm.SGTLine;
 
 import java.awt.*;
 import javax.swing.*;

@@ -15,8 +15,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.StringTokenizer;
 
-import sgt.sgt.DefaultContourLineAttribute;
-import sgt.sgt.LineAttribute;
+import sgt.DefaultContourLineAttribute;
+import sgt.LineAttribute;
 import sgt.swing.util.ThreeDotsButton;
 import javax.swing.border.*;
 import java.awt.event.*;
@@ -25,7 +25,7 @@ import java.awt.event.*;
  * Edits a <code>DefaultContourLineAttribute</code>.  This dialog does not
  * make a copy of the attribute so changes "Applied" will cause
  * <code>sgt</code> to redraw the plot using the new properties unless
- * {@link sgt.sgt.JPane#setBatch(boolean) batching}
+ * {@link sgt.JPane#setBatch(boolean) batching}
  * has been turned on.
  *
  * <p> Example of <code>DefaultContourLineAttributeDialog</code> use:

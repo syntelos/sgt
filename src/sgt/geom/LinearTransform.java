@@ -14,7 +14,7 @@ package sgt.geom;
 
 import java.beans.PropertyChangeListener;
 import sgt.geom.Range2D;
-import sgt.sgt.Transform;
+import sgt.Transform;
  
 /**
  * <code>LinearTransform</code> defines a liniear transformations between 

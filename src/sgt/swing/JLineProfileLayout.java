@@ -12,22 +12,22 @@
 
 package  sgt.swing;
 
-import sgt.sgt.LineKey;
-import sgt.sgt.Layer;
-import sgt.sgt.CartesianGraph;
-import sgt.sgt.LineCartesianRenderer;
-import sgt.sgt.LinearTransform;
-import sgt.sgt.PlainAxis;
-import sgt.sgt.JPane;
-import sgt.sgt.Logo;
-import sgt.sgt.SGLabel;
-import sgt.sgt.LayerNotFoundException;
-import sgt.sgt.LineAttribute;
-import sgt.sgt.Graph;
-import sgt.sgt.AxisNotFoundException;
-import sgt.sgt.CartesianGraph;
-import sgt.sgt.SGException;
-import sgt.sgt.StackedLayout;
+import sgt.LineKey;
+import sgt.Layer;
+import sgt.CartesianGraph;
+import sgt.LineCartesianRenderer;
+import sgt.LinearTransform;
+import sgt.PlainAxis;
+import sgt.JPane;
+import sgt.Logo;
+import sgt.SGLabel;
+import sgt.LayerNotFoundException;
+import sgt.LineAttribute;
+import sgt.Graph;
+import sgt.AxisNotFoundException;
+import sgt.CartesianGraph;
+import sgt.SGException;
+import sgt.StackedLayout;
 
 import sgt.geom.Domain;
 import sgt.geom.Dimension2D;
@@ -37,11 +37,11 @@ import sgt.geom.Range2D;
 //import sgt.geom.TimeRange;
 import sgt.geom.Units;
 
-import sgt.sgt.dm.SGTData;
-import sgt.sgt.dm.SGTLine;
-import sgt.sgt.dm.SimpleLine;
-import sgt.sgt.dm.SGTMetaData;
-import sgt.sgt.dm.Collection;
+import sgt.dm.SGTData;
+import sgt.dm.SGTLine;
+import sgt.dm.SimpleLine;
+import sgt.dm.SGTMetaData;
+import sgt.dm.Collection;
 
 
 import java.util.Enumeration;

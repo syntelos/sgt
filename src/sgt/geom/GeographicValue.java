@@ -1,6 +1,6 @@
 
 
- package sgt.geom;
+package sgt.geom;
 
 /**
 * Base class used by LatitudeValue and LongitudeValue for translating between

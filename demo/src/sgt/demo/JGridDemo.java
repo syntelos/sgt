@@ -14,17 +14,17 @@ package sgt.demo;
 import sgt.swing.JPlotLayout;
 import sgt.swing.JClassTree;
 import sgt.swing.prop.GridAttributeDialog;
-import sgt.sgt.JPane;
-import sgt.sgt.AbstractPane;
-import sgt.sgt.GridAttribute;
-import sgt.sgt.ContourLevels;
-import sgt.sgt.CartesianRenderer;
-import sgt.sgt.CartesianGraph;
-import sgt.sgt.GridCartesianRenderer;
-import sgt.sgt.IndexedColorMap;
-import sgt.sgt.ColorMap;
-import sgt.sgt.LinearTransform;
-import sgt.sgt.dm.SGTData;
+import sgt.JPane;
+import sgt.AbstractPane;
+import sgt.GridAttribute;
+import sgt.ContourLevels;
+import sgt.CartesianRenderer;
+import sgt.CartesianGraph;
+import sgt.GridCartesianRenderer;
+import sgt.IndexedColorMap;
+import sgt.ColorMap;
+import sgt.LinearTransform;
+import sgt.dm.SGTData;
 
 
 import sgt.geom.GeoDate;

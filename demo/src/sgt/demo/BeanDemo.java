@@ -17,7 +17,7 @@ import java.awt.*;
 /**
  * Example demonstrating the use of the SGT Bean classes.  This application
  * looks for the BeanDemoPanelModel.xml file in the same directory as
- * sgt.sgt.beans.
+ * sgt.beans.
  *
  * @author Donald Denbo
  * @version $Revision: 1.2 $, $Date: 2003/08/22 23:02:38 $

@@ -11,9 +11,9 @@
  */
 package sgt.swing.prop;
 
-import sgt.sgt.dm.SGTGrid;
+import sgt.dm.SGTGrid;
 import sgt.geom.Range2D;
-import sgt.sgt.Graph;
+import sgt.Graph;
 
 import javax.swing.*;
 import java.awt.*;

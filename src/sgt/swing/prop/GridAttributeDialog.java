@@ -23,19 +23,19 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.StreamTokenizer;
 
-import sgt.sgt.GridCartesianRenderer;
-import sgt.sgt.GridAttribute;
-import sgt.sgt.ContourLineAttribute;
-import sgt.sgt.DefaultContourLineAttribute;
-import sgt.sgt.ContourLevels;
-import sgt.sgt.ColorMap;
-import sgt.sgt.IndexedColor;
+import sgt.GridCartesianRenderer;
+import sgt.GridAttribute;
+import sgt.ContourLineAttribute;
+import sgt.DefaultContourLineAttribute;
+import sgt.ContourLevels;
+import sgt.ColorMap;
+import sgt.IndexedColor;
 import sgt.swing.ColorSwatchIcon;
-import sgt.sgt.IndexedColorMap;
-import sgt.sgt.LinearTransform;
-import sgt.sgt.JPane;
-import sgt.sgt.ContourLevelNotFoundException;
-import sgt.sgt.dm.SGTGrid;
+import sgt.IndexedColorMap;
+import sgt.LinearTransform;
+import sgt.JPane;
+import sgt.ContourLevelNotFoundException;
+import sgt.dm.SGTGrid;
 
 import sgt.geom.Range2D;
 import java.awt.event.*;
@@ -410,7 +410,7 @@ public class GridAttributeDialog extends JDialog {
   /**
    * Set the parent <code>JPane</code>.  This reference to
    * <code>JPane</code> is used to enable/disable
-   * {@link sgt.sgt.JPane#setBatch(boolean) batching} so
+   * {@link sgt.JPane#setBatch(boolean) batching} so
    * multiple property changes are made at one time.
    */
   public void setJPane(JPane pane) {
@@ -430,7 +430,7 @@ public class GridAttributeDialog extends JDialog {
   /**
    * Set the parent <code>JPane</code>s.  These references to
    * <code>JPane</code> are used to enable/disable
-   * {@link sgt.sgt.JPane#setBatch(boolean) batching} so
+   * {@link sgt.JPane#setBatch(boolean) batching} so
    * multiple property changes are made at one time. A second
    * <code>JPane</code> is often used for a <code>ColorKey</code>.
    */

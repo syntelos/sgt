@@ -16,8 +16,8 @@ import java.awt.*;
 import java.util.StringTokenizer;
 
 
-import sgt.sgt.PointAttribute;
-import sgt.sgt.JPane;
+import sgt.PointAttribute;
+import sgt.JPane;
 import sgt.swing.PlotMarkIcon;
 import sgt.swing.util.ThreeDotsButton;
 
@@ -25,7 +25,7 @@ import sgt.swing.util.ThreeDotsButton;
  * Edits a <code>PointAttribute</code>. This dialog does not
  * make a copy of the attribute so changes "Applied" will cause
  * <code>sgt</code> to redraw the plot using the new properties unless
- * {@link sgt.sgt.JPane#setBatch(boolean) batching}
+ * {@link sgt.JPane#setBatch(boolean) batching}
  * has been turned on.
  *
  * <p> Example of <code>PointAttributeDialog</code> use:
@@ -345,7 +345,7 @@ public class PointAttributeDialog extends JDialog {
   /**
    * Set the parent <code>JPane</code>.  This reference to
    * <code>JPane</code> is used to enable/disable
-   * {@link sgt.sgt.JPane#setBatch(boolean) batching} so
+   * {@link sgt.JPane#setBatch(boolean) batching} so
    * multiple property changes are made at one time.
    */
   public void setJPane(JPane pane) {
@@ -365,7 +365,7 @@ public class PointAttributeDialog extends JDialog {
   /**
    * Set the parent <code>JPane</code>s.  These references to
    * <code>JPane</code> are used to enable/disable
-   * {@link sgt.sgt.JPane#setBatch(boolean) batching} so
+   * {@link sgt.JPane#setBatch(boolean) batching} so
    * multiple property changes are made at one time. A second
    * <code>JPane</code> is often used for a <code>PointCollectionKey</code>.
    */

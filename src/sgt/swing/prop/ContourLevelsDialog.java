@@ -19,10 +19,10 @@ import java.awt.*;
 import java.util.Vector;
 import java.util.Enumeration;
 
-import sgt.sgt.ContourLevels;
-import sgt.sgt.ContourLevelNotFoundException;
-import sgt.sgt.ContourLineAttribute;
-import sgt.sgt.DefaultContourLineAttribute;
+import sgt.ContourLevels;
+import sgt.ContourLevelNotFoundException;
+import sgt.ContourLineAttribute;
+import sgt.DefaultContourLineAttribute;
 
 /**
  * This dialog edits a <code>ContourLevels</code> object. This dialog

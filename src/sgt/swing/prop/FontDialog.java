@@ -19,7 +19,7 @@ import java.awt.*;
  * make a copy of the object so changes "Applied" will cause
  * <code>sgt</code> to redraw the plot using the new <code>Font</code>
  * properties unless
- * {@link sgt.sgt.JPane#setBatch(boolean) batching}
+ * {@link sgt.JPane#setBatch(boolean) batching}
  * has been turned on.
  *
  * <p> Example of <code>FontDialog</code> use:

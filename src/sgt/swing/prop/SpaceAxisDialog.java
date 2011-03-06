@@ -11,9 +11,9 @@
  */
 package sgt.swing.prop;
 
-import sgt.sgt.JPane;
-import sgt.sgt.SpaceAxis;
-import sgt.sgt.Axis;
+import sgt.JPane;
+import sgt.SpaceAxis;
+import sgt.Axis;
 import sgt.geom.Range2D;
 import sgt.geom.Point2D;
 import sgt.geom.TimePoint;

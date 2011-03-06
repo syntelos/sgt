@@ -757,7 +757,7 @@ public class GeoDate extends java.util.Date implements java.io.Serializable {
    * getTime() method of <code>Long.MIN_VALUE</code> represents a
    * missing observation.
    *
-   * @see sgt.sgt.dm.SGTData#getXRange()
+   * @see sgt.dm.SGTData#getXRange()
    */
   public boolean isMissing() {
     return getTime() == Long.MIN_VALUE;

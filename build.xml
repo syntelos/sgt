@@ -77,7 +77,7 @@
   </target>
 
 
-  <target name="compile-test" depends="compile">
+  <target name="compile-test" depends="compile-demo">
     <javac srcdir="test/src" destdir="${bin}">
       <classpath>
          <pathelement location="${bin}"/>

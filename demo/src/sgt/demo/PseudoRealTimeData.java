@@ -11,10 +11,10 @@
  */
 package sgt.demo;
 
-import sgt.sgt.SGLabel;
-import sgt.sgt.dm.SGTLine;
-import sgt.sgt.dm.SGTData;
-import sgt.sgt.dm.SGTMetaData;
+import sgt.SGLabel;
+import sgt.dm.SGTLine;
+import sgt.dm.SGTData;
+import sgt.dm.SGTMetaData;
 import sgt.geom.GeoDate;
 import sgt.geom.GeoDateArray;
 import sgt.geom.SoTRange;

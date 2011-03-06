@@ -99,12 +99,12 @@ public class JSystemPropertiesDialog extends javax.swing.JDialog {
 	//
 	String ver = null;
 	try {
-	    Class cls = Class.forName("sgt.sgt.JPane");
+	    Class cls = Class.forName("sgt.JPane");
 	    java.lang.reflect.Method meth = cls.getMethod("getVersion", NoParameters);
 	    ver = (String)meth.invoke(Static, NoArgs);
 	} catch (Exception e) {
 	} finally {
-	    names.add("sgt.sgt.version");
+	    names.add("sgt.version");
 	    values.add(ver);
 	}
 	//

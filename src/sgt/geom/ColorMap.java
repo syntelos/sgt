@@ -2,7 +2,7 @@ package sgt.geom;
 
 import java.util.*;
 import java.awt.*;
-import sgt.sgt.Transform;
+import sgt.Transform;
 
 public class ColorMap {
 	protected String mParamName;

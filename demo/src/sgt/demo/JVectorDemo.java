@@ -13,13 +13,13 @@ package sgt.demo;
 
 import sgt.swing.JPlotLayout;
 import sgt.swing.JClassTree;
-import sgt.sgt.JPane;
-import sgt.sgt.AbstractPane;
-import sgt.sgt.VectorAttribute;
-import sgt.sgt.CartesianRenderer;
-import sgt.sgt.CartesianGraph;
-import sgt.sgt.dm.SGTGrid;
-import sgt.sgt.dm.SGTVector;
+import sgt.JPane;
+import sgt.AbstractPane;
+import sgt.VectorAttribute;
+import sgt.CartesianRenderer;
+import sgt.CartesianGraph;
+import sgt.dm.SGTGrid;
+import sgt.dm.SGTVector;
 import sgt.swing.prop.VectorAttributeDialog;
 
 

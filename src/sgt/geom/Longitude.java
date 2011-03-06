@@ -1,5 +1,5 @@
 
- package sgt.geom;
+package sgt.geom;
 
 /**
 * LongitudeValue translates between float and deg/min/sec.

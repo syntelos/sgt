@@ -26,7 +26,7 @@ package sgt.geom;
  * @author Donald Denbo
  * @verstion $Revision: 1.14 $ $Date: 2003/08/25 21:14:26 $
  * @since sgt 2.0
- * @see sgt.sgt.dm.SGTData
+ * @see sgt.dm.SGTData
  */
 public abstract class SoTRange implements java.io.Serializable, Cloneable {
   /**

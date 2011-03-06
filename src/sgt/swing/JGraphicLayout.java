@@ -12,21 +12,21 @@
 
 package  sgt.swing;
 
-import sgt.sgt.CartesianGraph;
-import sgt.sgt.Pane;
-import sgt.sgt.SGLabel;
-import sgt.sgt.Layer;
-import sgt.sgt.JPane;
-import sgt.sgt.AxisTransform;
-import sgt.sgt.LineCartesianRenderer;
-import sgt.sgt.Graph;
-import sgt.sgt.Attribute;
-import sgt.sgt.LineAttribute;
-import sgt.sgt.GridAttribute;
-import sgt.sgt.PlainAxis;
-import sgt.sgt.TimeAxis;
-import sgt.sgt.Logo;
-import sgt.sgt.DataNotFoundException;
+import sgt.CartesianGraph;
+import sgt.Pane;
+import sgt.SGLabel;
+import sgt.Layer;
+import sgt.JPane;
+import sgt.AxisTransform;
+import sgt.LineCartesianRenderer;
+import sgt.Graph;
+import sgt.Attribute;
+import sgt.LineAttribute;
+import sgt.GridAttribute;
+import sgt.PlainAxis;
+import sgt.TimeAxis;
+import sgt.Logo;
+import sgt.DataNotFoundException;
 
 import sgt.geom.Domain;
 import sgt.geom.Rectangle2D;
@@ -37,12 +37,12 @@ import sgt.geom.GeoDate;
 import sgt.geom.Units;
 import sgt.geom.SoTRange;
 
-import sgt.sgt.dm.SGTData;
-import sgt.sgt.dm.SGTPoint;
-import sgt.sgt.dm.SGTLine;
-import sgt.sgt.dm.SGTGrid;
-import sgt.sgt.dm.Collection;
-import sgt.sgt.dm.SGTVector;
+import sgt.dm.SGTData;
+import sgt.dm.SGTPoint;
+import sgt.dm.SGTLine;
+import sgt.dm.SGTGrid;
+import sgt.dm.Collection;
+import sgt.dm.SGTVector;
 
 import sgt.swing.prop.SGLabelDialog;
 import sgt.swing.prop.TimeAxisDialog;

@@ -12,12 +12,12 @@
 
 package  sgt.geom;
 
-import sgt.sgt.dm.SGTMetaData;
-import sgt.sgt.dm.SGTData;
-import sgt.sgt.dm.SGTLine;
-import sgt.sgt.dm.SGTGrid;
-import sgt.sgt.dm.SimpleLine;
-import sgt.sgt.dm.SimpleGrid;
+import sgt.dm.SGTMetaData;
+import sgt.dm.SGTData;
+import sgt.dm.SGTLine;
+import sgt.dm.SGTGrid;
+import sgt.dm.SimpleLine;
+import sgt.dm.SimpleGrid;
 
 import java.lang.reflect.Constructor;
 

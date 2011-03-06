@@ -18,7 +18,7 @@ import javax.swing.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import sgt.sgt.*;
+import sgt.*;
 import sgt.geom.SoTPoint;
 import sgt.geom.SoTRange;
 import sgt.geom.Dimension2D;

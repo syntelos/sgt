@@ -12,7 +12,7 @@
 
 package sgt.swing;
 
-import sgt.sgt.PlotMark;
+import sgt.PlotMark;
 
 import javax.swing.Icon;
 import java.awt.Component;

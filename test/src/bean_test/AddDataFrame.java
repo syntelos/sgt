@@ -6,24 +6,24 @@ import java.awt.event.*;
 import javax.swing.border.*;
 import java.util.Iterator;
 
-import sgt.sgt.dm.SGTData;
-import sgt.sgt.dm.SGTGrid;
-import sgt.sgt.dm.SGTVector;
-import sgt.sgt.Attribute;
-import sgt.sgt.LineAttribute;
-import sgt.sgt.PointAttribute;
-import sgt.sgt.GridAttribute;
-import sgt.sgt.VectorAttribute;
-import sgt.sgt.beans.*;
-import sgt.sgt.demo.TestData;
-import sgt.sgt.ColorMap;
-import sgt.sgt.IndexedColorMap;
-import sgt.sgt.LinearTransform;
+import sgt.dm.SGTData;
+import sgt.dm.SGTGrid;
+import sgt.dm.SGTVector;
+import sgt.Attribute;
+import sgt.LineAttribute;
+import sgt.PointAttribute;
+import sgt.GridAttribute;
+import sgt.VectorAttribute;
+import sgt.beans.*;
+import sgt.demo.TestData;
+import sgt.ColorMap;
+import sgt.IndexedColorMap;
+import sgt.LinearTransform;
 import sgt.geom.Range2D;
 import sgt.geom.GeoDate;
 import sgt.geom.IllegalTimeValue;
 import sgt.geom.TimeRange;
-import sgt.sgt.beans.Page;
+import sgt.beans.Page;
 
 import javax.swing.event.*;
 
