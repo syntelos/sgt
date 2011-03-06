@@ -17,9 +17,9 @@ import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.event.*;
 
-import sgt.swing.ThreeDotsButton;
-import sgt.sgt.swing.prop.ColorEntryPanel;
-import sgt.sgt.swing.prop.FontDialog;
+import sgt.swing.util.ThreeDotsButton;
+import sgt.swing.prop.ColorEntryPanel;
+import sgt.swing.prop.FontDialog;
 
 /**
  * Edit/create a <code>Border</code> object to be used with <code>PanelHolder</code>.

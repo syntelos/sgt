@@ -15,7 +15,7 @@ package  sgt.sgt;
 import sgt.sgt.dm.Collection;
 import sgt.sgt.dm.SGTData;
 
-import sgt.sgt.swing.Draggable;
+import sgt.swing.Draggable;
 
 import sgt.geom.Dimension2D;
 import sgt.geom.Rectangle2D;

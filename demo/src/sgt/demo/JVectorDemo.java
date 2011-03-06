@@ -11,8 +11,8 @@
  */
 package sgt.demo;
 
-import sgt.sgt.swing.JPlotLayout;
-import sgt.sgt.swing.JClassTree;
+import sgt.swing.JPlotLayout;
+import sgt.swing.JClassTree;
 import sgt.sgt.JPane;
 import sgt.sgt.AbstractPane;
 import sgt.sgt.VectorAttribute;
@@ -20,7 +20,7 @@ import sgt.sgt.CartesianRenderer;
 import sgt.sgt.CartesianGraph;
 import sgt.sgt.dm.SGTGrid;
 import sgt.sgt.dm.SGTVector;
-import sgt.sgt.swing.prop.VectorAttributeDialog;
+import sgt.swing.prop.VectorAttributeDialog;
 
 
 import sgt.geom.GeoDate;

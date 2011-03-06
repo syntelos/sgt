@@ -23,12 +23,12 @@ import sgt.sgt.PointCollectionKey;
 import sgt.sgt.PointCartesianRenderer;
 import sgt.sgt.StackedLayout;
 import sgt.sgt.Axis;
-import sgt.sgt.swing.JClassTree;
+import sgt.swing.JClassTree;
 import sgt.sgt.Logo;
 
-import sgt.sgt.swing.ValueIcon;
-import sgt.sgt.swing.ValueIconFormat;
-import sgt.sgt.swing.prop.PointAttributeDialog;
+import sgt.swing.ValueIcon;
+import sgt.swing.ValueIconFormat;
+import sgt.swing.prop.PointAttributeDialog;
 
 import sgt.sgt.dm.Collection;
 import sgt.sgt.dm.SimplePoint;
@@ -178,7 +178,7 @@ public class TAOMap extends JApplet implements PropertyChangeListener {
   JPane makeGraph() {
     /*
      * This example creates a very simple plot from
-     * scratch (not using one of the sgt.sgt.swing classes)
+     * scratch (not using one of the sgt.swing classes)
      * to display a Collection of points.
      */
     coastLine_ = getCoastLine("finerezcoast.bin", 50200);

@@ -19,7 +19,7 @@ import java.beans.PropertyChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import sgt.sgt.swing.prop.ColorDialog;
+import sgt.swing.prop.ColorDialog;
 import sgt.sgt.AbstractPane;
 
 /**

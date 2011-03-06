@@ -27,9 +27,9 @@ import sgt.sgt.IndexedColorMap;
 import sgt.sgt.LinearTransform;
 import sgt.sgt.GridAttribute;
 import sgt.sgt.Attribute;
-import sgt.sgt.swing.JClassTree;
+import sgt.swing.JClassTree;
 import sgt.geom.*;
-import sgt.swing.JSystemPropertiesDialog;
+import sgt.swing.util.JSystemPropertiesDialog;
 
 /**
  *

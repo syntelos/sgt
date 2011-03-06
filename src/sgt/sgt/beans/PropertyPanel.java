@@ -29,7 +29,7 @@ import sgt.geom.SoTRange;
 import sgt.geom.SoTPoint;
 import sgt.geom.IllegalTimeValue;
 import sgt.geom.GeoDate;
-import sgt.sgt.swing.ColorSwatchIcon;
+import sgt.swing.ColorSwatchIcon;
 
 /**
  * @author Donald Denbo

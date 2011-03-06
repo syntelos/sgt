@@ -12,7 +12,7 @@
 package sgt.demo;
 
 import sgt.sgt.JPane;
-import sgt.sgt.swing.JPlotLayout;
+import sgt.swing.JPlotLayout;
 import sgt.sgt.dm.SGTData;
 
 import sgt.geom.Range2D;
@@ -99,7 +99,7 @@ public class JProfileDemo extends JApplet {
      * on the Applet.
      */
     lpl.setTitles("Profile Demo", 
-                  "using a sgt.swing class", 
+                  "using a sgt.swing.util class", 
                   "JPlotLayout");
                   
     lpl.setSize(new Dimension(450,600));

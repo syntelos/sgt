@@ -33,7 +33,7 @@ import sgt.geom.Dimension2D;
  * @version $Revision: 1.7 $, $Date: 2003/09/17 21:37:18 $
  * @since 2.0
  * @see PointCartesianRenderer
- * @see sgt.sgt.swing.PlotMarkIcon
+ * @see sgt.swing.PlotMarkIcon
  */
 public class PlotMark {
   protected int mark_;

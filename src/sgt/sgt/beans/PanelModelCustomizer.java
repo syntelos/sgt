@@ -40,7 +40,7 @@ import sgt.sgt.SGLabel;
 import sgt.geom.Point2D;
 import sgt.geom.Rectangle2D;
 import sgt.geom.SimpleFileFilter;
-import sgt.swing.MRJUtil;
+import sgt.swing.util.MRJUtil;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 /**

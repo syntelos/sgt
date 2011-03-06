@@ -27,7 +27,7 @@ import sgt.sgt.Axis;
 
 import sgt.sgt.dm.SimpleLine;
 
-import sgt.sgt.swing.JClassTree;
+import sgt.swing.JClassTree;
 
 import sgt.geom.Point2D;
 import sgt.geom.TimePoint;

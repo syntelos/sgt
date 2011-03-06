@@ -17,7 +17,7 @@ import sgt.sgt.SGLabel;
 import sgt.sgt.Layer;
 import sgt.sgt.CartesianGraph;
 import sgt.sgt.StackedLayout;
-import sgt.sgt.swing.JClassTree;
+import sgt.swing.JClassTree;
 import sgt.geom.Dimension2D;
 import sgt.geom.Point2D;
 //import sgt.geom.SoTDomain;

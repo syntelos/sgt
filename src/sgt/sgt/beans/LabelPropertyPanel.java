@@ -22,8 +22,8 @@ import java.text.DecimalFormat;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
-import sgt.sgt.swing.prop.ColorDialog;
-import sgt.sgt.swing.prop.FontDialog;
+import sgt.swing.prop.ColorDialog;
+import sgt.swing.prop.FontDialog;
 import sgt.sgt.SGLabel;
 import sgt.geom.Point2D;
 

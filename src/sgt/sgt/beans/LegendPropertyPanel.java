@@ -25,8 +25,8 @@ import java.awt.Font;
 import java.text.DecimalFormat;
 
 import sgt.sgt.Ruler;
-import sgt.sgt.swing.prop.FontDialog;
-import sgt.sgt.swing.prop.ColorDialog;
+import sgt.swing.prop.FontDialog;
+import sgt.swing.prop.ColorDialog;
 
 /**
  * @author Donald Denbo

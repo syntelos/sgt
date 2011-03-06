@@ -26,7 +26,7 @@ import sgt.sgt.LineAttribute;
 import sgt.sgt.LineCartesianRenderer;
 import sgt.sgt.StackedLayout;
 import sgt.sgt.Axis;
-import sgt.sgt.swing.JClassTree;
+import sgt.swing.JClassTree;
 //import sgt.sgt.Logo;
 
 //import sgt.sgt.dm.Collection;

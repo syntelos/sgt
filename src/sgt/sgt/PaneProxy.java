@@ -12,7 +12,7 @@
 
 package  sgt.sgt;
 
-import sgt.sgt.swing.Draggable;
+import sgt.swing.Draggable;
 import sgt.sgt.beans.Panel;
 
 import sgt.geom.Debug;

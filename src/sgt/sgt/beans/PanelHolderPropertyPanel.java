@@ -22,7 +22,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
-import sgt.sgt.swing.prop.ColorDialog;
+import sgt.swing.prop.ColorDialog;
 /**
  * @author Donald Denbo
  * @version $Revision: 1.4 $, $Date: 2003/08/27 23:29:40 $

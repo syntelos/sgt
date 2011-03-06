@@ -43,10 +43,10 @@ import sgt.geom.IllegalTimeValue;
 import sgt.sgt.Axis;
 import sgt.sgt.TimeAxis;
 import sgt.sgt.SGLabel;
-import sgt.sgt.swing.ColorSwatchIcon;
-import sgt.sgt.swing.prop.SGLabelDialog;
-import sgt.sgt.swing.prop.FontDialog;
-import sgt.sgt.swing.prop.ColorDialog;
+import sgt.swing.ColorSwatchIcon;
+import sgt.swing.prop.SGLabelDialog;
+import sgt.swing.prop.FontDialog;
+import sgt.swing.prop.ColorDialog;
 
 /**
  * @author Donald Denbo

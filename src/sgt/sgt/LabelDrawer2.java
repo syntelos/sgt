@@ -15,7 +15,7 @@ package  sgt.sgt;
 import sgt.geom.Point2D;
 import sgt.geom.Rectangle2D;
 import sgt.geom.Debug;
-import sgt.swing.MRJUtil;
+import sgt.swing.util.MRJUtil;
 
 import java.awt.*;
 import java.beans.*;

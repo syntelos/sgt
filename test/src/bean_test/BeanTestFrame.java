@@ -23,8 +23,8 @@ import java.beans.XMLDecoder;
 import sgt.sgt.beans.*;
 import sgt.sgt.AbstractPane;
 import sgt.sgt.JPane;
-import sgt.swing.*;
-import sgt.sgt.swing.JClassTree;
+import sgt.swing.util.*;
+import sgt.swing.JClassTree;
 import sgt.geom.SimpleFileFilter;
 
 /**

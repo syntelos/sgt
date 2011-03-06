@@ -11,9 +11,9 @@
  */
 package sgt.demo;
 
-import sgt.sgt.swing.JPlotLayout;
-import sgt.sgt.swing.JClassTree;
-import sgt.sgt.swing.prop.GridAttributeDialog;
+import sgt.swing.JPlotLayout;
+import sgt.swing.JClassTree;
+import sgt.swing.prop.GridAttributeDialog;
 import sgt.sgt.JPane;
 import sgt.sgt.AbstractPane;
 import sgt.sgt.GridAttribute;
