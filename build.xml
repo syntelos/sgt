@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<project name="sgt" default="jar" basedir=".">
+  <!--
+     - SGT Dev Branch
+    -->
+  <tstamp/>
+  <property name="bin" value="bin"/>
+  <property name="lib" value="lib"/>
+  <property name="src" value="src"/>
+  <property name="dst" value="."/>
+  <property name="demo" value="demo"/>
+
+  <property name="sgt.jar" value="${dst}/sgt.jar"/>
+  <property name="sgt.demo.jar" value="${dst}/sgt-demo.jar"/>
+
+  <macrodef name="copy-resources">
+    <attribute name="src" />
+    <attribute name="dst" />
+    <sequential>
+      <copy todir="@{dst}" filtering="no">
+	<fileset dir="@{src}">
+          <patternset>
+	    <include name="**/*.gif"/>
+	    <include name="**/*.bin"/>
+	    <include name="**/*.dat"/>
+	    <include name="**/*.xml"/>
+	    <include name="**/*cmap"/>
+	  </patternset>
+	</fileset>
+      </copy>
+    </sequential>
+  </macrodef>
+
+  <target name="jar" depends="compile" description="Compile and package SGT jar.">
+
+    <copy-resources src="${src}" dst="${bin}"/>
+
+    <jar jarfile="${sgt.jar}" basedir="${bin}"
+          manifest="${src}/Manifest.mf" />
+
+  </target>
+
+  <target name="compile">
+
+    <mkdir dir="${bin}"/>
+
+    <javac srcdir="${src}" destdir="${bin}" debug="true" source="1.4" target="1.4" />
+
+  </target>
+
+  <target name="demo" depends="compile-demo" description="Compile and package DEMO jar.">
+
+    <copy-resources src="${demo}" dst="${bin}"/>
+
+    <jar jarfile="${sgt.demo.jar}" basedir="${bin}"
+          manifest="${src}/Manifest.mf" />
+
+  </target>
+
+  <target name="compile-demo" depends="compile">
+
+    <javac srcdir="${demo}" destdir="${bin}" debug="true" source="1.4" target="1.4" />
+
+  </target>
+
+
+  <target name="clean">
+    
+    <delete dir="${bin}"/>
+    <delete file="${sgt.jar}"/>
+    <delete file="${sgt.demo.jar}"/>
+
+    <delete verbose="true">
+       <fileset dir="." defaultexcludes="no"
+            includes="**/*.class,**/*~"/>
+    </delete>
+  </target>
+
+
+  <target name="compile-test" depends="compile">
+    <javac srcdir="test/src" destdir="${bin}">
+      <classpath>
+         <pathelement location="${bin}"/>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="test" depends="compile-test">
+
+    <java classname="bean_test.BeanTestApp"
+          fork="yes">
+      <classpath>
+        <pathelement location="${bin}"/>
+      </classpath>
+    </java>
+
+  </target>
+
+  <target name="pmEdit">
+    <java classname="sgt.sgt.beans.PanelModelEditor"
+          fork="yes">
+      <classpath>
+        <pathelement path="${sgt.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="all"
+    depends="JGridDemo,JLayoutDemo,JLogLogDemo,JPointDemo,JProfileDemo,JRealTimeDemo,JTimeSeriesDemo,JVectorDemo,TAOMap,BeanDemo">
+  </target>
+
+  <target name="BeanDemo">
+    <java classname="sgt.demo.BeanDemo"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="vector">
+    <java classname="sgt.demo.JVectorDemo"
+               fork="yes">
+        <classpath>
+            <pathelement location="${sgt.demo.jar}"/>
+        </classpath>
+     </java>
+  </target>
+
+  <target name="JVectorDemo">
+    <java classname="sgt.demo.JVectorDemo"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="JGridDemo">
+    <java classname="sgt.demo.JGridDemo"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="JLayoutDemo">
+    <java classname="sgt.demo.JLayoutDemo"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="JLogLogDemo">
+    <java classname="sgt.demo.JLogLogDemo"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="JPointDemo">
+    <java classname="sgt.demo.JPointDemo"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="JProfileDemo">
+    <java classname="sgt.demo.JProfileDemo"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="JRealTimeDemo">
+    <java classname="sgt.demo.JRealTimeDemo"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="JTimeSeriesDemo">
+    <java classname="sgt.demo.JTimeSeriesDemo"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="TAOMap">
+    <java classname="sgt.demo.TAOMap"
+               fork="yes">
+      <classpath>
+        <pathelement path="${sgt.demo.jar}"/>
+      </classpath>
+    </java>
+  </target>
+</project>

@@ -1,0 +1,42 @@
+
+Welcome to SGT!
+
+  Origin Home
+
+     http://www.epic.noaa.gov/java/sgt/
+
+	 The Scientific Graphics Toolkit (SGT) for highly interactive,
+	 flexible, and publication quality graphics of scientific data
+
+	     Features include user settable or automatically scaled
+	     axes, sophisticated, automatically self-scaling time
+	     axes, labels as movable, customizable objects, automatic
+	     generation of legends to explain the data being
+	     displayed, and more.
+
+
+  Dev Branch
+
+     http://github.com/syntelos/sgt
+
+     Objectives
+
+	 Reorganizing into a minimized form for evaluation and
+	 application purposes
+
+	 Reviewing performance qualities for demanding real time data
+	 display
+
+     Requirements
+
+         Once per second update of thousands of domain elements (X for
+	 multiple Y) with plenty of CPU remaining for network I/O,
+	 data management, and user interaction in a normal user
+	 desktop application.
+
+     Road Map
+
+         Would be nice to have AWT (this existing), JOGL and Android
+         backends under a common API.  If possible, something like
+         this would be the place to do it.
+
