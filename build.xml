@@ -109,7 +109,7 @@
     depends="JGridDemo,JLayoutDemo,JLogLogDemo,JPointDemo,JProfileDemo,JRealTimeDemo,JTimeSeriesDemo,JVectorDemo,TAOMap,BeanDemo">
   </target>
 
-  <target name="BeanDemo">
+  <target name="BeanDemo" description="Run demo">
     <java classname="sgt.demo.BeanDemo"
                fork="yes">
       <classpath>
@@ -127,7 +127,7 @@
      </java>
   </target>
 
-  <target name="JVectorDemo">
+  <target name="JVectorDemo" description="Run demo">
     <java classname="sgt.demo.JVectorDemo"
                fork="yes">
       <classpath>
@@ -136,7 +136,7 @@
     </java>
   </target>
 
-  <target name="JGridDemo">
+  <target name="JGridDemo" description="Run demo">
     <java classname="sgt.demo.JGridDemo"
                fork="yes">
       <classpath>
@@ -145,7 +145,7 @@
     </java>
   </target>
 
-  <target name="JLayoutDemo">
+  <target name="JLayoutDemo" description="Run demo">
     <java classname="sgt.demo.JLayoutDemo"
                fork="yes">
       <classpath>
@@ -154,7 +154,7 @@
     </java>
   </target>
 
-  <target name="JLogLogDemo">
+  <target name="JLogLogDemo" description="Run demo">
     <java classname="sgt.demo.JLogLogDemo"
                fork="yes">
       <classpath>
@@ -163,7 +163,7 @@
     </java>
   </target>
 
-  <target name="JPointDemo">
+  <target name="JPointDemo" description="Run demo">
     <java classname="sgt.demo.JPointDemo"
                fork="yes">
       <classpath>
@@ -172,7 +172,7 @@
     </java>
   </target>
 
-  <target name="JProfileDemo">
+  <target name="JProfileDemo" description="Run demo">
     <java classname="sgt.demo.JProfileDemo"
                fork="yes">
       <classpath>
@@ -181,7 +181,7 @@
     </java>
   </target>
 
-  <target name="JRealTimeDemo">
+  <target name="JRealTimeDemo" description="Run demo">
     <java classname="sgt.demo.JRealTimeDemo"
                fork="yes">
       <classpath>
@@ -190,7 +190,7 @@
     </java>
   </target>
 
-  <target name="JTimeSeriesDemo">
+  <target name="JTimeSeriesDemo" description="Run demo">
     <java classname="sgt.demo.JTimeSeriesDemo"
                fork="yes">
       <classpath>
@@ -199,7 +199,7 @@
     </java>
   </target>
 
-  <target name="TAOMap">
+  <target name="TAOMap" description="Run demo">
     <java classname="sgt.demo.TAOMap"
                fork="yes">
       <classpath>
