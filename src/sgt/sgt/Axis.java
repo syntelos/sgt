@@ -12,10 +12,10 @@
 
 package  sgt.sgt;
 
-import sgt.util.SoTPoint;
-import sgt.util.SoTRange;
-import sgt.util.Range2D;
-import sgt.util.Debug;
+import sgt.geom.SoTPoint;
+import sgt.geom.SoTRange;
+import sgt.geom.Range2D;
+import sgt.geom.Debug;
 
 import java.util.Vector;
 import java.util.Enumeration;

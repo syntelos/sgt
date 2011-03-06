@@ -12,7 +12,7 @@
  
 package sgt.sgt.dm;
  
-import sgt.util.GeoDate;
+import sgt.geom.GeoDate;
 import java.util.Properties;
 /**
  * MetaData container for the sgt datamodel.

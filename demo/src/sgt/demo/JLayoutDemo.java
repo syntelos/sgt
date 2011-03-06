@@ -29,15 +29,15 @@ import sgt.sgt.dm.SimpleLine;
 
 import sgt.sgt.swing.JClassTree;
 
-import sgt.util.Point2D;
-import sgt.util.TimePoint;
-import sgt.util.GeoDate;
-import sgt.util.TimeRange;
-import sgt.util.Range2D;
-import sgt.util.Dimension2D;
-import sgt.util.IllegalTimeValue;
-import sgt.util.SoTRange;
-import sgt.util.SoTPoint;
+import sgt.geom.Point2D;
+import sgt.geom.TimePoint;
+import sgt.geom.GeoDate;
+import sgt.geom.TimeRange;
+import sgt.geom.Range2D;
+import sgt.geom.Dimension2D;
+import sgt.geom.IllegalTimeValue;
+import sgt.geom.SoTRange;
+import sgt.geom.SoTPoint;
 
 import java.util.Enumeration;
 import java.awt.*;

@@ -25,7 +25,7 @@ import sgt.sgt.AbstractPane;
 import sgt.sgt.JPane;
 import sgt.swing.*;
 import sgt.sgt.swing.JClassTree;
-import sgt.util.SimpleFileFilter;
+import sgt.geom.SimpleFileFilter;
 
 /**
  *

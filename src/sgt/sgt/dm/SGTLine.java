@@ -12,8 +12,8 @@
 
 package sgt.sgt.dm;
 
-import sgt.util.GeoDate;
-import sgt.util.GeoDateArray;
+import sgt.geom.GeoDate;
+import sgt.geom.GeoDateArray;
 
 /**
  * Defines a data object to be of Line type. Interpretation

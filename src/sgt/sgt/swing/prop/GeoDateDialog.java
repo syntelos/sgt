@@ -11,7 +11,7 @@
  */
 package sgt.sgt.swing.prop;
 
-import sgt.util.GeoDate;
+import sgt.geom.GeoDate;
 
 import java.awt.*;
 import java.awt.event.*;

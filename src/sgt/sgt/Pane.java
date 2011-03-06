@@ -12,7 +12,7 @@
 
 package  sgt.sgt;
 
-import sgt.util.Debug;
+import sgt.geom.Debug;
 
 import java.awt.Rectangle;
 import java.awt.Dimension;

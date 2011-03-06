@@ -13,7 +13,7 @@
 package sgt.sgt.dm;
 
 import sgt.sgt.SGLabel;
-import sgt.util.SoTRange;
+import sgt.geom.SoTRange;
 
 import java.beans.PropertyChangeListener;
 
@@ -112,7 +112,7 @@ public interface SGTData {
    * and return <code>GeoDate(Long.MIN_VALUE)</code> for data of type
    * <code>GeoDate</code>.
    *
-   * @see sgt.util.GeoDate#isMissing()
+   * @see sgt.geom.GeoDate#isMissing()
    */
   public SoTRange getXRange();
 

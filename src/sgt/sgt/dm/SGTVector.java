@@ -13,7 +13,7 @@
 package sgt.sgt.dm;
 
 import sgt.sgt.SGLabel;
-import sgt.util.SoTRange;
+import sgt.geom.SoTRange;
 
 import java.beans.PropertyChangeListener;
 import java.io.Serializable;

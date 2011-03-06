@@ -13,10 +13,10 @@
 package sgt.sgt.dm;
 
 import sgt.sgt.SGLabel;
-import sgt.util.GeoDate;
-import sgt.util.GeoDateArray;
-import sgt.util.SoTRange;
-import sgt.util.Range2D;
+import sgt.geom.GeoDate;
+import sgt.geom.GeoDateArray;
+import sgt.geom.SoTRange;
+import sgt.geom.Range2D;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;

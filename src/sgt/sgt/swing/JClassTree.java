@@ -22,7 +22,7 @@ import java.awt.event.InputEvent;
 import java.util.Enumeration;
 import java.util.List;
 
-import sgt.util.Debug;
+import sgt.geom.Debug;
 
 import sgt.sgt.JPane;
 import sgt.sgt.Layer;

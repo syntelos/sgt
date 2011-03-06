@@ -14,12 +14,12 @@ package sgt.sgt.swing.prop;
 import sgt.sgt.JPane;
 import sgt.sgt.TimeAxis;
 import sgt.sgt.Axis;
-import sgt.util.Range2D;
-import sgt.util.TimeRange;
-import sgt.util.TimePoint;
+import sgt.geom.Range2D;
+import sgt.geom.TimeRange;
+import sgt.geom.TimePoint;
 
-import sgt.util.GeoDate;
-import sgt.util.IllegalTimeValue;
+import sgt.geom.GeoDate;
+import sgt.geom.IllegalTimeValue;
 import sgt.swing.ThreeDotsButton;
 
 import java.util.Enumeration;

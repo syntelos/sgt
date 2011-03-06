@@ -17,8 +17,8 @@ import java.awt.Rectangle;
 import java.awt.Point;
 import java.awt.Graphics;
 
-import sgt.util.Point2D;
-import sgt.util.Rectangle2D;
+import sgt.geom.Point2D;
+import sgt.geom.Rectangle2D;
 
 /**
  * @author Donald Denbo

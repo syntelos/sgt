@@ -12,9 +12,9 @@
 
 package  sgt.sgt;
 
-import sgt.util.Point2D;
-import sgt.util.Rectangle2D;
-import sgt.util.Debug;
+import sgt.geom.Point2D;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Debug;
 
 import  java.awt.image.PixelGrabber;
 import  java.awt.image.MemoryImageSource;

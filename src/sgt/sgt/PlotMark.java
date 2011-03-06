@@ -21,7 +21,7 @@ import java.awt.Color;
 
 import javax.swing.*;
 
-import sgt.util.Dimension2D;
+import sgt.geom.Dimension2D;
 
 /**
  * Support class used to draw a PlotMark. Plot mark codes are defined

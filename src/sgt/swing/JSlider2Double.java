@@ -15,7 +15,7 @@ import java.awt.BorderLayout;
 import java.awt.Insets;
 import java.text.DecimalFormat;
 
-import sgt.util.Range2D;
+import sgt.geom.Range2D;
 
 /**
  * Class provides graphical and textual input of a range.

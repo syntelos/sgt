@@ -12,7 +12,7 @@
 
 package  sgt.sgt;
 
-import sgt.util.Point2D;
+import sgt.geom.Point2D;
 
 import java.util.Vector;
 import java.awt.Graphics;

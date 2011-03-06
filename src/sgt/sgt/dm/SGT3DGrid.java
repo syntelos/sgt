@@ -12,9 +12,9 @@
  
 package sgt.sgt.dm;
  
-import sgt.util.GeoDate;
-import sgt.util.Range2D;
-import sgt.util.SoTRange;
+import sgt.geom.GeoDate;
+import sgt.geom.Range2D;
+import sgt.geom.SoTRange;
  
 /**
  * Defines a data object to be of Grid type. Interpretation 

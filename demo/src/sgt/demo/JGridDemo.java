@@ -27,14 +27,14 @@ import sgt.sgt.LinearTransform;
 import sgt.sgt.dm.SGTData;
 
 
-import sgt.util.GeoDate;
-import sgt.util.TimeRange;
-import sgt.util.Range2D;
-import sgt.util.Dimension2D;
-import sgt.util.Rectangle2D;
-import sgt.util.Point2D;
-import sgt.util.IllegalTimeValue;
-import sgt.util.Debug;
+import sgt.geom.GeoDate;
+import sgt.geom.TimeRange;
+import sgt.geom.Range2D;
+import sgt.geom.Dimension2D;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Point2D;
+import sgt.geom.IllegalTimeValue;
+import sgt.geom.Debug;
 
 import java.awt.*;
 import java.awt.print.*;

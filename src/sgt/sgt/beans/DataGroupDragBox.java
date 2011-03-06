@@ -13,7 +13,7 @@
 package sgt.sgt.beans;
 
 import java.awt.*;
-//import sgt.util.Rectangle2D;
+//import sgt.geom.Rectangle2D;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.geom.Rectangle2D;

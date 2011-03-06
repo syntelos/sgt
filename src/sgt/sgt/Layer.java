@@ -17,9 +17,9 @@ import sgt.sgt.dm.SGTData;
 
 import sgt.sgt.swing.Draggable;
 
-import sgt.util.Dimension2D;
-import sgt.util.Rectangle2D;
-import sgt.util.Debug;
+import sgt.geom.Dimension2D;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Debug;
 
 import java.util.Vector;
 import java.util.Enumeration;
@@ -112,7 +112,7 @@ import java.awt.*;
  * @see ColorKey
  * @see SGLabel
  * @see LineKey
- * @see sgt.util.GeoDate
+ * @see sgt.geom.GeoDate
 **/
 public class Layer extends Component implements Cloneable, LayerControl {
   private String ident_;

@@ -12,7 +12,7 @@
  
 package sgt.sgt;
 
-import sgt.util.Range2D;
+import sgt.geom.Range2D;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;

@@ -12,9 +12,9 @@
 
 package sgt.sgt.dm;
 
-import sgt.util.GeoDate;
-import sgt.util.GeoDateArray;
-import sgt.util.Range2D;
+import sgt.geom.GeoDate;
+import sgt.geom.GeoDateArray;
+import sgt.geom.Range2D;
 
 /**
  * Provides access to tuple organized data of either 2 or 3 dimensions.

@@ -14,8 +14,8 @@ package sgt.sgt.swing.prop;
 
 import sgt.sgt.SGLabel;
 import sgt.sgt.JPane;
-import sgt.util.Point2D;
-import sgt.util.Debug;
+import sgt.geom.Point2D;
+import sgt.geom.Debug;
 import sgt.swing.ThreeDotsButton;
 import sgt.swing.MRJUtil;
 

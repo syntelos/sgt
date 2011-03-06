@@ -15,9 +15,9 @@ import sgt.sgt.JPane;
 import sgt.sgt.swing.JPlotLayout;
 import sgt.sgt.dm.SGTData;
 
-import sgt.util.Range2D;
-import sgt.util.Dimension2D;
-import sgt.util.Point2D;
+import sgt.geom.Range2D;
+import sgt.geom.Dimension2D;
+import sgt.geom.Point2D;
 
 import java.awt.*;
 import javax.swing.*;

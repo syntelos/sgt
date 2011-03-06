@@ -32,12 +32,12 @@ import sgt.sgt.swing.JClassTree;
 //import sgt.sgt.dm.Collection;
 import sgt.sgt.dm.SGTData;
 
-import sgt.util.Point2D;
-import sgt.util.Range2D;
-import sgt.util.SoTRange;
-import sgt.util.SoTValue;
-import sgt.util.SoTPoint;
-import sgt.util.Dimension2D;
+import sgt.geom.Point2D;
+import sgt.geom.Range2D;
+import sgt.geom.SoTRange;
+import sgt.geom.SoTValue;
+import sgt.geom.SoTPoint;
+import sgt.geom.Dimension2D;
 
 import java.awt.*;
 import javax.swing.*;

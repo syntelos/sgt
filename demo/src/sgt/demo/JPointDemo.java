@@ -28,9 +28,9 @@ import sgt.sgt.Logo;
 
 import sgt.sgt.dm.Collection;
 
-import sgt.util.Point2D;
-import sgt.util.Range2D;
-import sgt.util.Dimension2D;
+import sgt.geom.Point2D;
+import sgt.geom.Range2D;
+import sgt.geom.Dimension2D;
 
 import java.awt.*;
 import javax.swing.*;

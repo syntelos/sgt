@@ -12,7 +12,7 @@
 
 package sgt.sgt.contour;
 
-import sgt.util.Debug;
+import sgt.geom.Debug;
 
 import java.util.BitSet;
 

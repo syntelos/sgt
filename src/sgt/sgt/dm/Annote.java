@@ -17,13 +17,13 @@ import sgt.sgt.LineAttribute;
 import sgt.sgt.PointAttribute;
 import sgt.sgt.SGLabel;
 
-import sgt.util.SoTPoint;
-import sgt.util.SoTDomain;
-import sgt.util.SoTRange;
-import sgt.util.SoTValue;
-import sgt.util.Rectangle2D;
-import sgt.util.GeoDate;
-import sgt.util.GeoDateArray;
+import sgt.geom.SoTPoint;
+import sgt.geom.SoTDomain;
+import sgt.geom.SoTRange;
+import sgt.geom.SoTValue;
+import sgt.geom.Rectangle2D;
+import sgt.geom.GeoDate;
+import sgt.geom.GeoDateArray;
 
 import java.io.Serializable;
 import java.awt.Color;

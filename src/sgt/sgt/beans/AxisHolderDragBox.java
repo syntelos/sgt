@@ -16,8 +16,8 @@ import java.awt.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import sgt.util.Rectangle2D;
-import sgt.util.Point2D;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Point2D;
 import sgt.sgt.Axis;
 
 /**

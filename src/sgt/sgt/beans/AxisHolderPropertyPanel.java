@@ -33,12 +33,12 @@ import java.util.Vector;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
-import sgt.util.SoTRange;
-import sgt.util.SoTPoint;
-import sgt.util.Rectangle2D;
-import sgt.util.Point2D;
-import sgt.util.GeoDate;
-import sgt.util.IllegalTimeValue;
+import sgt.geom.SoTRange;
+import sgt.geom.SoTPoint;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Point2D;
+import sgt.geom.GeoDate;
+import sgt.geom.IllegalTimeValue;
 
 import sgt.sgt.Axis;
 import sgt.sgt.TimeAxis;

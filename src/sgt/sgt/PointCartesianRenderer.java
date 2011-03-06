@@ -16,8 +16,8 @@ import sgt.sgt.dm.SGTPoint;
 import sgt.sgt.dm.Collection;
 import sgt.sgt.dm.SGTData;
 
-import sgt.util.Point2D;
-import sgt.util.Debug;
+import sgt.geom.Point2D;
+import sgt.geom.Debug;
 
 import java.util.Vector;
 import java.util.Enumeration;

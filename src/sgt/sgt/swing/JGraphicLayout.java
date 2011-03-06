@@ -28,14 +28,14 @@ import sgt.sgt.TimeAxis;
 import sgt.sgt.Logo;
 import sgt.sgt.DataNotFoundException;
 
-import sgt.util.Domain;
-import sgt.util.Rectangle2D;
-import sgt.util.Dimension2D;
-import sgt.util.Range2D;
-import sgt.util.TimeRange;
-import sgt.util.GeoDate;
-import sgt.util.Units;
-import sgt.util.SoTRange;
+import sgt.geom.Domain;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Dimension2D;
+import sgt.geom.Range2D;
+import sgt.geom.TimeRange;
+import sgt.geom.GeoDate;
+import sgt.geom.Units;
+import sgt.geom.SoTRange;
 
 import sgt.sgt.dm.SGTData;
 import sgt.sgt.dm.SGTPoint;
@@ -246,10 +246,10 @@ public abstract class JGraphicLayout extends JPane {
    * default units are "m/s"; DISTANCE, default unis are "m"). NOTE: Presently
    * the units supported are very limited.
    *
-   * @see sgt.util.Units#NONE
-   * @see sgt.util.Units#TEMPERATURE
-   * @see sgt.util.Units#VELOCITY
-   * @see sgt.util.Units#DISTANCE
+   * @see sgt.geom.Units#NONE
+   * @see sgt.geom.Units#TEMPERATURE
+   * @see sgt.geom.Units#VELOCITY
+   * @see sgt.geom.Units#DISTANCE
    */
   public void setBaseUnit(int base) {
     base_units_ = base;

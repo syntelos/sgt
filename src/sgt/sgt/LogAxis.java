@@ -14,8 +14,8 @@ package  sgt.sgt;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import sgt.util.Point2D;
-import sgt.util.Debug;
+import sgt.geom.Point2D;
+import sgt.geom.Debug;
 
 /**
  * Axis class for creation of "log" axes. An {@link sgt.sgt.demo.JLogLogDemo

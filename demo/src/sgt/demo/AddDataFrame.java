@@ -29,10 +29,10 @@ import sgt.sgt.beans.*;
 import sgt.sgt.ColorMap;
 import sgt.sgt.IndexedColorMap;
 import sgt.sgt.LinearTransform;
-import sgt.util.Range2D;
-import sgt.util.GeoDate;
-import sgt.util.IllegalTimeValue;
-import sgt.util.TimeRange;
+import sgt.geom.Range2D;
+import sgt.geom.GeoDate;
+import sgt.geom.IllegalTimeValue;
+import sgt.geom.TimeRange;
 import sgt.sgt.beans.Page;
 
 import javax.swing.event.*;

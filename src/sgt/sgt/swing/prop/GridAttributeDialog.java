@@ -37,7 +37,7 @@ import sgt.sgt.JPane;
 import sgt.sgt.ContourLevelNotFoundException;
 import sgt.sgt.dm.SGTGrid;
 
-import sgt.util.Range2D;
+import sgt.geom.Range2D;
 import java.awt.event.*;
 
 /**

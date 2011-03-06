@@ -11,9 +11,9 @@
  */
 package  sgt.sgt;
 
-import sgt.util.Range2D;
-import sgt.util.SoTRange;
-import sgt.util.Debug;
+import sgt.geom.Range2D;
+import sgt.geom.SoTRange;
+import sgt.geom.Debug;
 
 import sgt.sgt.dm.SGTData;
 

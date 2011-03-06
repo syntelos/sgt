@@ -22,13 +22,13 @@ import java.text.DecimalFormat;
 import java.util.StringTokenizer;
 
 import sgt.sgt.SGLabel;
-import sgt.util.Rectangle2D;
-import sgt.util.Range2D;
-import sgt.util.Point2D;
-import sgt.util.SoTRange;
-import sgt.util.SoTPoint;
-import sgt.util.IllegalTimeValue;
-import sgt.util.GeoDate;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Range2D;
+import sgt.geom.Point2D;
+import sgt.geom.SoTRange;
+import sgt.geom.SoTPoint;
+import sgt.geom.IllegalTimeValue;
+import sgt.geom.GeoDate;
 import sgt.sgt.swing.ColorSwatchIcon;
 
 /**

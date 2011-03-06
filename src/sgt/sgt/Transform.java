@@ -14,7 +14,7 @@ package  sgt.sgt;
 
 import java.beans.PropertyChangeListener;
 
-import sgt.util.Range2D;
+import sgt.geom.Range2D;
 import java.io.Serializable;
 
 /**

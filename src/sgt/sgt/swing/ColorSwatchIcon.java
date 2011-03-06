@@ -14,7 +14,7 @@ package sgt.sgt.swing;
 
 import sgt.sgt.IndexedColor;
 import sgt.sgt.ColorMap;
-import sgt.util.Debug;
+import sgt.geom.Debug;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;

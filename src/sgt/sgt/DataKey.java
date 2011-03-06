@@ -12,8 +12,8 @@
 
 package sgt.sgt;
 
-import sgt.util.Point2D;
-import sgt.util.Rectangle2D;
+import sgt.geom.Point2D;
+import sgt.geom.Rectangle2D;
 
 /**
  * Inticates the class is a key or legend.

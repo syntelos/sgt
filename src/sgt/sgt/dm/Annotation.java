@@ -16,8 +16,8 @@ import sgt.sgt.LineAttribute;
 import sgt.sgt.PointAttribute;
 import sgt.sgt.SGException;
 
-import sgt.util.SoTRange;
-import sgt.util.SoTPoint;
+import sgt.geom.SoTRange;
+import sgt.geom.SoTPoint;
 
 import java.util.List;
 import java.util.Vector;

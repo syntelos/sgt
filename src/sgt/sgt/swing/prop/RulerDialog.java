@@ -12,7 +12,7 @@
 package sgt.sgt.swing.prop;
 
 import sgt.sgt.*;
-import sgt.util.*;
+import sgt.geom.*;
 import sgt.swing.ThreeDotsButton;
 import java.awt.*;
 import javax.swing.*;

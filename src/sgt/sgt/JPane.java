@@ -12,7 +12,7 @@
 
 package  sgt.sgt;
 
-import sgt.util.Debug;
+import sgt.geom.Debug;
 import sgt.sgt.beans.Panel;
 
 import java.awt.Rectangle;

@@ -14,10 +14,10 @@ package sgt.sgt.dm;
 
 import sgt.sgt.SGLabel;
 import sgt.sgt.InvalidMethodError;
-import sgt.util.GeoDate;
-import sgt.util.SoTRange;
-import sgt.util.SoTPoint;
-import sgt.util.SoTValue;
+import sgt.geom.GeoDate;
+import sgt.geom.SoTRange;
+import sgt.geom.SoTPoint;
+import sgt.geom.SoTValue;
 
 import java.beans.PropertyChangeSupport;
 import java.beans.PropertyChangeListener;

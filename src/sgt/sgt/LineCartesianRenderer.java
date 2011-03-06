@@ -16,8 +16,8 @@ import sgt.sgt.dm.SGTLine;
 import sgt.sgt.dm.SGTData;
 import sgt.sgt.dm.Collection;
 
-//import sgt.util.GeoDate;
-import sgt.util.Debug;
+//import sgt.geom.GeoDate;
+import sgt.geom.Debug;
 
 import java.util.Vector;
 import java.util.Enumeration;

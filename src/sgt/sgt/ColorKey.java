@@ -12,11 +12,11 @@
 
 package  sgt.sgt;
 
-import sgt.util.Rectangle2D;
-import sgt.util.Dimension2D;
-import sgt.util.Range2D;
-import sgt.util.Point2D;
-import sgt.util.Debug;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Dimension2D;
+import sgt.geom.Range2D;
+import sgt.geom.Point2D;
+import sgt.geom.Debug;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;

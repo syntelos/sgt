@@ -13,7 +13,7 @@
 package sgt.sgt.beans;
 
 import sgt.sgt.*;
-import sgt.util.*;
+import sgt.geom.*;
 import java.awt.*;
 import java.beans.*;
 import java.io.*;

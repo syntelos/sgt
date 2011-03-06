@@ -37,9 +37,9 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import sgt.sgt.SGLabel;
-import sgt.util.Point2D;
-import sgt.util.Rectangle2D;
-import sgt.util.SimpleFileFilter;
+import sgt.geom.Point2D;
+import sgt.geom.Rectangle2D;
+import sgt.geom.SimpleFileFilter;
 import sgt.swing.MRJUtil;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;

@@ -12,11 +12,11 @@
 
 package sgt.demo;
 
-import sgt.util.GeoDate;
-import sgt.util.Range2D;
-import sgt.util.Point2D;
-import sgt.util.TimeRange;
-import sgt.util.GeoDateArray;
+import sgt.geom.GeoDate;
+import sgt.geom.Range2D;
+import sgt.geom.Point2D;
+import sgt.geom.TimeRange;
+import sgt.geom.GeoDateArray;
 
 import sgt.sgt.dm.SGTData;
 import sgt.sgt.dm.SGTPoint;

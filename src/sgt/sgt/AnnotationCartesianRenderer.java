@@ -26,10 +26,10 @@ import sgt.sgt.dm.SGTLine;
 import sgt.sgt.dm.SGTPoint;
 import sgt.sgt.dm.SGTData;
 
-import sgt.util.SoTPoint;
-//import sgt.util.GeoDate;
-import sgt.util.SoTValue;
-import sgt.util.Point2D;
+import sgt.geom.SoTPoint;
+//import sgt.geom.GeoDate;
+import sgt.geom.SoTValue;
+import sgt.geom.Point2D;
 
 /**
  * Renders <code>Annote</code> and <code>Annotation</code> objects. 

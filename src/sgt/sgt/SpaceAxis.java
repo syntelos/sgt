@@ -12,14 +12,14 @@
 
 package  sgt.sgt;
 
-import sgt.util.Range2D;
-import sgt.util.TimePoint;
-import sgt.util.Point2D;
-import sgt.util.Debug;
-import sgt.util.GeoDate;
-import sgt.util.SoTValue;
-import sgt.util.SoTPoint;
-import sgt.util.SoTRange;
+import sgt.geom.Range2D;
+import sgt.geom.TimePoint;
+import sgt.geom.Point2D;
+import sgt.geom.Debug;
+import sgt.geom.GeoDate;
+import sgt.geom.SoTValue;
+import sgt.geom.SoTPoint;
+import sgt.geom.SoTRange;
 
 import java.util.Enumeration;
 import java.awt.Graphics;

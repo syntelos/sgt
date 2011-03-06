@@ -13,9 +13,9 @@
 package sgt.sgt.dm;
 
 import sgt.sgt.SGLabel;
-import sgt.util.GeoDate;
-import sgt.util.GeoDateArray;
-import sgt.util.SoTRange;
+import sgt.geom.GeoDate;
+import sgt.geom.GeoDateArray;
+import sgt.geom.SoTRange;
 
 import java.io.Serializable;
 import java.beans.PropertyChangeSupport;

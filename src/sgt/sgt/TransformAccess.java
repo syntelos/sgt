@@ -11,7 +11,7 @@
  */
 package sgt.sgt;
 
-import sgt.util.Range2D;
+import sgt.geom.Range2D;
 
 /**
  * Interface indicates that the color map uses a transform to map

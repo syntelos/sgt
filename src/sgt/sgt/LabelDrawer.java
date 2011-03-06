@@ -14,8 +14,8 @@ package  sgt.sgt;
 
 import java.awt.*;
 
-import sgt.util.Rectangle2D;
-import sgt.util.Point2D;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Point2D;
 import java.io.Serializable;
 
 /**

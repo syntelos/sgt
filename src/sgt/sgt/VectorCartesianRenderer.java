@@ -16,8 +16,8 @@ import sgt.sgt.dm.SGTVector;
 import sgt.sgt.dm.SGTData;
 import sgt.sgt.dm.Collection;
 
-import sgt.util.GeoDate;
-import sgt.util.Debug;
+import sgt.geom.GeoDate;
+import sgt.geom.Debug;
 
 import java.awt.Graphics2D;
 import java.awt.BasicStroke;

@@ -44,9 +44,9 @@ import sgt.sgt.PointCollectionKey;
 import sgt.sgt.Ruler;
 import sgt.sgt.dm.SGTData;
 
-import sgt.util.Dimension2D;
-import sgt.util.Rectangle2D;
-import sgt.util.Point2D;
+import sgt.geom.Dimension2D;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Point2D;
 
 /**
  * A <code>Layer</code> container that provides a <code>StackedLayout</code> of

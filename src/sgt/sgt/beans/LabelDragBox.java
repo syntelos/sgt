@@ -15,8 +15,8 @@ package sgt.sgt.beans;
 import java.awt.*;
 import java.util.Iterator;
 
-import sgt.util.Point2D;
-import sgt.util.Rectangle2D;
+import sgt.geom.Point2D;
+import sgt.geom.Rectangle2D;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;

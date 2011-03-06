@@ -11,8 +11,8 @@
  */
 package sgt.sgt;
 
-import sgt.util.Range2D;
-import sgt.util.Debug;
+import sgt.geom.Range2D;
+import sgt.geom.Debug;
 
 import java.awt.*;
 import java.beans.PropertyChangeListener;

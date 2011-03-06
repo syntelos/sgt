@@ -27,8 +27,8 @@ import sgt.sgt.JPane;
 import sgt.sgt.LineAttribute;
 import sgt.sgt.StrokeDrawer;
 
-import sgt.util.Point2D;
-import sgt.util.GeoDate;
+import sgt.geom.Point2D;
+import sgt.geom.GeoDate;
 
 /**
  * <code>ContourLine</code> contains a single closed or open contour

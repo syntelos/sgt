@@ -12,9 +12,9 @@
 
 package  sgt.sgt;
 
-import sgt.util.GeoDate;
-import sgt.util.IllegalTimeValue;
-import sgt.util.TimeRange;
+import sgt.geom.GeoDate;
+import sgt.geom.IllegalTimeValue;
+import sgt.geom.TimeRange;
 
 /**
  * Draws time axes using the day/month style.

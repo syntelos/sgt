@@ -14,8 +14,8 @@ package sgt.sgt.beans;
 
 import sgt.sgt.dm.SGTData;
 import sgt.sgt.LayerChild;
-import sgt.util.Rectangle2D;
-import sgt.util.Point2D;
+import sgt.geom.Rectangle2D;
+import sgt.geom.Point2D;
 import javax.swing.event.*;
 import java.util.*;
 import java.io.*;

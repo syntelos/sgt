@@ -29,9 +29,9 @@ import javax.swing.event.ChangeListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
-import sgt.util.SoTRange;
-import sgt.util.GeoDate;
-import sgt.util.IllegalTimeValue;
+import sgt.geom.SoTRange;
+import sgt.geom.GeoDate;
+import sgt.geom.IllegalTimeValue;
 
 /**
  * @author Donald Denbo

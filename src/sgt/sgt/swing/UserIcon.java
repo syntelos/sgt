@@ -17,9 +17,9 @@ import sgt.sgt.Layer;
 import sgt.sgt.CartesianGraph;
 import sgt.sgt.AbstractPane;
 
-import sgt.util.Point2D;
-import sgt.util.Debug;
-import sgt.util.SoTPoint;
+import sgt.geom.Point2D;
+import sgt.geom.Debug;
+import sgt.geom.SoTPoint;
 
 import javax.swing.ImageIcon;
 import java.awt.Rectangle;

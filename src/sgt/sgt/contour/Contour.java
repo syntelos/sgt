@@ -22,10 +22,10 @@ import sgt.sgt.ContourLevelNotFoundException;
 
 import sgt.sgt.dm.SGTGrid;
 
-import sgt.util.Range2D;
-import sgt.util.Point2D;
-import sgt.util.GeoDate;
-import sgt.util.Debug;
+import sgt.geom.Range2D;
+import sgt.geom.Point2D;
+import sgt.geom.GeoDate;
+import sgt.geom.Debug;
 
 import java.awt.Graphics;
 import java.awt.Color;

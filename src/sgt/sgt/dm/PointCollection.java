@@ -15,7 +15,7 @@ package sgt.sgt.dm;
 import java.util.Vector;
 import java.util.Enumeration;
 
-import sgt.util.SoTRange;
+import sgt.geom.SoTRange;
  
 /**
  * <code>PointCollection</code> is an extension to <code>Vector</code>

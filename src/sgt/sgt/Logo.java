@@ -12,9 +12,9 @@
 
 package  sgt.sgt;
 
-import sgt.util.Point2D;
-import sgt.util.Dimension2D;
-import sgt.util.Debug;
+import sgt.geom.Point2D;
+import sgt.geom.Dimension2D;
+import sgt.geom.Debug;
 
 import java.awt.Panel;
 import java.awt.Graphics;

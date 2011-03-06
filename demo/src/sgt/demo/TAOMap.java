@@ -37,10 +37,10 @@ import sgt.sgt.LineAttribute;
 import sgt.sgt.dm.SimpleLine;
 import sgt.sgt.dm.SGTMetaData;
 
-import sgt.util.Point2D;
-import sgt.util.Range2D;
-import sgt.util.Dimension2D;
-import sgt.util.SoTPoint;
+import sgt.geom.Point2D;
+import sgt.geom.Range2D;
+import sgt.geom.Dimension2D;
+import sgt.geom.SoTPoint;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

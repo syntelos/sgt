@@ -21,7 +21,7 @@ import sgt.sgt.dm.Collection;
 import sgt.sgt.dm.SGTVector;
 import sgt.sgt.dm.Annotation;
 
-import sgt.util.Debug;
+import sgt.geom.Debug;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;

@@ -15,7 +15,7 @@ package  sgt.sgt;
 import sgt.sgt.swing.Draggable;
 import sgt.sgt.beans.Panel;
 
-import sgt.util.Debug;
+import sgt.geom.Debug;
 
 import java.awt.Graphics2D;
 import java.awt.Stroke;

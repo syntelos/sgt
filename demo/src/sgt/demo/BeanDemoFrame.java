@@ -28,7 +28,7 @@ import sgt.sgt.LinearTransform;
 import sgt.sgt.GridAttribute;
 import sgt.sgt.Attribute;
 import sgt.sgt.swing.JClassTree;
-import sgt.util.*;
+import sgt.geom.*;
 import sgt.swing.JSystemPropertiesDialog;
 
 /**

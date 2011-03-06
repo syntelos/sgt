@@ -19,9 +19,9 @@ import sgt.sgt.JPane;
 import sgt.sgt.LineCartesianRenderer;
 import sgt.sgt.LineAttribute;
 
-import sgt.util.GeoDate;
-import sgt.util.TimeRange;
-import sgt.util.IllegalTimeValue;
+import sgt.geom.GeoDate;
+import sgt.geom.TimeRange;
+import sgt.geom.IllegalTimeValue;
 
 import sgt.sgt.dm.SGTData;
 import sgt.sgt.dm.SGTLine;

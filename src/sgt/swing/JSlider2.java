@@ -15,7 +15,7 @@ import java.awt.FontMetrics;
 import java.awt.BorderLayout;
 import java.awt.Rectangle;
 
-import sgt.util.Range;
+import sgt.geom.Range;
 import sgt.swing.beans.SliderHandle;
 
 /**

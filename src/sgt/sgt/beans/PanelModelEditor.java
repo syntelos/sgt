@@ -24,7 +24,7 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 import java.awt.event.*;
 
-import sgt.util.SimpleFileFilter;
+import sgt.geom.SimpleFileFilter;
 
 /**
  * Run-time and stand-alone editor to modify a <code>PanelModel</code>.

@@ -15,11 +15,11 @@
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-import sgt.util.GeoDate;
-import sgt.util.Range2D;
-import sgt.util.TimeRange;
-import sgt.util.SoTValue;
-import sgt.util.SoTRange;
+import sgt.geom.GeoDate;
+import sgt.geom.Range2D;
+import sgt.geom.TimeRange;
+import sgt.geom.SoTValue;
+import sgt.geom.SoTRange;
 
 /**
  * Abstract base class for cartesian axis transforms. Adds additional

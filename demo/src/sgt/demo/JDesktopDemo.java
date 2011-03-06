@@ -19,10 +19,10 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import sgt.sgt.*;
-import sgt.util.SoTPoint;
-import sgt.util.SoTRange;
-import sgt.util.Point2D;
-import sgt.util.Dimension2D;
+import sgt.geom.SoTPoint;
+import sgt.geom.SoTRange;
+import sgt.geom.Point2D;
+import sgt.geom.Dimension2D;
 
 /**
  * Example demonstrating the use of <code>PropertyChangeEvents</code>

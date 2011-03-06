@@ -12,8 +12,8 @@
 
 package sgt.sgt.beans;
 
-import sgt.util.Point2D;
-import sgt.util.Rectangle2D;
+import sgt.geom.Point2D;
+import sgt.geom.Rectangle2D;
 import javax.swing.event.*;
 import java.awt.Color;
 import java.awt.Font;

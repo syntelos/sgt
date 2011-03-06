@@ -12,11 +12,11 @@
 
 package  sgt.sgt;
 
-import sgt.util.Range2D;
-import sgt.util.GeoDate;
-import sgt.util.TimeRange;
-import sgt.util.SoTValue;
-import sgt.util.SoTRange;
+import sgt.geom.Range2D;
+import sgt.geom.GeoDate;
+import sgt.geom.TimeRange;
+import sgt.geom.SoTValue;
+import sgt.geom.SoTRange;
 
 /**
  * Performs a linear transformation on cartesian axes. If the

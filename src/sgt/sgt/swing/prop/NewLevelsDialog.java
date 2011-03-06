@@ -12,7 +12,7 @@
 package sgt.sgt.swing.prop;
 
 import sgt.sgt.dm.SGTGrid;
-import sgt.util.Range2D;
+import sgt.geom.Range2D;
 import sgt.sgt.Graph;
 
 import javax.swing.*;

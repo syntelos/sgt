@@ -12,7 +12,7 @@
 
 package sgt.sgt.dm;
 
-import sgt.util.GeoDate;
+import sgt.geom.GeoDate;
 
 /**
  * Defines a data object to be of Point type. Interpretation

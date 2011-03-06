@@ -12,8 +12,8 @@
 
 package sgt.sgt;
 
-import sgt.util.GeoDate;
-import sgt.util.TimeRange;
+import sgt.geom.GeoDate;
+import sgt.geom.TimeRange;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;

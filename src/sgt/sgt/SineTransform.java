@@ -12,11 +12,11 @@
 
 package  sgt.sgt;
 
-import sgt.util.GeoDate;
-import sgt.util.Range2D;
-import sgt.util.TimeRange;
-import sgt.util.SoTValue;
-import sgt.util.SoTRange;
+import sgt.geom.GeoDate;
+import sgt.geom.Range2D;
+import sgt.geom.TimeRange;
+import sgt.geom.SoTValue;
+import sgt.geom.SoTRange;
 
 /**
  * Performs a sine(x) transform on a cartesian axis.

@@ -13,8 +13,8 @@ package sgt.sgt.swing;
 
 import java.text.DecimalFormat;
 
-import sgt.util.SoTPoint;
-import sgt.util.SoTValue;
+import sgt.geom.SoTPoint;
+import sgt.geom.SoTValue;
 
 /**
  * <code>ValueIconFormat</code> is used to create the value string for

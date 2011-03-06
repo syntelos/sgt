@@ -11,11 +11,11 @@
 // RCS $Id: LogTransform.java,v 1.8 2003/08/22 23:02:32 dwd Exp $
 package  sgt.sgt;
 
-import sgt.util.GeoDate;
-import sgt.util.Range2D;
-import sgt.util.TimeRange;
-import sgt.util.SoTValue;
-import sgt.util.SoTRange;
+import sgt.geom.GeoDate;
+import sgt.geom.Range2D;
+import sgt.geom.TimeRange;
+import sgt.geom.SoTValue;
+import sgt.geom.SoTRange;
 
 /**
  * Transform class for creation of "log" axes. An {@link sgt.sgt.demo.JLogLogDemo

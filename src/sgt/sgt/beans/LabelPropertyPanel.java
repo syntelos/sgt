@@ -25,7 +25,7 @@ import java.awt.event.FocusListener;
 import sgt.sgt.swing.prop.ColorDialog;
 import sgt.sgt.swing.prop.FontDialog;
 import sgt.sgt.SGLabel;
-import sgt.util.Point2D;
+import sgt.geom.Point2D;
 
 /**
  * @author Donald Denbo
