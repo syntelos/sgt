@@ -8,11 +8,11 @@ Welcome to SGT!
 	 The Scientific Graphics Toolkit (SGT) for highly interactive,
 	 flexible, and publication quality graphics of scientific data
 
-	     Features include user settable or automatically scaled
-	     axes, sophisticated, automatically self-scaling time
-	     axes, labels as movable, customizable objects, automatic
+	     Features include: user settable or automatically scaled
+	     axes; sophisticated, automatically self-scaling time
+	     axes; labels as movable, customizable objects; automatic
 	     generation of legends to explain the data being
-	     displayed, and more.
+	     displayed; and more.
 
 
   Dev Branch
