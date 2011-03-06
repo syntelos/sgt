@@ -19,69 +19,57 @@ package sgt.util;
  * @version $Revision: 1.3 $, $Date: 2001/02/09 18:42:30 $
  * @since sgt 1.0
  */
-public class Dimension2D {
-  public double height;
-  public double width;
-  public Dimension2D() {
-    width = 0.0;
-    height = 0.0;
-}
-  public Dimension2D(double width, double height) {
-    this.width = width;
-    this.height = height;
-  }
-  /**
-   * Returns the width.
-   *
-   * @return the width
-   */
-  public double getWidth() {
-    return width;
-  }
-  
-  /**
-   * Returns the height.
-   *
-   * @return the height
-   */
-  public double getHeight() {
-    return height;
-  }
-  
-  /**
-   * Set the size to the specified width
-   * and height.
-   * This method is included for completeness, to parallel the
-   * getSize method of <code>Component</code>.
-   * @param width  the new width
-   * @param height  the new height
-   */
-  public void setSize(double width, double height) {
-    this.width = width;
-    this.height = height;
-  }
-  
-  /**
-   * Set the size to match the specified size.
-   * This method is included for completeness, to parallel the
-   * getSize method of <code>Component</code>.
-   * @param d  the new size
-   */
-  public void setSize(Dimension2D d) {
-    setSize(d.getWidth(), d.getHeight());
-  }
-  /**
-   *
-   */
-  public String toString() {
-    return getClass().getName() + "[width=" + width + ",height=" + height +
-"]";
-  }
-  /**
-   * Test for equality.  Both width and height must be equal to be
-   * true.
-   */
-  public boolean equals(Dimension2D d) {
-    return (width == d.width && height == d.height);
-  }
+public class Dimension2D
+    extends java.awt.geom.Dimension2D
+{
+
+    public double height;
+    public double width;
+
+
+    public Dimension2D() {
+	super();
+	width = 0.0;
+	height = 0.0;
+    }
+    public Dimension2D(double width, double height) {
+	super();
+	this.width = width;
+	this.height = height;
+    }
+
+
+    @Override
+    public double getWidth() {
+	return width;
+    }
+    @Override
+    public double getHeight() {
+	return height;
+    }
+    @Override  
+    public void setSize(double width, double height) {
+	this.width = width;
+	this.height = height;
+    }
+    @Override
+    public void setSize(java.awt.geom.Dimension2D d) {
+	setSize(d.getWidth(), d.getHeight());
+    }
+    @Override
+    public String toString() {
+	return getClass().getName() + "[width=" + width + ",height=" + height +
+	    "]";
+    }
+    public boolean equals(Object that){
+	if (this == that)
+	    return true;
+	else if (that instanceof java.awt.geom.Dimension2D)
+	    return this.equals( (java.awt.geom.Dimension2D)that);
+	else
+	    return false;
+    }
+    public boolean equals(java.awt.geom.Dimension2D d) {
+	return (this.width == d.getWidth() && this.height == d.getHeight());
+    }
 }

@@ -133,9 +133,9 @@ public class Collection extends Vector implements SGTData, Cloneable {
     xRange_ = ((SGTData)firstElement()).getXRange();
     yRange_ = ((SGTData)firstElement()).getYRange();
 
-    Enumeration enum = elements();
-    while(enum.hasMoreElements()) {
-      SGTData data = (SGTData)enum.nextElement();
+    Enumeration en = elements();
+    while(en.hasMoreElements()) {
+      SGTData data = (SGTData)en.nextElement();
       xRange_.add(data.getXRange());
       yRange_.add(data.getYRange());
     }
